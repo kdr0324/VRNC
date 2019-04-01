@@ -15,6 +15,7 @@ public class PopulateGrid : MonoBehaviour
     void Start()
     {
         Populate();
+        Debug.Log(sprites[0].name);
     }
 
     void Update()
@@ -30,7 +31,7 @@ public class PopulateGrid : MonoBehaviour
         {
             newObj = (GameObject)Instantiate(prefab, transform);
             newObj.GetComponent<Image>().sprite = sprites[i];
-            newObj.GetComponent<FunitureSelect>().name = "kmj"+i;
+            newObj.GetComponent<FunitureSelect>().name = sprites[i].name;
         }
 
         //newObj = (GameObject)Instantiate(prefab, transform);
@@ -39,14 +40,14 @@ public class PopulateGrid : MonoBehaviour
         //newObj = (GameObject)Instantiate(prefab, transform);
         //newObj.GetComponent<Image>().sprite = sprites[1];
 
-        for (int i = 0; i < numberToCreate; i++)
-        {
-            // Create new instances of our prefab until we've created as many as we specified
-            newObj = (GameObject)Instantiate(prefab, transform);
-            //newObj.GetComponent<Image>().sprite.;
-            // Randomize the color of our image
-            //   newObj.GetComponent<Image>().color = Random.ColorHSV();
-        }
+        //for (int i = 0; i < numberToCreate; i++)
+        //{
+        //    // Create new instances of our prefab until we've created as many as we specified
+        //    newObj = (GameObject)Instantiate(prefab, transform);
+        //    //newObj.GetComponent<Image>().sprite.;
+        //    // Randomize the color of our image
+        //    //   newObj.GetComponent<Image>().color = Random.ColorHSV();
+        //}
 
     }
 }
