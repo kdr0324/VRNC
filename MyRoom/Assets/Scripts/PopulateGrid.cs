@@ -10,7 +10,7 @@ public class PopulateGrid : MonoBehaviour
 
     public Sprite[] sprites;
 
-    public int numberToCreate; // number of objects to create. Exposed in inspector
+    //public int numberToCreate; // number of objects to create. Exposed in inspector
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class PopulateGrid : MonoBehaviour
     {
         GameObject newObj; // Create GameObject instance
 
+        Debug.Log(sprites.Length);
         for(int i=0; i< sprites.Length; i++)
         {
             newObj = (GameObject)Instantiate(prefab, transform);
