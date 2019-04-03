@@ -38,10 +38,10 @@ public class MenuManager : MonoBehaviour
     }
     public void MakingRoom()
     {
-        GameObject mainMenu = GameObject.Find("Player/Canvas/MainMenu");
+        GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
         mainMenu.SetActive(false);
         //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
-        GameObject.Find("Player/Canvas/FurnitureMenu").SetActive(true);
+        GameObject.Find("Player/CanvasMainMenu/FurnitureMenu").SetActive(true);
 
     }
 
