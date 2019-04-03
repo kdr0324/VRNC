@@ -1,0 +1,3 @@
+﻿  TCPSocket.c
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\tcpsocket.c(78): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SOCKET *'입니다.
+  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\Debug\GameServer.exe
