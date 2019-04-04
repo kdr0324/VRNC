@@ -119,12 +119,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GaemRoom.c" />
     <ClCompile Include="GameServer.c" />
-    <ClCompile Include="TCPSocket.c" />
+    <ClCompile Include="List.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="User.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameRoom.h" />
     <ClInclude Include="GameServer.h" />
-    <ClInclude Include="TCPSocket.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

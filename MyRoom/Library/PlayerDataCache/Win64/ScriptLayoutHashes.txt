@@ -110,6 +110,7 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 1834077a69235486c45931f07f154641 SteamVR.dll:Valve.VR.SteamVR_Behaviour_Boolean
 2e4d26187828ec6fc78fe78f0712f15b SteamVR.dll:Valve.VR.InteractionSystem.Sample.CustomSkeletonHelper
 18628813c7aad3d4328ffde18c4d9d59 SteamVR.dll:Valve.VR.InteractionSystem.Sample.JoeJeffController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Client
 6a77bf8a6622108e73cfcd0356550328 SteamVR.dll:Valve.VR.InteractionSystem.UIElement
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -230,7 +231,7 @@ e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 876541412e7eb49d05ffab44f25627c2 SteamVR.dll:Valve.VR.InteractionSystem.TeleportArea
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.SleepOnAwake
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.ChaperoneInfo
-0c2909ae91e9336a2e379c9e2279fb3f Assembly-CSharp.dll:.LibrarySample
+71e7e8c46ce4e67b3713e238271ed2c1 Assembly-CSharp.dll:.LibraryClient
 d94cf8f260d8c2d5fae1de5f4983b730 SteamVR.dll:Valve.VR.Extras.SteamVR_TestTrackedCamera
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.DestroyOnDetachedFromHand
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
@@ -295,4 +296,3 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SocketSampleTCPGuest

@@ -15,18 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TCPSocket.c">
+    <ClCompile Include="GameServer.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GameServer.c">
+    <ClCompile Include="GaemRoom.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="User.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="List.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TCPSocket.h">
+    <ClInclude Include="GameServer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GameServer.h">
+    <ClInclude Include="GameRoom.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
