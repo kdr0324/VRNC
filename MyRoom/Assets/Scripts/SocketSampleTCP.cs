@@ -4,10 +4,11 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Runtime.InteropServices;
 
 public class SocketSampleTCP : MonoBehaviour
 {
-	class _presentBox
+	struct _presentBox
     {
         public float x, y, z;
     };
@@ -56,10 +57,7 @@ public class SocketSampleTCP : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-	{
-
-
-        
+	{ 
         switch (m_state) {
 
 		case State.ClientCommunication:
@@ -71,24 +69,53 @@ public class SocketSampleTCP : MonoBehaviour
 		}
 	}
 
-
+    //send Packet
 	void ClientProcess()
 	{
         // 메시지 송신.
-        byte[] buffer = new byte[1400];/* = System.Text.Encoding.UTF8.GetBytes("Hello, this is client.\n");*/
+        byte[] buffer;// = new byte[1400];/* = System.Text.Encoding.UTF8.GetBytes("Hello, this is client.\n");*/
         _presentBox presentBox = new _presentBox();
         presentBox.x = transform.position.x;
         presentBox.y = transform.position.y;
         presentBox.z = transform.position.z;
 
-        String str = String.Format("{0:F5},{1:F5},{2:F5}", presentBox.x, presentBox.y, presentBox.z);
-        buffer = System.Text.Encoding.UTF8.GetBytes(str);
-        Debug.Log(str);
-        Debug.Log(str.Length);
+        buffer = getBytes(presentBox);
         m_socket.Send(buffer, buffer.Length, SocketFlags.None);
 
-        /* = System.Text.Encoding.UTF8.GetBytes("Hello, this is client.\n");*/
-        //m_socket.Send(buffer, buffer.Length, SocketFlags.None);
+
+        m_socket.Receive(buffer);
+
+        presentBox = fromBytes(buffer);
+
+        transform.position = new Vector3(presentBox.x, presentBox.y, presentBox.z);
+
     }
 
+    byte[] getBytes(_presentBox str)
+    {
+        int size = Marshal.SizeOf(str);
+        byte[] arr = new byte[size];
+
+        IntPtr ptr = Marshal.AllocHGlobal(size);
+        Marshal.StructureToPtr(str, ptr, true);
+        Marshal.Copy(ptr, arr, 0, size);
+        Marshal.FreeHGlobal(ptr);
+        return arr;
+    }
+
+
+    _presentBox fromBytes(byte[] arr)
+    {
+        _presentBox str = new _presentBox();
+
+        int size = Marshal.SizeOf(str);
+        IntPtr ptr = Marshal.AllocHGlobal(size);
+
+        Marshal.Copy(arr, 0, ptr, size);
+
+        str = (_presentBox)Marshal.PtrToStructure(ptr, str.GetType());
+        Marshal.FreeHGlobal(ptr);
+
+        return str;
+    }
 }

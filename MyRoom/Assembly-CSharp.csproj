@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\SocketSampleTCP.cs" />
+    <Compile Include="Assets\Scripts\SocketSampleTCPGuest.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\TransportTCP.cs" />
     <Compile Include="Assets\Scripts\TransportUDP.cs" />
