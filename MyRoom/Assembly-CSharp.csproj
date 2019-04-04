@@ -60,13 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Client.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Scripts\DropMe.cs" />
-    <Compile Include="Assets\Scripts\LibrarySample.cs" />
+    <Compile Include="Assets\Scripts\LibraryClient.cs" />
     <Compile Include="Assets\Scripts\NetworkDef.cs" />
     <Compile Include="Assets\Scripts\PacketQueue.cs" />
     <Compile Include="Assets\Scripts\PanelManager.cs" />
@@ -74,7 +75,6 @@
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\SocketSampleTCP.cs" />
-    <Compile Include="Assets\Scripts\SocketSampleTCPGuest.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\TransportTCP.cs" />
     <Compile Include="Assets\Scripts\TransportUDP.cs" />

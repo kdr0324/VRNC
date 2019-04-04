@@ -119,10 +119,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameServerMain.c" />
+    <ClCompile Include="GameServer.c" />
     <ClCompile Include="TCPSocket.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameServer.h" />
     <ClInclude Include="TCPSocket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
