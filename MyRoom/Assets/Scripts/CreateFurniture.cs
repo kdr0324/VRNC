@@ -6,16 +6,20 @@ using UnityEngine.EventSystems;
 public class CreateFurniture : MonoBehaviour
 {
     public GameObject NewGameObject;
+    //public Transform Furniture;
     
+
+
     // Start is called before the first frame update
     void Start()
     {
+     
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -27,9 +31,18 @@ public class CreateFurniture : MonoBehaviour
         NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
         Debug.Log(NewGameObject.name);
 
-
+        
 
         Instantiate(NewGameObject, transform.position + Vector3.forward, NewGameObject.transform.rotation);
+       
+
+
 
     }
+
+    //public void SetParent(GameObject newParent)
+    //{
+
+    //    NewGameObject.transform.parent = newParent.transform;
+    //}
 }
