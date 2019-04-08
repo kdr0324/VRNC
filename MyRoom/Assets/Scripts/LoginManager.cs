@@ -7,9 +7,12 @@ public class LoginManager : MonoBehaviour
 {
     public InputField login;
     public InputField password;
+
+    private Client cli;
     // Start is called before the first frame update
     void Start()
     {
+        cli = GameObject.Find("NetworkManager").GetComponent<Client>();
         Debug.Log("Login manager Start");
     }
 
@@ -44,7 +47,16 @@ public class LoginManager : MonoBehaviour
     {
         Debug.Log(login.text);
         Debug.Log(password.text);
-        Debug.Log("Login");
+
+        if(cli.Login(login.text, password.text))
+        {
+            //login success
+            Debug.Log("Login Success");
+        }
+        else
+        {
+            Debug.Log("Login Fail");
+        }
     }
 
 

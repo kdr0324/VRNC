@@ -1,0 +1,34 @@
+#pragma once
+
+#ifndef _GAMESERVER_H_
+#define _GAMESERVER_H_
+
+#include "List.h"
+#include "User.h"
+#include "GameRoom.h"
+
+#define PACKETSIZE 1400
+
+list userlist;
+list roomlist;
+
+enum {
+	NOLOGIN,
+	LOGIN,
+	CHARACTERSELECT,
+	ROOMMAKING,
+	ROOMLIST,
+	ROOMENTER
+};
+
+void noLogin(void *sock);
+user* login(void *sock);
+void characterSelect(void *sock, user* curUser);
+void roomMake(void *sock, user* curUser);
+void roomList(void *sock);
+void roomEnter(void *sock, user* curUser);
+
+
+
+
+#endif // !_GAMESERVER_H_

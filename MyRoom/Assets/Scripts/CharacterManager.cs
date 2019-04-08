@@ -7,28 +7,12 @@ using UnityEngine.UI;
 public class CharacterManager: MonoBehaviour
 { //SelectButton, QuitButton;
     bool m_SceneLoaded;
-    public Button SelectButton, QuitButton;
 
-    void Awake()
+    private Client cli;
+
+    void Start()
     {
-        // Outputs the current active Scene to the console
-        Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
-
-        // Check that this Button exists
-        if (SelectButton != null)
-        {
-            // Fetch the Button from the Inspector. Make sure to set this in the Inspector window
-            Button loadButton = SelectButton.GetComponent<Button>();
-
-            // Call the LoadScene2Button() function when this Button is clicked
-            loadButton.onClick.AddListener(LoadSceneButton);
-        }
-
-        if (QuitButton != null)
-        {
-            Button buttonTwo = QuitButton.GetComponent<Button>();
-            buttonTwo.onClick.AddListener(SetActiveSceneButton);
-        }
+        cli = GameObject.Find("NetworkManager").GetComponent<Client>();
     }
 
     // Load the Scene when this Button is pressed
@@ -37,11 +21,16 @@ public class CharacterManager: MonoBehaviour
         // Check that the second Scene hasn't been added yet
         if (m_SceneLoaded == false)
         {
-            // Loads the second Scene
-            SceneManager.LoadScene("Main", LoadSceneMode.Additive);
 
-            // Outputs the name of the current active Scene.
-            // Notice it still outputs the name of the first Scene
+            //선택한 캐릭터 정보 보내기 , 일단 0번
+            cli.CharacterSelect(0);
+
+            //Main 씬 호출
+            // Loads the second Scene
+            SceneManager.LoadScene("Main");
+            
+            
+            //불려진 씬 확인 디버그
             Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
 
             // The Scene has been loaded, exit this method
@@ -49,20 +38,7 @@ public class CharacterManager: MonoBehaviour
         }
     }
 
-    // Change the newly loaded Scene to be the active Scene if it is loaded
-    public void SetActiveSceneButton()
-    {
-        // Allow this other Button to be pressed when the other Button has been pressed (Scene 2 is loaded)
-        if (m_SceneLoaded == true)
-        {
-            // Set Scene2 as the active Scene
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
 
-            // Ouput the name of the active Scene
-            // See now that the name is updated
-            Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
-        }
-    }
     public void Quit()
     {
         Debug.Log("ClickedQuit");
