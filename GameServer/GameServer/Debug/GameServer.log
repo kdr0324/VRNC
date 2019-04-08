@@ -1,15 +1,15 @@
 ﻿  GaemRoom.c
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\gaemroom.c(17): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\gaemroom.c(17): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   GameServer.c
   List.c
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\list.c(31): warning C4047: '==': 'void *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\list.c(31): warning C4047: '==': 'void *'의 간접 참조 수준이 'int'과(와) 다릅니다.
   main.c
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\main.c(134): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SOCKET *'입니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\main.c(134): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SOCKET *'입니다.
   User.c
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\user.c(11): warning C4013: 'strcpy'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\user.c(11): warning C4013: 'strlen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\user.c(19): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\user.c(11): warning C4013: 'strcpy'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\user.c(11): warning C4013: 'strlen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\user.c(19): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   코드를 생성하고 있습니다...
-c:\users\bit\documents\github\vrnc\gameserver\gameserver\main.c(69): warning C4716: 'ThreadFunction': 값을 반환해야 합니다.
-  LINK : C:\Users\bit\Documents\GitHub\VRNC\GameServer\Debug\GameServer.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  GameServer.vcxproj -> C:\Users\bit\Documents\GitHub\VRNC\GameServer\Debug\GameServer.exe
+c:\users\bit\documents\github\vrnc-ui\gameserver\gameserver\main.c(69): warning C4716: 'ThreadFunction': 값을 반환해야 합니다.
+  LINK : C:\Users\BIT\Documents\GitHub\VRNC-UI\GameServer\Debug\GameServer.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC-UI\GameServer\Debug\GameServer.exe

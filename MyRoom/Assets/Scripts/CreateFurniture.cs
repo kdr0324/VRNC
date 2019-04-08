@@ -33,8 +33,10 @@ public class CreateFurniture : MonoBehaviour
 
         
 
-        Instantiate(NewGameObject, transform.position + Vector3.forward, NewGameObject.transform.rotation);
-       
+        GameObject obj = Instantiate(NewGameObject, transform.position + Vector3.forward, NewGameObject.transform.rotation);
+        obj.name = NewGameObject.name;
+
+
 
 
 
