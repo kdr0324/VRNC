@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class RoomSelectManager : MonoBehaviour
 {
     public Transform roomParent;
-    private Client cli;
+    //private Client cli = Client.instance;
     // Start is called before the first frame update
     void Start()
     {
-        cli = GameObject.Find("NetworkManager").GetComponent<Client>();
+        //cli = GameObject.Find("NetworkManager").GetComponent<Client>();
     }
 
     // Update is called once per frame
@@ -22,20 +22,20 @@ public class RoomSelectManager : MonoBehaviour
 
     public void RoomMake()
     {
-        cli.RoomMake();
+        Client.instance.RoomMake();
     }
 
     public void Quit()
     {
         string[] rooms;
-        rooms = cli.RoomList();
+        rooms = Client.instance.RoomList();
 
         for(int i=0; i<rooms.Length; i++)
         {
             roomParent.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
             Button btn = roomParent.GetChild(i).GetComponent<Button>();
             int temp = i;
-            btn.onClick.AddListener(() => cli.RoomEnter(temp));
+            btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
         }
     }
 }

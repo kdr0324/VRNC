@@ -8,11 +8,11 @@ public class CharacterManager: MonoBehaviour
 { //SelectButton, QuitButton;
     bool m_SceneLoaded;
 
-    private Client cli;
+    //private Client cli = Client.instance;
 
     void Start()
     {
-        cli = GameObject.Find("NetworkManager").GetComponent<Client>();
+        //cli = GameObject.Find("NetworkManager").GetComponent<Client>();
     }
 
     // Load the Scene when this Button is pressed
@@ -23,7 +23,7 @@ public class CharacterManager: MonoBehaviour
         {
 
             //선택한 캐릭터 정보 보내기 , 일단 0번
-            cli.CharacterSelect(0);
+            Client.instance.CharacterSelect(0);
 
             //Main 씬 호출
             // Loads the second Scene

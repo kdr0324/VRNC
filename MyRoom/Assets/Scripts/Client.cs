@@ -10,6 +10,8 @@ public class Client : MonoBehaviour
 {
     Socket cli;
 
+    public static Client instance;
+
     //통신용 버퍼와 사이즈
     //private byte[] buffer;
     private const int s_mtu = 1400;
@@ -18,6 +20,11 @@ public class Client : MonoBehaviour
     private object lockObject = new object();
     //쓰레드
     private Thread thread = null;
+
+    public void Awake()
+    {
+        Client.instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
