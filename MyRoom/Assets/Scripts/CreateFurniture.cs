@@ -31,10 +31,11 @@ public class CreateFurniture : MonoBehaviour
         NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
         Debug.Log(NewGameObject.name);
 
-        
 
-        Instantiate(NewGameObject, transform.position + Vector3.forward, NewGameObject.transform.rotation);
+        GameObject obj = Instantiate(NewGameObject, transform.position + Vector3.forward, NewGameObject.transform.rotation);
+        obj.name = current_name;
        
+        
 
 
 
