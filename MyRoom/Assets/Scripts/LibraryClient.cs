@@ -58,31 +58,5 @@ public class LibraryClient : MonoBehaviour {
 
     }
 
-    byte[] getBytes(PacketData str)
-    {
-        int size = Marshal.SizeOf(str);
-        byte[] arr = new byte[size];
 
-        IntPtr ptr = Marshal.AllocHGlobal(size);
-        Marshal.StructureToPtr(str, ptr, true);
-        Marshal.Copy(ptr, arr, 0, size);
-        Marshal.FreeHGlobal(ptr);
-        return arr;
-    }
-
-
-    PacketData fromBytes(byte[] arr)
-    {
-        PacketData str = new PacketData();
-
-        int size = Marshal.SizeOf(str);
-        IntPtr ptr = Marshal.AllocHGlobal(size);
-
-        Marshal.Copy(arr, 0, ptr, size);
-
-        str = (PacketData)Marshal.PtrToStructure(ptr, str.GetType());
-        Marshal.FreeHGlobal(ptr);
-
-        return str;
-    }
 }

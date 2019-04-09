@@ -10,17 +10,40 @@ public class Client : MonoBehaviour
 {
     Socket cli;
 
+    //singletone instance
     public static Client instance;
 
-    //통신용 버퍼와 사이즈
-    //private byte[] buffer;
+    public bool isOwner = false;
+
+    //통신 버퍼 사이즈
     private const int s_mtu = 1400;
 
-    //락
-    private object lockObject = new object();
     //쓰레드
-    private Thread thread = null;
+    private Thread sendThread = null;
+    private Thread recvThread = null;
+    //락
+    public object sendLockObject = new object();
+    public object recvLockObject = new object();
 
+    public Queue<byte[]> sendTask = new Queue<byte[]>();
+    public Queue<byte[]> recvTask = new Queue<byte[]>();
+
+
+
+
+    //Task
+    enum Task
+    {
+        NOLOGIN = 0,
+        LOGIN = 1,
+        CHARACTERSELECT,
+        ROOMMAKE,
+        ROOMLIST,
+        ROOMENTER,
+        PLAY
+    }
+
+    
     public void Awake()
     {
         Client.instance = this;
@@ -32,15 +55,6 @@ public class Client : MonoBehaviour
         cli = GetComponent<LibraryClient>().Connect();
         //thread = new Thread(LoginTask);
         //thread.Start();
-    }
-
-    enum Task {
-        NOLOGIN = 0,
-        LOGIN = 1,
-        CHARACTERSELECT,
-        ROOMMAKE,
-        ROOMLIST,
-        ROOMENTER
     }
 
     
@@ -191,5 +205,48 @@ public class Client : MonoBehaviour
          * 
          * 
          */
+
+        isOwner = true;
+        Play();
+    }
+
+
+    public void Play()
+    {
+
+        Debug.Log("Play");
+        byte[] buffer = new byte[s_mtu];
+
+        //서버에게 노로그인 루틴 실행하라고 알림
+        buffer[0] = (byte)Task.PLAY;
+        cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+        sendThread = new Thread(SendMessage);
+        recvThread = new Thread(RecvMessage);
+        sendThread.Start();
+        recvThread.Start();
+    }
+
+    public void SendMessage()
+    {
+        while(true)
+        {
+            if(sendTask.Count > 0)
+            {
+                lock (sendLockObject)
+                {
+                    byte[] pkt = sendTask.Dequeue();
+                    cli.Send(pkt);
+                }
+            }
+        }
+    }
+
+    public void RecvMessage()
+    {
+        while (true)
+        {
+
+        }
     }
 }

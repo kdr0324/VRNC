@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 //가구 정보를 담는 클래스, JsonUtility 사용을 위해 Seiralizable
@@ -19,19 +21,73 @@ public class ObjDataList
 }
 
 
+public struct StructFurniture
+{
+    public float x1, y1, z1;
+    public float x2, y2, z2, w2;
+    [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 20)]
+    public string name;
+}
+
+
 public class FurnitureManager : MonoBehaviour
 {
-
+    private Client cli;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //네트워크 
+        if (Client.instance == null)
+        {
+            Debug.Log("OK");
+
+        }
+        //Cli 이
+        else
+        {
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        lock (cli.sendLockObject)
+        {
+            Debug.Log("Enqueue");
+            cli.sendTask.Enqueue(StructToArray());
+        }
+    
+    }
+
+    public byte[] StructToArray()
+    {
+        int childCnt = transform.childCount;
+        StructFurniture furniture = new StructFurniture();
+        int size = Marshal.SizeOf(furniture);
+        byte[] furnitures = new byte[size * transform.childCount];
+        byte[] temp;
         
+        for (int i = 0; i < childCnt; i++)
+        {
+            //자식 가구 Transform 받아옴
+            Transform cur = transform.GetChild(i);
+
+            //가구 정보 할당
+            furniture.x1 = cur.position.x;
+            furniture.y1 = cur.position.y;
+            furniture.z1 = cur.position.z;
+            furniture.x2 = cur.rotation.x;
+            furniture.y2 = cur.rotation.y;
+            furniture.z2 = cur.rotation.z;
+            furniture.w2 = cur.rotation.w;
+            furniture.name = cur.name;
+
+            temp = getBytes(furniture);
+            Array.Copy(temp, 0, furnitures, i * size, size);
+        }
+
+        return furnitures;
     }
 
     public ObjDataList FurnitureToList()
@@ -78,5 +134,33 @@ public class FurnitureManager : MonoBehaviour
             //가구 이름도 설정
             newObj.name = obj.objDataList[i].name;
         }
+    }
+
+    byte[] getBytes(StructFurniture str)
+    {
+        int size = Marshal.SizeOf(str);
+        byte[] arr = new byte[size];
+
+        IntPtr ptr = Marshal.AllocHGlobal(size);
+        Marshal.StructureToPtr(str, ptr, true);
+        Marshal.Copy(ptr, arr, 0, size);
+        Marshal.FreeHGlobal(ptr);
+        return arr;
+    }
+
+
+    StructFurniture fromBytes(byte[] arr)
+    {
+        StructFurniture str = new StructFurniture();
+
+        int size = Marshal.SizeOf(str);
+        IntPtr ptr = Marshal.AllocHGlobal(size);
+
+        Marshal.Copy(arr, 0, ptr, size);
+
+        str = (StructFurniture)Marshal.PtrToStructure(ptr, str.GetType());
+        Marshal.FreeHGlobal(ptr);
+
+        return str;
     }
 }
