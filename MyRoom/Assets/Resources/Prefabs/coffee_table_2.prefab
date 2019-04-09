@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3176327804647999227}
   - component: {fileID: 5480624201944876432}
   - component: {fileID: 1793281716298924929}
+  - component: {fileID: 8997852072770456780}
   m_Layer: 0
   m_Name: coffee_table_2
   m_TagString: Untagged
@@ -209,6 +210,20 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!114 &8997852072770456780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300000}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &2716177271149104467
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110028113150684246}
   - component: {fileID: 2131206690007525445}
+  - component: {fileID: 1102566158138648487}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Untagged
@@ -253,6 +269,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.42, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1102566158138648487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716177271149104467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &4235179893656352555
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7300389522516614523}
   - component: {fileID: 7068152745274858253}
+  - component: {fileID: 5396237722112717986}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -297,6 +328,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.42, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5396237722112717986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235179893656352555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &8361396015367292511
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17815371660406910}
   - component: {fileID: 875928162842873693}
+  - component: {fileID: 7708035476290096089}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -341,3 +387,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.05, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7708035476290096089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361396015367292511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

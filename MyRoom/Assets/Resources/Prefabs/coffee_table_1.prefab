@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 1967614384854555689}
   m_Layer: 0
   m_Name: up
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1967614384854555689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300000}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +103,7 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 3300002}
   - component: {fileID: 2300002}
+  - component: {fileID: 8996491976465520027}
   m_Layer: 0
   m_Name: metal
   m_TagString: Untagged
@@ -154,6 +170,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8996491976465520027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300002}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +198,7 @@ GameObject:
   - component: {fileID: 3349004703047657611}
   - component: {fileID: 3848350796781958807}
   - component: {fileID: 8877705895246171492}
+  - component: {fileID: 3874782408617461835}
   m_Layer: 0
   m_Name: coffee_table_1
   m_TagString: Untagged
@@ -321,6 +352,20 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!114 &3874782408617461835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300002}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1453017911084075968
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420671419858127381}
   - component: {fileID: 8654887334988126152}
+  - component: {fileID: 8563530983596029887}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Untagged
@@ -365,6 +411,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.3, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8563530983596029887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453017911084075968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &2504896490675701741
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7473943675592058886}
   - component: {fileID: 2736242785096211309}
+  - component: {fileID: 4099499695239898860}
   m_Layer: 0
   m_Name: GameObject (4)
   m_TagString: Untagged
@@ -409,6 +470,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.3, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4099499695239898860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504896490675701741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &3027859282934385664
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970338995444896198}
   - component: {fileID: 324257216207843067}
+  - component: {fileID: 247839108015329379}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -453,6 +529,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.5, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &247839108015329379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027859282934385664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &4189719569743491000
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4083096617548071146}
   - component: {fileID: 921927188343739434}
+  - component: {fileID: 5840415256926038629}
   m_Layer: 0
   m_Name: GameObject (5)
   m_TagString: Untagged
@@ -497,6 +588,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.3, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5840415256926038629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189719569743491000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &4435674520145051391
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333745663499519501}
   - component: {fileID: 860985133817367085}
+  - component: {fileID: 7162182908032246329}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -541,6 +647,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.5, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7162182908032246329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435674520145051391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &6641400269372984488
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6666154600739223561}
   - component: {fileID: 7581328559898707946}
+  - component: {fileID: 1593884155954534113}
   m_Layer: 0
   m_Name: GameObject (3)
   m_TagString: Untagged
@@ -585,3 +706,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.3, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1593884155954534113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641400269372984488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6156496023291645443}
   - component: {fileID: 7496066928662103183}
   - component: {fileID: 3209397290601902893}
+  - component: {fileID: 7441830777062599388}
   m_Layer: 0
   m_Name: wood
   m_TagString: Untagged
@@ -176,6 +177,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 46.040035, y: 7.2618623, z: 41.79747}
   m_Center: {x: 3.3801596, y: -6.7486205, z: -0.0000039492193}
+--- !u!114 &7441830777062599388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300000}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +205,7 @@ GameObject:
   - component: {fileID: 8013765980075851680}
   - component: {fileID: 7061421153544531573}
   - component: {fileID: 1350807112067528028}
+  - component: {fileID: 2176659273903119715}
   m_Layer: 0
   m_Name: seat
   m_TagString: Untagged
@@ -296,6 +312,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 40.117786, y: 47.414425, z: 9.854523}
   m_Center: {x: 0.7768506, y: -3.615134, z: -27.70097}
+--- !u!114 &2176659273903119715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300002}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +340,7 @@ GameObject:
   - component: {fileID: 352637783179255002}
   - component: {fileID: 6820643864118990984}
   - component: {fileID: 2780321242966824564}
+  - component: {fileID: 2244843556246556048}
   m_Layer: 0
   m_Name: kitchen_chair_1
   m_TagString: Untagged
@@ -457,3 +488,17 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!114 &2244843556246556048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivingRenderer: {fileID: 2300002}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

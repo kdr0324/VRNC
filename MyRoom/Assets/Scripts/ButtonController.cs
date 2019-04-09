@@ -37,13 +37,18 @@ public class ButtonController : MonoBehaviour
     {
         Debug.Log("Clicked B Button");
         transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(true);
         //transform.GetChild(1).gameObject.SetActive(true);
     }
 
     public void onCButtonClicked()
     {
         Debug.Log("Clicked C Button");
+
         transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(true);
+
         //transform.GetChild(1).gameObject.SetActive(false);
     }
 }
