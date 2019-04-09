@@ -18,7 +18,8 @@ enum {
 	CHARACTERSELECT,
 	ROOMMAKING,
 	ROOMLIST,
-	ROOMENTER
+	ROOMENTER,
+	PLAY,
 };
 
 void noLogin(void *sock);
