@@ -33,31 +33,53 @@ public struct StructFurniture
 public class FurnitureManager : MonoBehaviour
 {
     private Client cli;
+
+    private bool isOnline;
     // Start is called before the first frame update
     void Start()
     {
         //네트워크 
         if (Client.instance == null)
         {
-            Debug.Log("OK");
+            Debug.Log("NO");
+            isOnline = false;
 
         }
         //Cli 이
         else
         {
-
+            Debug.Log("YES");
+            isOnline = true;
+            cli = Client.instance;
+            
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        lock (cli.sendLockObject)
+        if (isOnline)
         {
-            Debug.Log("Enqueue");
-            cli.sendTask.Enqueue(StructToArray());
+            lock (cli.sendLockObject)
+            {
+                Debug.Log("Enqueue");
+                Debug.Log(cli.sendTask.Count);
+
+                cli.sendTask.Enqueue(StructToArray());
+            }
+
+
+            if (cli.recvTask.Count > 0)
+            {
+                Debug.Log("recv Pakcet");
+                byte[] buf = cli.recvTask.Dequeue();
+
+//                StructFurniture temp = fromBytes(buf);
+  //              Debug.Log(temp.name);
+            }
+
+
         }
-    
     }
 
     public byte[] StructToArray()

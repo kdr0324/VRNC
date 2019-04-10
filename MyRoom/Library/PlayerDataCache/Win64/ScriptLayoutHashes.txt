@@ -174,6 +174,7 @@ eccb730f467441090bf062add4e71527 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.Bindin
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 a72b59fc029116362b3317d54b5ec7e0 Assembly-CSharp.dll:.TiltWindow
 b03d1c51938aa5acf14208025059c8af SteamVR.dll:Valve.VR.InteractionSystem.Sample.LockToPoint
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.setParent
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.InteractableExample
 1e60b594c810419da447862ce8e657f6 SteamVR.dll:Valve.VR.SteamVR_Skeleton_Pose
 9fc3f19334d5c8086a3c31c922c8a827 SteamVR.dll:Valve.VR.InteractionSystem.SoundDeparent
@@ -258,6 +259,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DragPanel
 ef01145d01005ab9549541e17c69be56 SteamVR.dll:Valve.VR.SteamVR_Skybox
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CharacterManager
 7d19057642c463daceac505ab19dd37e SteamVR.dll:Valve.VR.Extras.SteamVR_ForceSteamVRMode
 369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragMe
 148051f3064d3418568411e9fc26aed5 Assembly-CSharp.dll:HTC.UnityPlugin.PoseTracker.PoseTracker
@@ -270,6 +272,7 @@ aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 876541412e7eb49d05ffab44f25627c2 SteamVR.dll:Valve.VR.InteractionSystem.TeleportArea
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.CanvasRaycastMethod
+108ccd455cbe1c441d7db888ef1c8b70 Assembly-CSharp.dll:.RoomSelectManager
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.SleepOnAwake
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.ChaperoneInfo
 d94cf8f260d8c2d5fae1de5f4983b730 SteamVR.dll:Valve.VR.Extras.SteamVR_TestTrackedCamera
@@ -327,6 +330,7 @@ b41a5b7cc47ed116b2d9e17f76346513 SteamVR.dll:Valve.VR.InteractionSystem.ItemPack
 9f8e8b1ced7ce10ef6ae6acbd2c6eb2d Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BasicGrabbable
 89e07f8eebad87f5ba3d9d8bcec860c0 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.SteamVRExtension.VIUSteamVRRenderModel
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeMaterialToButtonsColor
+71e7e8c46ce4e67b3713e238271ed2c1 Assembly-CSharp.dll:.LibraryClient
 f91cb688355a2c7124846064fa9b7918 SteamVR.dll:Valve.VR.InteractionSystem.ArcheryTarget
 503196a1f60aab91cb941af8ddc0e37d SteamVR.dll:Valve.VR.SteamVR_ExternalCamera
 369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragImage
@@ -339,6 +343,7 @@ cafe8f659ec4810167e189e3e06c6f57 SteamVR.dll:Valve.VR.InteractionSystem.PlaySoun
 6f194e0261aecd5aab82aab33643d4b3 SteamVR.dll:Valve.VR.InteractionSystem.BalloonColliders
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Vive.VRCameraHook
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.FurnitureManager
 96cb31f4a8c9acd984491f5c26d3f7b2 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceConfigPanelController
 dcc608e96ec2ac8ad8de1fc54d7d0b7a SteamVR.dll:Valve.VR.InteractionSystem.Sample.SquishyToy
 0e3fbe10caf4ef42cbbac7eab8547b84 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.ViveRaycaster
@@ -359,7 +364,7 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.JoeJeffGestures
 827788bf62ad53d2c918573e88943cd0 SteamVR.dll:Valve.VR.SteamVR_Render
 1ba001e1051dbf18703ca59a4cbf3476 SteamVR.dll:Valve.VR.InteractionSystem.LinearDrive
+b551c23650b7075c4727da11ccd2c00e Assembly-CSharp.dll:.Client
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
-68d02cf96b4e7b175a44d5af0a13dd6d Assembly-CSharp.dll:.CharacterManager

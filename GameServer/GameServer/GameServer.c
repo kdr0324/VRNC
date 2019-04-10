@@ -33,9 +33,12 @@ user* login(void *sock) {
 
 		//user 노드 생성		
 		user* newUser = createUser(id, password);
+		newUser->sock = sock;
 		//userlist에 노드 추가
 		push_back(&userlist, newUser);
-		printUser(get_idx(&userlist, 0));
+		//유저 정보 출력
+		printUser(newUser);
+		//printUser(get_idx(&userlist, 0));
 
 		return newUser;
 	}
@@ -63,16 +66,18 @@ void characterSelect(void *sock, user* curUser)
 }
 
 
-void roomMake(void *sock, user* curUser)
+room* roomMake(void *sock, user* curUser)
 {
 	printf("RoomMake\n");
 	//요청한 유저의 방을 만듬
 	room* newRoom = createRoom(curUser);
 	//만든 방을 방 리스트에 넣음
 	push_back(&roomlist, newRoom);
-	printRoom(newRoom);
 	//방 정보 출력
-	//
+	printRoom(newRoom);
+	
+	return newRoom;
+	
 }
 
 void roomList(void *sock)
@@ -95,7 +100,7 @@ void roomList(void *sock)
 }
 
 
-void roomEnter(void *sock, user* curUser)
+room* roomEnter(void *sock, user* curUser)
 {
 	char packetData[PACKETSIZE] = { 0, };
 	int roomidx;
@@ -122,5 +127,59 @@ void roomEnter(void *sock, user* curUser)
 	방의 정보를 어떻게 표현할지 게임로직에 표현된다.
 	잘 구현해보도록 하자.
 	*/
+
+	return target;
+}
+
+void play(void *sock, user* curUser, room* curRoom)
+{
+	char packetData[PACKETSIZE] = { 0, };
+	int recvDone = 0;
+	int recvCnt = 0;
+	int recvIndex = 0;
+	printf("***************************\n");
+	printf("Play Start\n");
+	furniture *f = malloc(sizeof(furniture));
+	f->px = 1.0;
+	f->py = 2.0;
+	f->pz = 1.0;
+	f->rx = 0.0;
+	f->ry = 0.0;
+	f->rz = 0.0;
+	f->w = 0.0;
+	strcpy_s(f->name,sizeof(f->name),"bed_1");
+
+	while (1)
+	{
+		byte* buf = malloc(10240);
+		printf("Wait Receive\n");
+
+		//받음
+		while (!recvDone) 
+		{
+			recvCnt = recv(*((SOCKET *)sock), &buf[recvIndex], sizeof(buf), 0);
+			if (recvCnt) {
+				recvIndex += recvCnt;
+				if (recvIndex == sizeof(buf))
+					recvDone = 1;
+			}
+		}
+		//recvCnt = recv(*((SOCKET *)sock), &buf[recvIndex], sizeof(buf), 0);
+
+		node* cur = curRoom->guestlist.head->next;
+		while (cur) {
+			send((*((user*)cur->value)->sock), buf, sizeof(buf), 0);
+			cur = cur->next;
+		}
+
+		Sleep(1000);
+		//send(*((SOCKET *)sock), buf, sizeof(buf), 0);
+		
+
+		/*printf("Sending...\n");
+		send(*((SOCKET *)sock), f, sizeof(furniture), 0);
+		printFurniture(f);
+		Sleep(1000);*/
+	}
 
 }

@@ -18,7 +18,7 @@ unsigned WINAPI ThreadFunction(void* para)
 	//주고 받을 때 사용할 버퍼 크기는 PACKETSIZE(1400)
 	char PacketData[PACKETSIZE] = { 0, };
 	user* curUser = NULL;
-
+	room* curRoom = NULL;
 	while (c) 
 	{
 		//어떤 일 할지 먼저 전달 받음 ( 첫 번째 바이트로 전달 받음 )
@@ -41,13 +41,17 @@ unsigned WINAPI ThreadFunction(void* para)
 			characterSelect(para, curUser);
 			break;
 		case ROOMMAKING:
-			roomMake(para, curUser);
+			curRoom = roomMake(para, curUser);
 			break;
 		case ROOMLIST:
 			roomList(para);
 			break;
 		case ROOMENTER:
-			roomEnter(para, curUser);
+			curRoom = roomEnter(para, curUser);
+			break;
+
+		case PLAY:
+			play(para, curUser, curRoom);
 			break;
 		}
 

@@ -145,12 +145,10 @@ public class Client : MonoBehaviour
         buffer[0] = (byte)Task.ROOMMAKE;
         cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        /*
-         * 
-         * 게임 진입
-         * 
-         * 
-         */
+        //Play 시작
+        isOwner = true;
+        Play();
+        
     }
 
     public string[] RoomList()
@@ -206,7 +204,7 @@ public class Client : MonoBehaviour
          * 
          */
 
-        isOwner = true;
+        isOwner = false;
         Play();
     }
 
@@ -244,8 +242,16 @@ public class Client : MonoBehaviour
 
     public void RecvMessage()
     {
+        
         while (true)
         {
+            byte[] buffer = new byte[s_mtu];
+            cli.Receive(buffer);
+
+            lock (recvLockObject)
+            {
+                recvTask.Enqueue(buffer);
+            }
 
         }
     }

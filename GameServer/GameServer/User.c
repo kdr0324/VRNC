@@ -8,8 +8,10 @@ user* createUser(char *id, char* password)
 	user* newUser = (user*)malloc(sizeof(user));
 	if (id != NULL)
 	{
-		strcpy(newUser->id, id, strlen(id));
-		strcpy(newUser->password, password, strlen(password));
+		//strcpy_s(newUser->id, id, strlen(id));
+		//strcpy_s(newUser->password, password, strlen(password));
+		strcpy_s(newUser->id, sizeof(newUser->id), id);
+		strcpy_s(newUser->password, sizeof(newUser->password), password);
 	}
 	return newUser;
 }

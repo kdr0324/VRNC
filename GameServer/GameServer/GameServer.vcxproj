@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Furniture.c" />
     <ClCompile Include="GaemRoom.c" />
     <ClCompile Include="GameServer.c" />
     <ClCompile Include="List.c" />
@@ -126,6 +127,7 @@
     <ClCompile Include="User.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Furniture.h" />
     <ClInclude Include="GameRoom.h" />
     <ClInclude Include="GameServer.h" />
     <ClInclude Include="List.h" />

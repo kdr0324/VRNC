@@ -6,6 +6,7 @@
 #include "List.h"
 #include "User.h"
 #include "GameRoom.h"
+#include "Furniture.h"
 
 #define PACKETSIZE 1400
 
@@ -25,9 +26,13 @@ enum {
 void noLogin(void *sock);
 user* login(void *sock);
 void characterSelect(void *sock, user* curUser);
-void roomMake(void *sock, user* curUser);
+
+
+room* roomMake(void *sock, user* curUser);
+room* roomEnter(void *sock, user* curUser);
 void roomList(void *sock);
-void roomEnter(void *sock, user* curUser);
+
+void play(void *sock, user* curUser, room* curRoom);
 
 
 
