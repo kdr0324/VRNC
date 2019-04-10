@@ -62,21 +62,23 @@ public class FurnitureManager : MonoBehaviour
         {
             lock (cli.sendLockObject)
             {
-                Debug.Log("Enqueue");
+                
                 Debug.Log(cli.sendTask.Count);
-
-                cli.sendTask.Enqueue(StructToArray());
+                Byte[] temp = StructToArray();
+                cli.sendTask.Enqueue(temp);
+                Debug.Log("Enqueue " + temp.Length );
             }
 
 
-            if (cli.recvTask.Count > 0)
-            {
-                Debug.Log("recv Pakcet");
-                byte[] buf = cli.recvTask.Dequeue();
+            //if (cli.recvTask.Count > 0)
+            //{
+                
+            //    byte[] buf = cli.recvTask.Dequeue();
+            //    Debug.Log("recv Pakcet" + buf.Length);
 
-//                StructFurniture temp = fromBytes(buf);
-  //              Debug.Log(temp.name);
-            }
+            //    //                StructFurniture temp = fromBytes(buf);
+            //    //              Debug.Log(temp.name);
+            //}
 
 
         }

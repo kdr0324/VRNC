@@ -234,6 +234,7 @@ public class Client : MonoBehaviour
                 lock (sendLockObject)
                 {
                     byte[] pkt = sendTask.Dequeue();
+                    
                     cli.Send(pkt);
                 }
             }

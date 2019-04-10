@@ -137,49 +137,41 @@ void play(void *sock, user* curUser, room* curRoom)
 	int recvDone = 0;
 	int recvCnt = 0;
 	int recvIndex = 0;
-	printf("***************************\n");
-	printf("Play Start\n");
-	furniture *f = malloc(sizeof(furniture));
-	f->px = 1.0;
-	f->py = 2.0;
-	f->pz = 1.0;
-	f->rx = 0.0;
-	f->ry = 0.0;
-	f->rz = 0.0;
-	f->w = 0.0;
-	strcpy_s(f->name,sizeof(f->name),"bed_1");
+
 
 	while (1)
 	{
 		byte* buf = malloc(10240);
+		recvDone = 0;
+		recvCnt = 0;
+		recvIndex = 0;
+
 		printf("Wait Receive\n");
 
-		//¹ÞÀ½
+		//recv
 		while (!recvDone) 
 		{
-			recvCnt = recv(*((SOCKET *)sock), &buf[recvIndex], sizeof(buf), 0);
+			recvCnt = recv(*((SOCKET *)sock), &buf[recvIndex], PACKETSIZE, 0);
 			if (recvCnt) {
 				recvIndex += recvCnt;
-				if (recvIndex == sizeof(buf))
-					recvDone = 1;
+			}
+			else {
+				recvDone = 1;
 			}
 		}
+		printf("recvIndex : %d\n", recvIndex);
 		//recvCnt = recv(*((SOCKET *)sock), &buf[recvIndex], sizeof(buf), 0);
 
+
+		//send
 		node* cur = curRoom->guestlist.head->next;
 		while (cur) {
-			send((*((user*)cur->value)->sock), buf, sizeof(buf), 0);
+			send((*((user*)cur->value)->sock), buf, PACKETSIZE, 0);
 			cur = cur->next;
 		}
 
 		Sleep(1000);
-		//send(*((SOCKET *)sock), buf, sizeof(buf), 0);
-		
 
-		/*printf("Sending...\n");
-		send(*((SOCKET *)sock), f, sizeof(furniture), 0);
-		printFurniture(f);
-		Sleep(1000);*/
 	}
 
 }
