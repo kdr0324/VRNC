@@ -1,4 +1,4 @@
-//링커 명령줄에 ws2_32.lib 추가해야 소켓 통신 가능
+#pragma comment(lib, "ws2_32.lib")		//링커 명령줄에 ws2_32.lib 추가해야 소켓 통신 가능
 
 #include<stdio.h>
 #include<stdlib.h>

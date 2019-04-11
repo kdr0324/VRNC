@@ -22,9 +22,11 @@ user* login(void *sock) {
 	printf("%s\n", password);
 
 	//로그인 성공 -- DB에 계정정보 물어보는 코드 작성 필요 ///////////////	
+	
 	//일단 123 / 123 으로 테스트
 	//if (!strcmp(id, "123") && !strcmp(password, "123"))
-	if(strcmp(id, "") || strcmp(password, ""))
+	//if(strcmp(id, "") || strcmp(password, ""))
+	if(server_login(id, password))
 	{
 		//클라이언트에게 로그인 성공했다고 알림
 		packetData[0] = 1;
