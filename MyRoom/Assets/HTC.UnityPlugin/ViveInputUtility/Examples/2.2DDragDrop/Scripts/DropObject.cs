@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public MeshRenderer receivingRenderer;
-    public Color highlightColor = Color.yellow;
+    public Color highlightColor = Color.black;
 
     private Material rendererMat;
     private Color normalColor;
@@ -14,19 +14,26 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 #if UNITY_EDITOR
     private void Reset()
     {
+
         receivingRenderer = GetComponentInChildren<MeshRenderer>();
+        Debug.Log("Drop Reset");
+
+
     }
 #endif
 
     public void OnEnable()
     {
+
         if (receivingRenderer != null)
         {
             rendererMat = receivingRenderer.material;
             normalColor = rendererMat.color;
             receivingRenderer.sharedMaterial = rendererMat;
         }
+
     }
+
 
     public void OnDrop(PointerEventData data)
     {
@@ -44,12 +51,14 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnPointerEnter(PointerEventData data)
     {
+        Debug.Log("Pointer Enter");
         if (rendererMat != null)
         {
             var dropSprite = GetDropSprite(data);
             if (dropSprite != null)
             {
-                rendererMat.color = highlightColor;
+                //rendererMat.color = highlightColor;
+                rendererMat.color = Color.black;
                 rendererMat.mainTexture = null;
             }
         }

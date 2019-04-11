@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 87758450}
   - component: {fileID: 8278389929976886577}
   - component: {fileID: 4175187275280510773}
-  - component: {fileID: 1801835091233142652}
+  - component: {fileID: 6369803431189719287}
   m_Layer: 0
   m_Name: rack_2
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeThruMaterial: {fileID: 2100000, guid: 3bbb445147c574240a8b87a1193788b5, type: 2}
---- !u!114 &1801835091233142652
+--- !u!114 &6369803431189719287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2300000}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  highlightColor: {r: 0, g: 0, b: 0, a: 1}

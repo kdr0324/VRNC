@@ -194,6 +194,7 @@
     <Compile Include="Assets\Scripts\CharacterManager.cs" />
     <Compile Include="Assets\Scripts\Client.cs" />
     <Compile Include="Assets\Scripts\CreateFurniture.cs" />
+    <Compile Include="Assets\Scripts\CustomDropObject.cs" />
     <Compile Include="Assets\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Scripts\DropMe.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Assets\Scripts\RoomSelectManager.cs" />
     <Compile Include="Assets\Scripts\ScrollbarController.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\SelectTexture.cs" />
     <Compile Include="Assets\Scripts\setParent.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
@@ -218,19 +220,19 @@
     <None Include="Assets\HTC.UnityPlugin\ViveInputUtility\changelog.txt" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -434,16 +436,16 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/BIT/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

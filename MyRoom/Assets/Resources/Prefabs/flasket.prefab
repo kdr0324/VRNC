@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1687473455}
   - component: {fileID: 3727419574249174589}
   - component: {fileID: 1696033560768345252}
-  - component: {fileID: 2815990569334137602}
   m_Layer: 0
   m_Name: flasket
   m_TagString: Untagged
@@ -120,17 +119,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeThruMaterial: {fileID: 2100000, guid: 3bbb445147c574240a8b87a1193788b5, type: 2}
---- !u!114 &2815990569334137602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 2300000}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

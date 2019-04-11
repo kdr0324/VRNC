@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8545223020611622041}
   - component: {fileID: 1562936323448494379}
   - component: {fileID: 7943973395077597172}
-  - component: {fileID: 6141804991296139707}
+  - component: {fileID: 2873438901202847531}
   m_Layer: 0
   m_Name: plate
   m_TagString: Untagged
@@ -222,7 +222,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
---- !u!114 &6141804991296139707
+--- !u!114 &2873438901202847531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,4 +235,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2300000}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  highlightColor: {r: 0, g: 0, b: 0, a: 1}
