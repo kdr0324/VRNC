@@ -28,12 +28,13 @@ public class PopulateGrid : MonoBehaviour
         GameObject newObj; // Create GameObject instance
 
         Debug.Log(sprites.Length);
-        for(int i=0; i< sprites.Length; i++)
+        for (int i = 0; i < sprites.Length; i++)
         {
             newObj = (GameObject)Instantiate(prefab, transform);
             newObj.GetComponent<Image>().sprite = sprites[i];
             newObj.GetComponent<FunitureSelect>().name = sprites[i].name;
         }
+
 
         //newObj = (GameObject)Instantiate(prefab, transform);
         //newObj.GetComponent<Image>().sprite = sprites[0];

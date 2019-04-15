@@ -89,7 +89,7 @@ public class DragImage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Destroy(m_DraggingIcons[eventData.pointerId]);
         }
-
+        
         m_DraggingIcons[eventData.pointerId] = null;
     }
 }

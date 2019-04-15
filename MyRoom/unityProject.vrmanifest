@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.myroom.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\a\\Documents\\GitHub\\VRNC\\MyRoom\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "MyRoom [Testing]"
+        }
+      }
+    }
+  ]
+}

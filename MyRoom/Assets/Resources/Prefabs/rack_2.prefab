@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 87758450}
   - component: {fileID: 8278389929976886577}
-  - component: {fileID: 4175187275280510773}
   - component: {fileID: 6369803431189719287}
+  - component: {fileID: 6836130012254603426}
   m_Layer: 0
   m_Name: rack_2
   m_TagString: Untagged
@@ -107,19 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917092c4fac9dea4bad37eb71c10354d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4175187275280510773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d623a50b67320940b97e93e31d0a21b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seeThruMaterial: {fileID: 2100000, guid: 3bbb445147c574240a8b87a1193788b5, type: 2}
 --- !u!114 &6369803431189719287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,3 +121,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2300000}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &6836130012254603426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de27f8a07624fa4bb7fa09ba9bb07a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posOffset: {x: 0, y: 0, z: 0}
+  rotOffset: {x: 0, y: 0, z: 0}
+  m_initGrabDistance: 0.5
+  m_followingDuration: 0.04
+  m_overrideMaxAngularVelocity: 1
+  m_unblockableGrab: 1
+  m_afterGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_beforeRelease:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_onDrop:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Draggable+UnityEventDraggable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_scrollingSpeed: 0.01
