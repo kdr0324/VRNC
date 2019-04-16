@@ -29,6 +29,18 @@ public class MenuManager : MonoBehaviour
         {
             MakingRoom();
         }
+        else if (Input.GetKeyUp(KeyCode.R))
+        {
+            Settings();
+        }
+        else if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Back();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Esc();
+        }
     }
 
 
@@ -55,6 +67,15 @@ public class MenuManager : MonoBehaviour
         GameObject.Find("Player/CanvasMainMenu/FurnitureMenu").SetActive(true);
 
     }
+    // 설정하기
+    public void Settings()
+    {
+        GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
+        mainMenu.SetActive(false);
+        //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
+        GameObject.Find("Player/CanvasMainMenu/SettingsMenu").SetActive(true);
+
+    }
 
     //저장하기
     public void Save()
@@ -70,7 +91,27 @@ public class MenuManager : MonoBehaviour
         //JSON 파일로 저장
         File.WriteAllText(path, jsonData);
     }
-
+    //뒤로가기
+    public void Back()
+    {
+        GameObject.Find("Player/CanvasMainMenu/FurnitureMenu").SetActive(false);
+        GameObject.Find("Player/CanvasMainMenu/SettingsMenu").SetActive(false);
+        GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(true);
+    }
+    //메뉴창 키기
+    public void Esc()
+    {
+        if (GameObject.Find("Player/CanvasMainMenu/MainMenu").activeSelf)
+        {
+            Debug.Log("close");
+            GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(false);
+        }
+        else
+        {
+            Debug.Log("open");
+            GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(true);
+        };
+    }
 
     public void Load()
     {
