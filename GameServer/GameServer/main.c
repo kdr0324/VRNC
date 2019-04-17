@@ -1,3 +1,4 @@
+
 #pragma comment(lib, "ws2_32.lib")		//링커 명령줄에 ws2_32.lib 추가해야 소켓 통신 가능
 
 #include<stdio.h>
@@ -127,15 +128,16 @@ int main(int argc, char *argv[])
 	{
 		//accept
 		printf("클라이언트로부터 접속을 기다리고 있습니다...\n");
-		clientsock[i] = accept(sock, (SOCKADDR*)&(clientinfo[i]), &clientsize);
+		clientsock[i] = accept(sock, /*(SOCKADDR*)*/&(clientinfo[i]), &clientsize);
 		
-
+		
 		if (clientsock[i] == INVALID_SOCKET)
 			printf(" 클라이언트 소켓 연결 실패 ");
 
 
 		//쓰레드 호출, ThreadFunction이 호출됨
-		printf("thread address : %d\n", clientsock + i);
+		printf("thread address : %d\n", clientsock[i] + i);
+		
 		hThread = (HANDLE)_beginthreadex(NULL, 0, ThreadFunction, (void*)(clientsock + i), 0, &threadID);
 		if (0 == hThread)
 		{

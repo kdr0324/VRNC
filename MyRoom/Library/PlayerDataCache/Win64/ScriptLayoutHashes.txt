@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/bit/Desktop/MyRoom.exe
+C:/Users/BIT/새 폴더/MyRoom.exe
 SceneListBegin?
 Assets/Scenes/StartUI.unity
 Assets/Scenes/Main.unity
@@ -168,6 +168,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 d1567eac46b185ec9136470c6b81f98d Assembly-CSharp.dll:HTC.UnityPlugin.Vive.ExCamConfigInterface.ExCamConfigInterfaceDraggableLabel
 4ad6beda2c0ca76215175ddca461ae7c SteamVR.dll:Valve.VR.InteractionSystem.Sample.Grenade
 8f4cf6924a6be92d2e925bd4f39de769 SteamVR.dll:Valve.VR.InteractionSystem.Player
+9b772226ee7d01b0b90b7d6ec5915a6b Assembly-CSharp.dll:.CustomDropObject
 eccb730f467441090bf062add4e71527 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceRolePanelController
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.FlowerPlanted
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -214,6 +215,7 @@ a1fb17cca6bffda930e23dec9de87b03 Assembly-CSharp.dll:.ResetButton
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.DefaultGenerator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ScrollbarController
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
+369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragFurniture
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.ButtonEffect
 2e1375d1548b4268fab18b330f28ddbc SteamVR.dll:Valve.VR.InteractionSystem.Interactable
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -239,6 +241,7 @@ f8d4c5bfc713cd2fe771de0491c3e506 SteamVR.dll:Valve.VR.InteractionSystem.ItemPack
 4c128527affe5849820ed3dec75f6027 SteamVR.dll:Valve.VR.InteractionSystem.RenderModel
 e57e39b8201f200433921b64dd104035 Assembly-CSharp.dll:.ImageAlphaRaycastFilter
 8eb3a5f0b7fd900742b16e7776e2275b SteamVR.dll:Valve.VR.SteamVR_TrackedObject
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SelectTexture
 33f5fb6162669a3c887965548d614567 SteamVR.dll:Valve.VR.InteractionSystem.SoundBowClick
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.SteamVR_Fade
 699582968bf572a4f5f4654f266dca73 Assembly-CSharp.dll:.DropImage
@@ -364,7 +367,8 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.JoeJeffGestures
 827788bf62ad53d2c918573e88943cd0 SteamVR.dll:Valve.VR.SteamVR_Render
 1ba001e1051dbf18703ca59a4cbf3476 SteamVR.dll:Valve.VR.InteractionSystem.LinearDrive
-b551c23650b7075c4727da11ccd2c00e Assembly-CSharp.dll:.Client
+446cebaa9ee5b183267000f134005aac Assembly-CSharp.dll:.Client
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
+21e871d89bbce53c038fc75ad1b7c7f3 Assembly-CSharp.dll:.RoomNetwork

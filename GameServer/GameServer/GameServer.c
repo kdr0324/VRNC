@@ -1,3 +1,4 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include "GameServer.h"
 
 #include<stdio.h>
@@ -25,8 +26,8 @@ user* login(void *sock) {
 	
 	//일단 123 / 123 으로 테스트
 	//if (!strcmp(id, "123") && !strcmp(password, "123"))
-	//if(strcmp(id, "") || strcmp(password, ""))
-	if(server_login(id, password))
+	if(strcmp(id, "") || strcmp(password, ""))
+	//if(server_login(id, password))
 	{
 		//클라이언트에게 로그인 성공했다고 알림
 		packetData[0] = 1;
@@ -114,13 +115,11 @@ room* roomEnter(void *sock, user* curUser)
 
 	printf("room Enter %d\n", roomidx);
 	//전달받은 방 노드 받아옴
-	printf("1");
 	room* target = get_idx(&roomlist, roomidx);
 	
 
 	//전달받은 방의 게스트 리스트에 요청한 유저 추가한다.
 	push_back(&(target->guestlist), curUser);
-	printf("2");
 	//디버깅용 방 정보 출력
 	printRoom(target);
 
@@ -129,6 +128,19 @@ room* roomEnter(void *sock, user* curUser)
 	방의 정보를 어떻게 표현할지 게임로직에 표현된다.
 	잘 구현해보도록 하자.
 	*/
+
+	struct sockaddr_in addr;
+	char name[256];
+	int addr_size = sizeof(struct sockaddr_in);
+
+	getpeername(*(target->owner->sock), (struct sockaddr *)&addr, &addr_size);
+	strncpy_s(packetData, 16, inet_ntoa(addr.sin_addr), 16);
+	printf("Owner IP Send : %s", packetData);
+
+	//방 주인 IP 전달
+	send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+
+
 
 	return target;
 }

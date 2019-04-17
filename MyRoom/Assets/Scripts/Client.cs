@@ -29,7 +29,7 @@ public class Client : MonoBehaviour
     public Queue<byte[]> recvTask = new Queue<byte[]>();
 
 
-
+    public string roomIp = null;
 
     //Task
     enum Task
@@ -145,9 +145,9 @@ public class Client : MonoBehaviour
         buffer[0] = (byte)Task.ROOMMAKE;
         cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        //Play 시작
+        //Play 시작///////////////////////////////////////
         isOwner = true;
-        Play();
+        //Play();
         
     }
 
@@ -203,9 +203,16 @@ public class Client : MonoBehaviour
          * 
          * 
          */
+        //Owner IP receive
+        cli.Receive(buffer, buffer.Length, SocketFlags.None);
+
+        string ip = System.Text.Encoding.UTF8.GetString(buffer);
+        Debug.Log(ip);
 
         isOwner = false;
-        Play();
+
+
+        //Play();
     }
 
 

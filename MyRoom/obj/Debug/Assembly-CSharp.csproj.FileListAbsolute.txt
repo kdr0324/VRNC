@@ -116,15 +116,10 @@ C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\System.Xml.XmlDocument.
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\System.Xml.XPath.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Analytics.Editor.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Analytics.Tracker.dll
-C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Locator.dll
-C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
-C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.TextMeshPro.dll
-C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\UnityEditor.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\UnityEngine.AIModule.dll
@@ -288,3 +283,4 @@ C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.csproj.CoreC
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.pdb
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\SteamVR_Actions.pdb

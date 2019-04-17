@@ -1,1 +1,3 @@
-﻿  GameServer.vcxproj -> C:\Users\bit\Documents\GitHub\GameServer\x64\Debug\GameServer.exe
+﻿  GameServer.c
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\gameserver.c(133): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
+  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe

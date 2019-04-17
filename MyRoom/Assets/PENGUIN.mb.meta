@@ -3,6 +3,99 @@ guid: e50b4b5854c73a543a446c5d899c4f70
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: joint1
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint13
+    100010: joint14
+    100012: joint15
+    100014: joint2
+    100016: joint3
+    100018: joint4
+    100020: joint5
+    100022: joint6
+    100024: joint7
+    100026: joint8
+    100028: joint9
+    100030: pCone1
+    100032: pCone2
+    100034: pCube1
+    100036: //RootNode
+    100038: pSphere1
+    100040: pSphere2
+    100042: pSphere3
+    100044: pSphere4
+    100046: pSphere5
+    100048: pSphere6
+    100050: transform1
+    100052: transform2
+    100054: transform3
+    100056: transform4
+    100058: transform5
+    100060: transform6
+    100062: transform7
+    100064: transform8
+    400000: joint1
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint13
+    400010: joint14
+    400012: joint15
+    400014: joint2
+    400016: joint3
+    400018: joint4
+    400020: joint5
+    400022: joint6
+    400024: joint7
+    400026: joint8
+    400028: joint9
+    400030: pCone1
+    400032: pCone2
+    400034: pCube1
+    400036: //RootNode
+    400038: pSphere1
+    400040: pSphere2
+    400042: pSphere3
+    400044: pSphere4
+    400046: pSphere5
+    400048: pSphere6
+    400050: transform1
+    400052: transform2
+    400054: transform3
+    400056: transform4
+    400058: transform5
+    400060: transform6
+    400062: transform7
+    400064: transform8
+    2100000: surfaceShader2
+    2100002: surfaceShader4
+    2100004: surfaceShader3
+    2100006: surfaceShader6
+    2100008: surfaceShader19
+    2100010: surfaceShader11
+    2100012: surfaceShader17
+    2100014: surfaceShader12
+    2100016: surfaceShader18
+    2100018: surfaceShader20
+    2100020: surfaceShader16
+    2100022: surfaceShader14
+    2100024: surfaceShader15
+    2100026: surfaceShader28
+    2100028: surfaceShader41
+    2100030: surfaceShader5
+    2100032: surfaceShader9
+    2100034: lambert1
+    2100036: surfaceShader8
+    2100038: surfaceShader22
+    2100040: surfaceShader24
+    2100042: surfaceShader40
+    2100044: surfaceShader29
+    2100046: surfaceShader39
+    4300000: pSphere6
+    9500000: //RootNode
+    13700000: pSphere6
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +150,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

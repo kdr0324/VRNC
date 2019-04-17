@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class RoomSelectManager : MonoBehaviour
 {
     public Transform roomParent;
-    //private Client cli = Client.instance;
+    
     // Start is called before the first frame update
     void Start()
     {
-        //cli = GameObject.Find("NetworkManager").GetComponent<Client>();
+        
+        RoomList();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class RoomSelectManager : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void Quit()
+    public void RoomList()
     {
         string[] rooms;
         rooms = Client.instance.RoomList();
