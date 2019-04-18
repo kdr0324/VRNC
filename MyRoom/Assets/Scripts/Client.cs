@@ -206,8 +206,8 @@ public class Client : MonoBehaviour
         //Owner IP receive
         cli.Receive(buffer, buffer.Length, SocketFlags.None);
 
-        string ip = System.Text.Encoding.UTF8.GetString(buffer);
-        Debug.Log(ip);
+        roomIp = System.Text.Encoding.UTF8.GetString(buffer);
+        Debug.Log(roomIp);
 
         isOwner = false;
 

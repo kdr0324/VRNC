@@ -2985,6 +2985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOwner: 0
+  roomIp: 
 --- !u!114 &1157337475
 MonoBehaviour:
   m_ObjectHideFlags: 0

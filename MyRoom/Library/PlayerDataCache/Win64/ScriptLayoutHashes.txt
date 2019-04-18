@@ -234,6 +234,7 @@ bb7a673e4fcf1b5651a3698dd5d52909 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.P
 bb7a673e4fcf1b5651a3698dd5d52909 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.StandaloneRaycaster
 f5f25645085257c501404a702df6e587 SteamVR.dll:Valve.VR.Extras.SteamVR_TestThrow
 865767fd905a12623f5660cf1d381c9f SteamVR.dll:Valve.VR.InteractionSystem.Longbow
+21e871d89bbce53c038fc75ad1b7c7f3 Assembly-CSharp.dll:.RoomNetwork
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.ExplosionWobble
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 37c893bbf0aec13e2dd0f1d88b6fff9b SteamVR.dll:Valve.VR.InteractionSystem.DestroyOnTriggerEnter
@@ -371,4 +372,3 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
-21e871d89bbce53c038fc75ad1b7c7f3 Assembly-CSharp.dll:.RoomNetwork

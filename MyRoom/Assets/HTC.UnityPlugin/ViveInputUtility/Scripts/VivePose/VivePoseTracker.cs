@@ -131,5 +131,10 @@ namespace HTC.UnityPlugin.Vive
         }
 
         public virtual void AfterNewPoses() { }
+        
+
+        
     }
+
+    
 }
