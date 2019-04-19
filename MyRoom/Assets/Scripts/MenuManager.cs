@@ -20,27 +20,27 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
-        {
+        //if (Input.GetKey(KeyCode.Q))
+        //{
 
-            Quit();
-        }
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            MakingRoom();
-        }
-        else if (Input.GetKeyUp(KeyCode.R))
-        {
-            Settings();
-        }
-        else if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Back();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Esc();
-        }
+        //    Quit();
+        //}
+        //else if (Input.GetKeyUp(KeyCode.E))
+        //{
+        //    MakingRoom();
+        //}
+        //else if (Input.GetKeyUp(KeyCode.R))
+        //{
+        //    Settings();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    Back();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Esc();
+        //}
     }
 
 
@@ -59,21 +59,23 @@ public class MenuManager : MonoBehaviour
     public void MakingRoom()
     {
         //기존에 떠있는 메인메뉴 UI 종료
-        GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
+        GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
         mainMenu.SetActive(false);
         //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
 
         //방만들기 UI 활성화
-        GameObject.Find("Player/CanvasMainMenu/FurnitureMenu").SetActive(true);
+        transform.parent.Find("FurnitureMenu").gameObject.SetActive(true);
 
     }
     // 설정하기
     public void Settings()
     {
-        GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
+        
+        GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
+        //GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
         mainMenu.SetActive(false);
         //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
-        GameObject.Find("Player/CanvasMainMenu/SettingsMenu").SetActive(true);
+        transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
 
     }
 
@@ -81,7 +83,7 @@ public class MenuManager : MonoBehaviour
     public void Save()
     {
         //가구를 리스트에 담아서 반환하는 함수 호출
-        ObjDataList obj = 
+        ObjDataList obj =
             GameObject.Find("Furniture").GetComponent<FurnitureManager>().FurnitureToList();
 
         //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
@@ -94,9 +96,9 @@ public class MenuManager : MonoBehaviour
     //뒤로가기
     public void Back()
     {
-        GameObject.Find("Player/CanvasMainMenu/FurnitureMenu").SetActive(false);
-        GameObject.Find("Player/CanvasMainMenu/SettingsMenu").SetActive(false);
-        GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(true);
+        transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
+        transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
+        transform.parent.Find("MainMenu").gameObject.SetActive(true);
     }
     //메뉴창 키기
     public void Esc()

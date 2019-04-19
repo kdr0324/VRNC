@@ -95,17 +95,13 @@ public class DragFurniture : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         //가구아이콘 드래그 시 가구 만듬
         if (eventData.pointerCurrentRaycast.gameObject.tag == "Floor")
         {
-            
             string current_name = transform.name;
-            Debug.Log("Prefabs/" + current_name);
-            GameObject NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
-            Debug.Log(NewGameObject.name);
 
+            transform.root.GetComponent<isLocalPlayer>().
+                SpawnObject(current_name, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0));
 
-            GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
-            obj.name = current_name;
         }
-        
+
 
         m_DraggingIcons[eventData.pointerId] = null;
 

@@ -284,3 +284,8 @@ C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.csproj.CopyC
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.dll
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\obj\Debug\Assembly-CSharp.pdb
 C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\SteamVR_Actions.pdb
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.TextMeshPro.dll
+C:\Users\BIT\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll

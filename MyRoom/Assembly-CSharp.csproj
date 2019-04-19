@@ -188,7 +188,6 @@
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleDeviceState.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleEvent.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleManager.cs" />
-    <Compile Include="Assets\RoomNetwork.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
@@ -202,6 +201,7 @@
     <Compile Include="Assets\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\FunitureSelect.cs" />
     <Compile Include="Assets\Scripts\FurnitureManager.cs" />
+    <Compile Include="Assets\Scripts\isLocalPlayer.cs" />
     <Compile Include="Assets\Scripts\LibraryClient.cs" />
     <Compile Include="Assets\Scripts\LoginManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
@@ -209,6 +209,7 @@
     <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\PopulateGrid.cs" />
     <Compile Include="Assets\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Scripts\RoomNetwork.cs" />
     <Compile Include="Assets\Scripts\RoomSelectManager.cs" />
     <Compile Include="Assets\Scripts\ScrollbarController.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />

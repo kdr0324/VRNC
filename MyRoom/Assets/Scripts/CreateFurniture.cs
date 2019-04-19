@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Networking;
 
-//public class CreateFurniture : MonoBehaviour
-public class CreateFurniture : NetworkBehaviour
+public class CreateFurniture : MonoBehaviour
 {
-    public GameObject NewGameObject;
     //public Transform Furniture;
     private List<GameObject> list;
 
@@ -15,7 +12,6 @@ public class CreateFurniture : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        list = NetworkManager.singleton.spawnPrefabs;
 
     }
 
@@ -25,33 +21,14 @@ public class CreateFurniture : NetworkBehaviour
 
     }
 
-    [ClientRpc]
-    public void RpcFurnitureCreate()
+    public void FurnitureCreate()
     {
-        
         string current_name = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log("Prefabs/" + current_name);
-        //NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
-        foreach (GameObject target in list)
-        {
-            if(target.name == current_name)
-            {
-                NewGameObject = target;
-            }
 
-        }
-        Debug.Log(NewGameObject.name);
+        Debug.Log(transform.root.name);
+        transform.root.GetComponent<isLocalPlayer>().
+            SpawnObject(current_name, transform.position + new Vector3(0, 0.5f, 0.5f));
 
-        GameObject obj = Instantiate(NewGameObject, transform.position + new Vector3(0, 0.5f, 0.5f), NewGameObject.transform.rotation);
-        obj.name = current_name;
-
-        
-        NetworkServer.Spawn(obj);
     }
 
-    //public void SetParent(GameObject newParent)
-    //{
-
-    //    NewGameObject.transform.parent = newParent.transform;
-    //}
 }

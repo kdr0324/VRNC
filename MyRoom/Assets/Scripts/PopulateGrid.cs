@@ -15,7 +15,6 @@ public class PopulateGrid : MonoBehaviour
     void Start()
     {
         Populate();
-        Debug.Log(sprites[0].name);
     }
 
     void Update()
@@ -27,7 +26,6 @@ public class PopulateGrid : MonoBehaviour
     {
         GameObject newObj; // Create GameObject instance
 
-        Debug.Log(sprites.Length);
         for (int i = 0; i < sprites.Length; i++)
         {
             newObj = (GameObject)Instantiate(prefab, transform);

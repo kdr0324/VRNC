@@ -157,7 +157,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 8f868257724aa315fed97c1e2effcde7 SteamVR.dll:Valve.VR.SteamVR_Behaviour_Vector2
-853c5e6cf68fbcd3b8f5c4c44ff55ad4 Assembly-CSharp.dll:.CreateFurniture
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CreateFurniture
 1c0df4a9092330c04a5f6cb7b40125c9 SteamVR.dll:Valve.VR.InteractionSystem.LinearAnimator
 297d7a050bd705232c6dbad0a7668cda SteamVR.dll:Valve.VR.InteractionSystem.InteractableDebug
 fc745e008cfd4ea6f7a014bef5f924e8 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.Pointer3DInputModule
@@ -372,3 +372,4 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.isLocalPlayer
