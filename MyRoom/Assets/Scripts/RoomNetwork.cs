@@ -49,7 +49,9 @@ public class RoomNetwork : NetworkManager
             }
             else
             {
+                Debug.Log(Client.instance.roomIp);
                 networkAddress = Client.instance.roomIp;
+                
                 StartClient();
                 if (!NetworkClient.active)
                 {

@@ -267,6 +267,7 @@ ef01145d01005ab9549541e17c69be56 SteamVR.dll:Valve.VR.SteamVR_Skybox
 7d19057642c463daceac505ab19dd37e SteamVR.dll:Valve.VR.Extras.SteamVR_ForceSteamVRMode
 369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragMe
 148051f3064d3418568411e9fc26aed5 Assembly-CSharp.dll:HTC.UnityPlugin.PoseTracker.PoseTracker
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.isLocalPlayer
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.ControllerHintsExample
 fcc780e067f89f750b2989afd01224f8 Assembly-CSharp.dll:.PopulateGrid
@@ -372,4 +373,3 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 67f016b700462d665c4a07e674bfa76d SteamVR.dll:Valve.VR.InteractionSystem.HoverButton
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.isLocalPlayer

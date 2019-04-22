@@ -26,7 +26,8 @@ user* login(void *sock) {
 	
 	//일단 123 / 123 으로 테스트
 	//if (!strcmp(id, "123") && !strcmp(password, "123"))
-	if(strcmp(id, "") || strcmp(password, ""))
+	if(1)
+	//if(strcmp(id, "") || strcmp(password, ""))
 	//if(server_login(id, password))
 	{
 		//클라이언트에게 로그인 성공했다고 알림
