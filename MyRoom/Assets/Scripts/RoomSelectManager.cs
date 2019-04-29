@@ -28,6 +28,8 @@ public class RoomSelectManager : MonoBehaviour
 
         // Loads the second Scene
         SceneManager.LoadScene("Main");
+
+        GameObject.Find("NetworkManager").GetComponent<ServerController>().RunHost();
     }
 
     public void RoomList()
@@ -42,6 +44,7 @@ public class RoomSelectManager : MonoBehaviour
             int temp = i;
             btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
             btn.onClick.AddListener(() => SceneManager.LoadScene("Main"));
+            GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
         }
 
       
