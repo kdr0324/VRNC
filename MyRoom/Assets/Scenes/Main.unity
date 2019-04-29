@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 29060695}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &87043140
 GameObject:
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 87043143}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &170076733
 GameObject:
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 191927888}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &191927891
 MonoBehaviour:
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 396728857}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &819555415
 GameObject:
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 1033482273}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1210267271
 GameObject:
@@ -1270,5 +1270,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b3603583a38f74aaa1747e70bc984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receivingRenderer: {fileID: 0}
+  receivingRenderer: {fileID: 2134451060}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}

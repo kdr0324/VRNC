@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 448}
   m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 137
+  controlID: 71
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 138
+  controlID: 49
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -383,9 +383,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0.29999995}
+    m_Target: {x: 0.076538086, y: 3.0336914, z: 0.2109375}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0.29999995}
+    m_Value: {x: 0.076538086, y: 3.0336914, z: 0.2109375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -417,9 +417,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.062957905, y: -0.000918333, z: 0.00006576532, w: 0.9980158}
   m_Size:
-    m_Target: 22
+    m_Target: 9.604691
     speed: 2
-    m_Value: 22
+    m_Value: 9.604691
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -462,21 +462,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 98a9ffff6aabffff50acffff6cacffff30afffff40afffffaab0ffff2ebbffff38bbffffb4c2ffff24dcffff4cddffff08e4ffff24e4fffffee8ffffd6edffffecedffffcef0ffff00f1ffff10f1ffff08f4ffff5af4ffffbef5ffffd6f6fffff2f6ffffb6f9ffffc2f9ffffcefbfffff4ffffff
+      m_ExpandedIDs: 1abcfffff8beffff887d0000b67d00002c7f0000dc7f0000d2810000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: NetworkManager
-        m_OriginalName: NetworkManager
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 43044
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -530,14 +530,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\BIT\Documents\GitHub\VRNC\MyRoom
+  m_LastProjectPath: C:\Users\bit\Documents\GitHub\VRNC\MyRoom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a350000
-    m_LastClickedID: 13594
-    m_ExpandedIDs: 00000000fc2b000078300000ac3100009a320000c83300008c350000ea350000503700008e380000d4380000ea390000443e0000ec3e0000803f0000843f0000de450000e0450000e2450000e4450000e6450000e8450000ea450000ec450000ee450000f0450000f2450000f445000000ca9a3b
+    m_SelectedIDs: 58750000
+    m_LastClickedID: 30040
+    m_ExpandedIDs: 00000000146f00003272000010730000b47300007c740000be75000000760000ca760000ea770000d2780000fe7b00008a7c0000ec7c0000f07c0000528100005481000056810000588100005a8100005c8100005e810000608100006281000064810000668100006881000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -565,7 +565,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 58090000
     m_LastClickedID: 2392
-    m_ExpandedIDs: 00000000fc2b000078300000ac3100009a320000c83300008c350000ea350000503700008e380000d4380000ea390000443e0000ec3e0000803f0000843f0000de450000e0450000e2450000e4450000e6450000e8450000ea450000ec450000ee450000f0450000f2450000f4450000
+    m_ExpandedIDs: 00000000146f00003272000010730000b47300007c740000be75000000760000ca760000b6770000ea770000d2780000fe7b00008a7c0000ec7c0000f07c0000528100005481000056810000588100005a8100005c8100005e8100006081000062810000648100006681000068810000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: b00f000050130000de0e0000ee060000ae13000050ce01003c130000ba430000b8430000f83800006c3c0000160f0000481d00001e070000424b00000000000094580000ec070000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
