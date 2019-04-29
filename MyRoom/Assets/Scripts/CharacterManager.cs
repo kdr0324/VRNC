@@ -18,6 +18,12 @@ public class CharacterManager: MonoBehaviour
     // Load the Scene when this Button is pressed
     public void LoadSceneButton()
     {
+        GameObject SelectCharacter = transform.parent.Find("SelectCharacter").gameObject;
+        SelectCharacter.SetActive(false);
+
+
+        GameObject GameRoomList = transform.parent.Find("GameRoomList").gameObject;
+        GameRoomList.SetActive(true);
         // Check that the second Scene hasn't been added yet
         if (m_SceneLoaded == false)
         {
@@ -35,6 +41,8 @@ public class CharacterManager: MonoBehaviour
 
             // The Scene has been loaded, exit this method
             m_SceneLoaded = true;
+
+            
         }
     }
 

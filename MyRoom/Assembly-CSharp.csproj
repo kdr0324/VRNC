@@ -188,6 +188,7 @@
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleDeviceState.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleEvent.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\VRModule\VRModuleManager.cs" />
+    <Compile Include="Assets\MenuWindow.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />

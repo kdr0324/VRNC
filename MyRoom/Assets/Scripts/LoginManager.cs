@@ -48,10 +48,23 @@ public class LoginManager : MonoBehaviour
         Debug.Log(login.text);
         Debug.Log(password.text);
 
-        if(Client.instance.Login(login.text, password.text))
+        
+        if(true)
+        //if(Client.instance.Login(login.text, password.text))
         {
             //login success
             Debug.Log("Login Success");
+
+            GameObject CanvasLogin = transform.parent.Find("CanvasLogin").gameObject;
+            CanvasLogin.SetActive(false);
+
+            
+            GameObject SelectCharacter = transform.parent.Find("SelectCharacter").gameObject;
+            SelectCharacter.SetActive(true);
+            
+            
+            
+            
         }
         else
         {
