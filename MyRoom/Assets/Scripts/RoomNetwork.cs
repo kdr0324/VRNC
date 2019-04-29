@@ -6,64 +6,64 @@ using UnityEngine.Networking;
 public class RoomNetwork : NetworkManager
 {
     // Start is called before the first frame update
-    private void Awake()
-    {
-        //스폰 프리팹 추가
-        string FolderName = "Assets\\Resources\\Prefabs";
-        System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(FolderName);
-        foreach (System.IO.FileInfo File in di.GetFiles())
-        {
-            if (File.Extension.ToLower().CompareTo(".prefab") == 0)
-            {
-                string FileNameOnly = File.Name.Substring(0, File.Name.Length - 7);
-                string FullFileName = File.FullName;
+    //private void Awake()
+    //{
+    //    //스폰 프리팹 추가
+    //    string FolderName = "Assets\\Resources\\Prefabs";
+    //    System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(FolderName);
+    //    foreach (System.IO.FileInfo File in di.GetFiles())
+    //    {
+    //        if (File.Extension.ToLower().CompareTo(".prefab") == 0)
+    //        {
+    //            string FileNameOnly = File.Name.Substring(0, File.Name.Length - 7);
+    //            string FullFileName = File.FullName;
                 
-                GameObject prefab = Resources.Load<GameObject>("Prefabs/" + FileNameOnly);
-                // spawnPrefabs 리스트에 스폰할 오브젝트를 추가
-                spawnPrefabs.Add(prefab);
-            }
+    //            GameObject prefab = Resources.Load<GameObject>("Prefabs/" + FileNameOnly);
+    //            // spawnPrefabs 리스트에 스폰할 오브젝트를 추가
+    //            spawnPrefabs.Add(prefab);
+    //        }
             
-        }
-    }
-    void Start()
-    {
-        Debug.Log("Network Manger");
-        if (Client.instance == null)
-        {
-            Debug.Log("Offline");
-            StartHost();
-            Debug.Log("Start Host Success");
-            //if(StartServer())
-            //{
-            //    Debug.Log("Start Server Success");                
-            //}
-        }
-        else
-        {
-            if (Client.instance.isOwner)
-            {
+    //    }
+    //}
+    //void Start()
+    //{
+    //    Debug.Log("Network Manger");
+    //    if (Client.instance == null)
+    //    {
+    //        Debug.Log("Offline");
+    //        StartHost();
+    //        Debug.Log("Start Host Success");
+    //        if (NetworkServer.active)
+    //        {
+    //            Debug.Log("NetworkServer is active!");
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (Client.instance.isOwner)
+    //        {
 
-                StartHost();
-                Debug.Log("Start Host Success");
+    //            StartHost();
+    //            Debug.Log("Start Host Success");
 
-            }
-            else
-            {
-                Debug.Log(Client.instance.roomIp);
-                networkAddress = Client.instance.roomIp;
+    //        }
+    //        else
+    //        {
+    //            Debug.Log(Client.instance.roomIp);
+    //            networkAddress = Client.instance.roomIp;
                 
-                StartClient();
-                if (!NetworkClient.active)
-                {
-                    Debug.Log("Client Start");
-                }
+    //            StartClient();
+    //            if (!NetworkClient.active)
+    //            {
+    //                Debug.Log("Client Start");
+    //            }
                 
                 
-            }
-        }
+    //        }
+    //    }
 
         
-    }
+    //}
 
     // Update is called once per frame
     void Update()

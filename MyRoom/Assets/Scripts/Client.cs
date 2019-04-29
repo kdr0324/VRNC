@@ -147,8 +147,10 @@ public class Client : MonoBehaviour
 
         //Play 시작///////////////////////////////////////
         isOwner = true;
-        //Play();
+
         
+        //Play();
+
     }
 
     public string[] RoomList()
@@ -211,7 +213,7 @@ public class Client : MonoBehaviour
 
         isOwner = false;
 
-
+        GetComponent<ClientController>().hostIP = roomIp;
         //Play();
     }
 

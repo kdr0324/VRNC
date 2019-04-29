@@ -194,6 +194,7 @@
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\CharacterManager.cs" />
     <Compile Include="Assets\Scripts\Client.cs" />
+    <Compile Include="Assets\Scripts\ClientController.cs" />
     <Compile Include="Assets\Scripts\CreateFurniture.cs" />
     <Compile Include="Assets\Scripts\CustomDropObject.cs" />
     <Compile Include="Assets\Scripts\DragMe.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="Assets\Scripts\ScrollbarController.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\SelectTexture.cs" />
+    <Compile Include="Assets\Scripts\ServerController.cs" />
     <Compile Include="Assets\Scripts\setParent.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
