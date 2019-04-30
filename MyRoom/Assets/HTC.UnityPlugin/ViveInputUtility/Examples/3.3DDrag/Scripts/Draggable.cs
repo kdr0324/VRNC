@@ -14,6 +14,8 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
     , IDragHandler
     , IEndDragHandler
 {
+   
+
     [Serializable]
     public class UnityEventDraggable : UnityEvent<Draggable> { }
 
@@ -156,6 +158,7 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
 
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
+        
         var hitDistance = 0f;
 
         switch (eventData.button)
@@ -206,10 +209,12 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
         }
     }
 
-    public virtual void OnDrag(PointerEventData eventData) { }
+    public virtual void OnDrag(PointerEventData eventData) {
+    }
 
     public virtual void OnEndDrag(PointerEventData eventData)
     {
+        GetComponent<AudioSource>().Play();
         if (m_eventGrabberSet == null) { return; }
 
         Grabber grabber;

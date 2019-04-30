@@ -9,12 +9,17 @@ using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
+    private AudioSource audio;
+    public AudioClip clickSound;
+
     public GameObject furnitureMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Menu manager Start");
+        audio = gameObject.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -42,8 +47,8 @@ public class MenuManager : MonoBehaviour
         //    Esc();
         //}
     }
-
-
+   
+    
     //프로그램 종료
     public void Quit()
     {
@@ -58,6 +63,8 @@ public class MenuManager : MonoBehaviour
     //방만들기 UI 활성화 시켜줌
     public void MakingRoom()
     {
+        audio.Play();
+    
         //기존에 떠있는 메인메뉴 UI 종료
         GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
         mainMenu.SetActive(false);
