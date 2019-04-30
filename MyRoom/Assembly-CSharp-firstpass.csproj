@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Plugins\360ScreenshotCapture\I360Render.cs" />
     <Compile Include="Assets\Plugins\RootMotion\FinalIK\_DEMOS\Aim IK\Scripts\AimBoxing.cs" />
     <Compile Include="Assets\Plugins\RootMotion\FinalIK\_DEMOS\Aim IK\Scripts\AimSwing.cs" />
     <Compile Include="Assets\Plugins\RootMotion\FinalIK\_DEMOS\Aim IK\Scripts\SimpleAimingSystem.cs" />
@@ -242,6 +243,8 @@
     <Compile Include="Assets\Plugins\RootMotion\Shared Scripts\TriggerEventBroadcaster.cs" />
     <Compile Include="Assets\Plugins\RootMotion\Shared Scripts\V3Tools.cs" />
     <Compile Include="Assets\Plugins\RootMotion\Shared Scripts\Warning.cs" />
+    <None Include="Assets\Plugins\360ScreenshotCapture\README.txt" />
+    <None Include="Assets\Plugins\360ScreenshotCapture\Resources\EquirectangularConverter.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/bit/Documents/GitHub/VRNC/MyRoom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

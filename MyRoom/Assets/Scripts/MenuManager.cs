@@ -25,11 +25,16 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKey(KeyCode.Q))
-        //{
-
-        //    Quit();
-        //}
+        if (Input.GetKey(KeyCode.Space))
+        {
+            byte[] bytes = I360Render.Capture(1024, true);
+            if (bytes != null)
+            {   // 파일 저장 경로 추후에 변경필요
+                string path = Path.Combine(Application.dataPath, "360render.png");
+                File.WriteAllBytes(path, bytes);
+                Debug.Log("360 render saved to " + path);
+            }
+        }
         //else if (Input.GetKeyUp(KeyCode.E))
         //{
         //    MakingRoom();
