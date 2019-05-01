@@ -7,6 +7,8 @@ public class setParent : NetworkBehaviour
 {
     private AudioSource audio;
     public AudioClip clickSound;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,9 @@ public class setParent : NetworkBehaviour
         this.audio = this.gameObject.AddComponent<AudioSource>();
         AudioClip clip = Resources.Load("Sounds/DM-CGS-02") as AudioClip;
         audio.clip = clip;
-        //audio.loop = true;
+        
+
+
         //audio.playOnAwake = true;
     }
 
@@ -24,6 +28,5 @@ public class setParent : NetworkBehaviour
     //{
         
     //}
-
    
 }

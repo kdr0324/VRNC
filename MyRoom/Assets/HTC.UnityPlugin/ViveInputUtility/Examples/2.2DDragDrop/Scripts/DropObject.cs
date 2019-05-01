@@ -6,6 +6,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 {
     public MeshRenderer receivingRenderer;
     public Color highlightColor = Color.black;
+    public string textureName;
 
     private Material rendererMat;
     private Color normalColor;
@@ -19,6 +20,11 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         Debug.Log("Drop Reset");
     }
 #endif
+
+    void Start()
+    {
+        textureName = "";
+    }
 
     public void OnEnable()
     {
@@ -42,6 +48,11 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
             if (dropSprite != null)
             {
                 rendererMat.mainTexture = droppedTexture = dropSprite.texture;
+
+
+                string[] spiltString = droppedTexture.name.Split('(') ;
+                textureName = spiltString[0].Trim();
+                //GetComponent<setParent>().childTexture;
             }
         }
     }

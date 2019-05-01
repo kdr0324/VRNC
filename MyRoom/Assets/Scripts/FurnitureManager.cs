@@ -139,20 +139,41 @@ public class FurnitureManager : MonoBehaviour
             objData.rotation = cur.rotation;
             objData.name = cur.name;
 
-            //리스트에 가구 정보 추가
-            obj.objDataList.Add(objData);
-
+            
+            
             //색 저장
             int cnt = cur.childCount;
             for(int j=0; j<cnt; j++)
             {
-                if(cur.GetChild(j).GetComponent<Material>() != null)
+
+                if (cur.GetChild(j).GetComponent<MeshRenderer>() != null)
                 {
-                    //Texture 얻어옴
-                    objData.textures[j] = 1;
+                    if (cur.GetChild(j).GetComponent<DropObject>().textureName == "")
+                    {
+                        objData.textures[j] = -1;
+                    }
+
+                    int len = FurnitureTextures.Length;
+                    for(int k =0; k<len; k++)
+                    {
+                        //Debug.Log(cur.GetChild(j).GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k]);
+                        if (FurnitureTextures[k].name == cur.GetChild(j).GetComponent<DropObject>().textureName)
+                        {
+                            Debug.Log(cur.GetChild(j).GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k].name);
+                            objData.textures[j] = k;
+                        }
+
+                    }
+
+                    //Debug.Log(cur.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture.name);
+                       
                 }
             }
-            
+
+            //리스트에 가구 정보 추가
+            obj.objDataList.Add(objData);
+
+
         }
         return obj;
     }
@@ -181,8 +202,12 @@ public class FurnitureManager : MonoBehaviour
             {
                 if (newObj.transform.GetChild(j).GetComponent<MeshRenderer>() != null)
                 {
-                    newObj.transform.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[0]];
-                    newObj.transform.GetChild(j).GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[0]]);
+                    if(obj.objDataList[i].textures[j] == -1)
+                    {
+                        continue;
+                    }
+                    newObj.transform.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[j]];
+                    newObj.transform.GetChild(j).GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[j]]);
                 }
                 
             }

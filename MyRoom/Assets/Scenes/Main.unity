@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 29060695}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
 --- !u!1 &87043140
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 87043143}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 191927888}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
 --- !u!114 &191927891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 396728857}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
 --- !u!1001 &773196667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -815,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 1033482273}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
 --- !u!1 &1210267271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1031,14 @@ MonoBehaviour:
   FurnitureTextures:
   - {fileID: 2800000, guid: db4265b11df6af1438db306cd16c60ee, type: 3}
   - {fileID: 2800000, guid: 06d346647450a0d4688aa76e20b03d78, type: 3}
+  - {fileID: 2800000, guid: 5b23a0b3534da9b44975ad134ad8033a, type: 3}
+  - {fileID: 2800000, guid: e985334e4a9d3ab448b77393b5c06265, type: 3}
   - {fileID: 2800000, guid: 4acc9fdd66048cb4e96d08ca021d5f41, type: 3}
+  - {fileID: 2800000, guid: b85f57159dd296e40941510cbde61814, type: 3}
+  - {fileID: 2800000, guid: 8742cf5389ec13846ae404783db50532, type: 3}
+  - {fileID: 2800000, guid: 2d3f16073f817e74ca26282b96b3593b, type: 3}
+  - {fileID: 2800000, guid: e062115192ae44040b73f45112562490, type: 3}
+  - {fileID: 2800000, guid: b8daff8b7c3733a4c89e2dc3cbd49222, type: 3}
 --- !u!1 &2096571729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,3 +1255,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2134451060}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  textureName: 
