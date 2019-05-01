@@ -17,8 +17,6 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
         receivingRenderer = GetComponentInChildren<MeshRenderer>();
         Debug.Log("Drop Reset");
-
-
     }
 #endif
 
@@ -33,7 +31,6 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         }
 
     }
-
 
     public void OnDrop(PointerEventData data)
     {
@@ -86,4 +83,13 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
         return srcImage.sprite;
     }
+
+    //추가한 코드
+    public void SetMaterial(Texture newTexture)
+    {
+        //rendererMat.mainTexture = newTexture;
+        droppedTexture = newTexture;
+    }
+
+
 }

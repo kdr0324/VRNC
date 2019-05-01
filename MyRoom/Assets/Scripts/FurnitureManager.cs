@@ -11,6 +11,7 @@ public class ObjData
     public Vector3 position;
     public Quaternion rotation;
     public string name;
+    public int[] textures;
 }
 
 //가구 정보(ObjData) 클래스가 담길 리스트 클래스, JsonUtility 사용을 위해 Seiralizable
@@ -32,6 +33,7 @@ public struct StructFurniture
 
 public class FurnitureManager : MonoBehaviour
 {
+    public Texture[] FurnitureTextures;
     private Client cli;
 
     private bool isOnline;
@@ -45,7 +47,6 @@ public class FurnitureManager : MonoBehaviour
             isOnline = false;
 
         }
-        //Cli 이
         else
         {
             Debug.Log("YES");
@@ -56,33 +57,33 @@ public class FurnitureManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (isOnline)
-        {
-            lock (cli.sendLockObject)
-            {
+    //void Update()
+    //{
+    //    if (isOnline)
+    //    {
+    //        lock (cli.sendLockObject)
+    //        {
                 
-                Debug.Log(cli.sendTask.Count);
-                Byte[] temp = StructToArray();
-                cli.sendTask.Enqueue(temp);
-                Debug.Log("Enqueue " + temp.Length );
-            }
+    //            Debug.Log(cli.sendTask.Count);
+    //            Byte[] temp = StructToArray();
+    //            cli.sendTask.Enqueue(temp);
+    //            Debug.Log("Enqueue " + temp.Length );
+    //        }
 
 
-            //if (cli.recvTask.Count > 0)
-            //{
+    //        //if (cli.recvTask.Count > 0)
+    //        //{
                 
-            //    byte[] buf = cli.recvTask.Dequeue();
-            //    Debug.Log("recv Pakcet" + buf.Length);
+    //        //    byte[] buf = cli.recvTask.Dequeue();
+    //        //    Debug.Log("recv Pakcet" + buf.Length);
 
-            //    //                StructFurniture temp = fromBytes(buf);
-            //    //              Debug.Log(temp.name);
-            //}
+    //        //    //                StructFurniture temp = fromBytes(buf);
+    //        //    //              Debug.Log(temp.name);
+    //        //}
 
 
-        }
-    }
+    //    }
+    //}
 
     public byte[] StructToArray()
     {
@@ -131,6 +132,8 @@ public class FurnitureManager : MonoBehaviour
 
             //가구 정보 담는 객체 생성
             ObjData objData = new ObjData();
+            objData.textures = new int[10];
+
             //가구 정보 할당
             objData.position = cur.position;
             objData.rotation = cur.rotation;
@@ -138,6 +141,18 @@ public class FurnitureManager : MonoBehaviour
 
             //리스트에 가구 정보 추가
             obj.objDataList.Add(objData);
+
+            //색 저장
+            int cnt = cur.childCount;
+            for(int j=0; j<cnt; j++)
+            {
+                if(cur.GetChild(j).GetComponent<Material>() != null)
+                {
+                    //Texture 얻어옴
+                    objData.textures[j] = 1;
+                }
+            }
+            
         }
         return obj;
     }
@@ -155,8 +170,23 @@ public class FurnitureManager : MonoBehaviour
             GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
             //Load 된 Prefab을 가구 정보에 맞게 생성
             GameObject newObj = Instantiate(NewGameObject, obj.objDataList[i].position, obj.objDataList[i].rotation);
-            //가구 이름도 설정
-            newObj.name = obj.objDataList[i].name;
+            int cnt = newObj.transform.childCount;
+
+            if(cnt == 0)
+            {
+                newObj.GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[0]];
+                newObj.GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[0]]);
+            }
+            for(int j=0; j<cnt; j++)
+            {
+                if (newObj.transform.GetChild(j).GetComponent<MeshRenderer>() != null)
+                {
+                    newObj.transform.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[0]];
+                    newObj.transform.GetChild(j).GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[0]]);
+                }
+                
+            }
+            
         }
     }
 
