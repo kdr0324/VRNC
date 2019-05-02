@@ -30,8 +30,8 @@ public class VRUIColorPalette : MonoBehaviour
 	private Color disabledUIDark =new Color(1f, 1f, 1f, 0.1f); 
 
 	private Color accentUILight = new Color(0f, 0f, 0f, 0.0f); 
-	private Color hoverUILight = new Color(0f, 0f, 0f, 0.1f); 
-	private Color pressedUILight = new Color(0f, 0f, 0f, 0.2f); 
+	private Color hoverUILight = new Color(0f, 0f, 0f, 0.5f); 
+	private Color pressedUILight = new Color(0f, 0f, 0f, 0.0f); 
 	private Color disabledUILight = new Color(0f, 0f, 0f, 0.05f); 
 
 	void Awake () {
