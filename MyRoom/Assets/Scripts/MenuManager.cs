@@ -12,7 +12,13 @@ public class MenuManager : MonoBehaviour
     private AudioSource audio;
     public AudioClip clickSound;
 
+   
+    public GameObject mainMenu;
     public GameObject furnitureMenu;
+    public GameObject settingsMenu;
+    public GameObject selectTextureMenu;
+
+    public GameObject Furniture;
 
     // Start is called before the first frame update
     void Start()
@@ -66,37 +72,41 @@ public class MenuManager : MonoBehaviour
     }
 
     //방만들기 UI 활성화 시켜줌
-    public void MakingRoom()
+    public void CallFurnitureMenu()
     {
         audio.Play();
     
         //기존에 떠있는 메인메뉴 UI 종료
-        GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
+        //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
+
         mainMenu.SetActive(false);
         //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
 
         //방만들기 UI 활성화
-        transform.parent.Find("FurnitureMenu").gameObject.SetActive(true);
+        //transform.parent.Find("FurnitureMenu").gameObject.SetActive(true);
+        furnitureMenu.SetActive(true);
 
     }
     // 설정하기
-    public void Settings()
+    public void CallSettingsMenu()
     {
         
-        GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
+        //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
         //GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
         mainMenu.SetActive(false);
         //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
-        transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
+        //transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
+        settingsMenu.SetActive(true);
 
     }
+
 
     //저장하기
     public void Save()
     {
         //가구를 리스트에 담아서 반환하는 함수 호출
         ObjDataList obj =
-            GameObject.Find("Furniture").GetComponent<FurnitureManager>().FurnitureToList();
+            Furniture.GetComponent<FurnitureManager>().FurnitureToList();
 
         //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
         string jsonData = JsonUtility.ToJson(obj, true);
@@ -108,23 +118,26 @@ public class MenuManager : MonoBehaviour
     //뒤로가기
     public void Back()
     {
-        transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
-        transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
-        transform.parent.Find("MainMenu").gameObject.SetActive(true);
+        furnitureMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        selectTextureMenu.SetActive(false);
+        mainMenu.SetActive(true);
+        //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
+        //transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
+        //transform.parent.Find("MainMenu").gameObject.SetActive(true);
     }
+
     //메뉴창 키기
-    public void Esc()
+    public void CallMainMenu()
     {
-        if (GameObject.Find("Player/CanvasMainMenu/MainMenu").activeSelf)
+        if(!mainMenu.activeSelf)
         {
-            Debug.Log("close");
-            GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(false);
+            mainMenu.SetActive(true);
         }
         else
         {
-            Debug.Log("open");
-            GameObject.Find("Player/CanvasMainMenu/MainMenu").SetActive(true);
-        };
+            mainMenu.SetActive(false);
+        }
     }
 
     public void Load()
@@ -137,7 +150,7 @@ public class MenuManager : MonoBehaviour
         //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
         ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
 
-        GameObject.Find("Furniture").GetComponent<FurnitureManager>().ListToFurniture(obj);
+        Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
 
 
     }
