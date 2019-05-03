@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject FurnitureMenu;
+    public GameObject TextureMenu;
+    public GameObject Test;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,37 +22,26 @@ public class ButtonController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Awake Button Controller");
         onAButtonClicked();
     }
 
 
     public void onAButtonClicked()
     {
-        Debug.Log("Clicked A Button");
-        transform.GetChild(0).gameObject.SetActive(true);
-        //transform.GetChild(1).gameObject.SetActive(false);
-        //transform.GetChild(1).gameObject.SetActive(false);
-        //transform.GetChild(2).gameObject.SetActive(false);
+        FurnitureMenu.SetActive(true);
+        TextureMenu.SetActive(false);
 
     }
 
     public void onBButtonClicked()
     {
-        Debug.Log("Clicked B Button");
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(true);
-        //transform.GetChild(1).gameObject.SetActive(true);
+        FurnitureMenu.SetActive(false);
+        TextureMenu.SetActive(true);
     }
 
     public void onCButtonClicked()
     {
-        Debug.Log("Clicked C Button");
-
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(true);
-        transform.GetChild(2).gameObject.SetActive(true);
-
-        //transform.GetChild(1).gameObject.SetActive(false);
+        FurnitureMenu.SetActive(false);
+        TextureMenu.SetActive(false);
     }
 }
