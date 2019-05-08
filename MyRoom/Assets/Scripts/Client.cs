@@ -265,6 +265,27 @@ public class Client : MonoBehaviour
         //서버에게 노로그인 루틴 실행하라고 알림
         buffer[0] = (byte)Task.LOAD;
         cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+        int len;
+        byte[] recvData = null;
+        while (true)
+        {
+            cli.Receive(buffer, buffer.Length, SocketFlags.None);
+            len = BitConverter.ToInt32(buffer, 0);
+
+            if (len == -1) break;
+
+            recvData = new byte[len];
+            cli.Receive(recvData, len, SocketFlags.None);
+        }
+
+        if(recvData != null)
+        {
+            System.Text.Encoding.UTF8.GetString(recvData, 0, recvData.Length);
+            Debug.Log(System.Text.Encoding.UTF8.GetString(recvData));
+        }
+        
+        
     }
 
     public void SendMessage()

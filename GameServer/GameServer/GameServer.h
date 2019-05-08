@@ -35,8 +35,8 @@ room* roomEnter(void *sock, user* curUser);
 void roomList(void *sock);
 
 void play(void *sock, user* curUser, room* curRoom);
-void save(void *sock);
-void load(void *sock);
+void save(void *sock, user* curUser);
+void load(void *sock, user* curUser);
 
 
 

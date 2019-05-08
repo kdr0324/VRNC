@@ -6,6 +6,7 @@
 #include<string.h>
 #include<winsock2.h>
 #include <Windows.h>
+#include <mysql.h>
 
 user* login(void *sock) {
 	//ID, PASSWORD 확인
@@ -26,9 +27,9 @@ user* login(void *sock) {
 	
 	//일단 123 / 123 으로 테스트
 	//if (!strcmp(id, "123") && !strcmp(password, "123"))
-	if(1)
+	//if(1)
 	//if(strcmp(id, "") || strcmp(password, ""))
-	//if(server_login(id, password))
+	if(server_login(id, password))
 	{
 		//클라이언트에게 로그인 성공했다고 알림
 		packetData[0] = 1;
@@ -146,7 +147,7 @@ room* roomEnter(void *sock, user* curUser)
 	return target;
 }
 
-void save(void *sock)
+void save(void *sock, user* curUser)
 {
 	char packetData[PACKETSIZE] = { 0, };
 	int dataLen = 0;
@@ -155,22 +156,60 @@ void save(void *sock)
 	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
 	dataLen = *((int *)packetData);
 
-	printf("recv data length %d\n");
+	printf("recv data length %d\n", dataLen);
 
-	char *saveData = malloc(dataLen);
+	char *saveData = malloc(dataLen); //db table에 id는 로그인 정보 data에 savedata의 데이터가 삽입-
+	// 쿼리문 생성 => Id, data 모두 파악 가능하므로 쿼리문으로 db에 전달하여 저장
 	int result = recv(*(SOCKET*)sock, saveData, dataLen, 0);
 	if (result == dataLen)
 	{
 		printf("recv Success %s\n", saveData);
 	}
 
-
-	free(saveData);
+	printf("call data_save function\n");
+	//쿼리문 발송
+	data_save(curUser->id, saveData, dataLen);
+	
+	
+	//에러나서 죽여놓음 왜 죽는지 모르겠음
+	//free(saveData);
 }
 
-void load(void *sock)
+void load(void *sock, user* curUser)
 {
+	char packetData[PACKETSIZE] = { 0, };
+	memset(packetData, 0, PACKETSIZE);
 
+	MYSQL* conn_ptr = data_load(curUser->id);
+	MYSQL_RES* res;
+	MYSQL_ROW row;
+
+
+	res = mysql_store_result(conn_ptr); // 전속한 결과 값을 MYSQL_RES 변수에 저장
+	if (res == NULL) {
+		printf("failed\n");
+		return 0;
+	}
+
+	int len=0;
+	 //쿼리 결과 값 출력
+	while ((row = mysql_fetch_row(res)) != NULL) { // 한 ROW 씩 얻어 온다
+		
+		printf("%s\n", row[0]); // 결과 값 출력
+
+		len = strlen(row);
+		*((int *)packetData) = len;
+		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+
+		send(*(SOCKET*)sock, row[0], len, 0);
+	}
+
+	len = -1;
+	*((int *)packetData) = len;
+	send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+
+	mysql_free_result(res);
+	mysql_close(conn_ptr);
 }
 
 void play(void *sock, user* curUser, room* curRoom)

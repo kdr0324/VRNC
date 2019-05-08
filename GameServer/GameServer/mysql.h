@@ -9,3 +9,5 @@
 #define NAME "server_db" // 접속할 데이터베이스 이름
 
 int server_login(char* id, char* password);
+int data_save(char* id, char* saveData, int dataLen);
+MYSQL* data_load(char* id);

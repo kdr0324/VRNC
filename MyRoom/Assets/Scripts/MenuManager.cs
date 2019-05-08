@@ -165,6 +165,17 @@ public class MenuManager : MonoBehaviour
         Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
 
 
+        if (Client.instance != null)
+        {
+            //방장
+            //if(Client.instance.isOwner)
+            if (true)
+            {
+                Client.instance.Load();
+            }
+        }
+
+
     }
 
 }
