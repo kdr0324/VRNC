@@ -114,6 +114,18 @@ public class MenuManager : MonoBehaviour
         string path = Path.Combine(Application.dataPath, "objData.json");
         //JSON 파일로 저장
         File.WriteAllText(path, jsonData);
+
+
+        
+        if(Client.instance != null)
+        {
+            //방장
+            //if(Client.instance.isOwner)
+            if(true)
+            {
+                Client.instance.Save(jsonData);
+            }
+        }
     }
     //뒤로가기
     public void Back()

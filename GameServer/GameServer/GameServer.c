@@ -146,6 +146,33 @@ room* roomEnter(void *sock, user* curUser)
 	return target;
 }
 
+void save(void *sock)
+{
+	char packetData[PACKETSIZE] = { 0, };
+	int dataLen = 0;
+
+
+	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	dataLen = *((int *)packetData);
+
+	printf("recv data length %d\n");
+
+	char *saveData = malloc(dataLen);
+	int result = recv(*(SOCKET*)sock, saveData, dataLen, 0);
+	if (result == dataLen)
+	{
+		printf("recv Success %s\n", saveData);
+	}
+
+
+	free(saveData);
+}
+
+void load(void *sock)
+{
+
+}
+
 void play(void *sock, user* curUser, room* curRoom)
 {
 	char packetData[PACKETSIZE] = { 0, };

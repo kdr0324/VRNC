@@ -54,6 +54,12 @@ unsigned WINAPI ThreadFunction(void* para)
 		case PLAY:
 			play(para, curUser, curRoom);
 			break;
+		case SAVE:
+			save(para);
+			break;
+		case LOAD:
+			load(para);
+			break;
 		}
 
 	}

@@ -21,6 +21,8 @@ enum {
 	ROOMLIST,
 	ROOMENTER,
 	PLAY,
+	SAVE,
+	LOAD
 };
 
 void noLogin(void *sock);
@@ -33,6 +35,8 @@ room* roomEnter(void *sock, user* curUser);
 void roomList(void *sock);
 
 void play(void *sock, user* curUser, room* curRoom);
+void save(void *sock);
+void load(void *sock);
 
 
 

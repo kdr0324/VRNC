@@ -49,8 +49,8 @@ public class LoginManager : MonoBehaviour
         Debug.Log(password.text);
 
         
-        if(true)
-        //if(Client.instance.Login(login.text, password.text))
+        //if(true)
+        if(Client.instance.Login(login.text, password.text))
         {
             //login success
             Debug.Log("Login Success");

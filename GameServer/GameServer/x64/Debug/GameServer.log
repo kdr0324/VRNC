@@ -1,3 +1,6 @@
 ﻿  GameServer.c
 c:\users\bit\documents\github\vrnc\gameserver\gameserver\gameserver.c(134): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
-  GameServer.vcxproj -> C:\Users\bit\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\gameserver.c(158): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+  c:\users\bit\documents\github\vrnc\gameserver\gameserver\gameserver.c(158): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+  c:\users\bit\documents\github\vrnc\gameserver\gameserver\gameserver.c(158): note: 누락된 variadic 인수 1이(가) 서식 문자열 '%d'에 필요합니다.
+  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe

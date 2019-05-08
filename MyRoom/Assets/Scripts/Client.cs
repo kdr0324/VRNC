@@ -40,7 +40,9 @@ public class Client : MonoBehaviour
         ROOMMAKE,
         ROOMLIST,
         ROOMENTER,
-        PLAY
+        PLAY,
+        SAVE,
+        LOAD
     }
 
     
@@ -232,6 +234,37 @@ public class Client : MonoBehaviour
         recvThread = new Thread(RecvMessage);
         sendThread.Start();
         recvThread.Start();
+    }
+
+    public void Save(string jsonData)
+    {
+        Debug.Log("SAVE");
+        byte[] buffer = new byte[s_mtu];
+        
+        //서버에게 노로그인 루틴 실행하라고 알림
+        buffer[0] = (byte)Task.SAVE;
+        cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+        //얼만큼의 길이를 보낼건지 보냄
+        byte[] intBytes = BitConverter.GetBytes(jsonData.Length);
+        intBytes.CopyTo(buffer, 0);
+        cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+        //실제 데이터 길이만큼 보냄
+        buffer = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+        
+    }
+
+    public void Load()
+    {
+        Debug.Log("LOAD");
+        byte[] buffer = new byte[s_mtu];
+
+        //서버에게 노로그인 루틴 실행하라고 알림
+        buffer[0] = (byte)Task.LOAD;
+        cli.Send(buffer, buffer.Length, SocketFlags.None);
     }
 
     public void SendMessage()
