@@ -6,7 +6,7 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject FurnitureMenu;
     public GameObject TextureMenu;
-    public GameObject Test;
+    public GameObject Delete;
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +30,21 @@ public class ButtonController : MonoBehaviour
     {
         FurnitureMenu.SetActive(true);
         TextureMenu.SetActive(false);
-
+        Delete.SetActive(false);
     }
 
     public void onBButtonClicked()
     {
         FurnitureMenu.SetActive(false);
         TextureMenu.SetActive(true);
+        Delete.SetActive(false);
+
     }
 
     public void onCButtonClicked()
     {
         FurnitureMenu.SetActive(false);
         TextureMenu.SetActive(false);
+        Delete.SetActive(true);
     }
 }

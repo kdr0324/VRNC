@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeleteFurniture.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\ColliderEvent\ColliderEventCaster.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\ColliderEvent\ColliderEventData.cs" />
     <Compile Include="Assets\HTC.UnityPlugin\ColliderEvent\ColliderEventInterfaces.cs" />

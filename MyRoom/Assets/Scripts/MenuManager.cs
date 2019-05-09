@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     public GameObject selectTextureMenu;
 
     public GameObject Furniture;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -139,6 +139,10 @@ public class MenuManager : MonoBehaviour
         //transform.parent.Find("MainMenu").gameObject.SetActive(true);
     }
 
+    public void Cancel()
+    {
+        mainMenu.SetActive(false);
+    }
     //메뉴창 키기
     public void CallMainMenu()
     {
