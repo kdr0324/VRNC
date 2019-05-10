@@ -646,6 +646,8 @@ GameObject:
   - component: {fileID: 191927887}
   - component: {fileID: 191927890}
   - component: {fileID: 191927891}
+  - component: {fileID: 191927892}
+  - component: {fileID: 191927893}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Floor
@@ -676,7 +678,7 @@ MeshCollider:
   m_GameObject: {fileID: 191927885}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -758,6 +760,35 @@ MonoBehaviour:
   fadeDuration: 0.3
   m_reticleMaterial: {fileID: 0}
   teleportButton: 1
+--- !u!54 &191927892
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191927885}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 100
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!65 &191927893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191927885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &209286162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 133930596512058622, guid: 52421a93abec9fb4ab2cbe0b0fd40049,

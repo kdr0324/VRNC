@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917092c4fac9dea4bad37eb71c10354d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
 --- !u!54 &307893574905938148
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2300000}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  textureName: 
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,3 +370,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivingRenderer: {fileID: 2300002}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  textureName: 

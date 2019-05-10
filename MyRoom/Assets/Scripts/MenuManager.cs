@@ -132,7 +132,7 @@ public class MenuManager : MonoBehaviour
     {
         furnitureMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        selectTextureMenu.SetActive(false);
+        //selectTextureMenu.SetActive(false);
         mainMenu.SetActive(true);
         //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
         //transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
