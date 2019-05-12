@@ -1,5 +1,4 @@
 ﻿//========= Copyright 2016-2019, HTC Corporation. All rights reserved. ===========
-//키보드 나오게 하는 스크립트
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,17 +14,13 @@ public class OverlayKeyboardSample : MonoBehaviour
 {
     public bool minimalMode;
 
-    //선택될 때 호출
     public void OnSelect(BaseEventData eventData)
     {
-        //키보드보임
         ShowKeyboard(this);
     }
 
-    //선택 안될때 호출
     public void OnDeselect(BaseEventData eventData)
     {
-        //키보드 감춤
         HideKeyboard();
     }
 
@@ -34,13 +29,12 @@ public class OverlayKeyboardSample : MonoBehaviour
     private static OverlayKeyboardSample activeKeyboard;
     private static System.Text.StringBuilder strBuilder;
 
-    //입력창 UI
     private InputField textEntry;
     private string text = "";
 
     protected virtual void Start()
     {
-        textEntry = GetComponent<InputField>();
+        textEntry = GetComponent<InputField>();  
     }
 
     protected virtual void OnDisable()
@@ -63,9 +57,10 @@ public class OverlayKeyboardSample : MonoBehaviour
         SteamVR_Utils.Event.Listen("KeyboardCharInput", OnKeyboardCharInputArgs);
         SteamVR_Utils.Event.Listen("KeyboardClosed", OnKeyboardClosedArgs);
 #endif
+        SteamVR_Events.System(Valve.VR.EVREventType.VREvent_KeyboardCharInput).AddListener(OnKeyboardCharInput);
+        SteamVR_Events.System(Valve.VR.EVREventType.VREvent_KeyboardClosed).AddListener(OnKeyboardClosed);
     }
 
-    //키보드 보임
     public static void ShowKeyboard(OverlayKeyboardSample caller)
     {
         if (activeKeyboard != null)
@@ -86,7 +81,6 @@ public class OverlayKeyboardSample : MonoBehaviour
         }
     }
 
-    //키보드 감춤
     public static void HideKeyboard()
     {
         if (activeKeyboard != null)
@@ -147,7 +141,6 @@ public class OverlayKeyboardSample : MonoBehaviour
                 activeKeyboard.text += input;
             }
 
-            //입력받은 내용 인풋필드에 넣음
             activeKeyboard.textEntry.text = activeKeyboard.text;
         }
         else
@@ -159,8 +152,6 @@ public class OverlayKeyboardSample : MonoBehaviour
 
                 vr.overlay.GetKeyboardText(strBuilder, 1024);
                 activeKeyboard.text = strBuilder.ToString();
-
-                //입력받은 내용 인풋필드에 넣음
                 activeKeyboard.textEntry.text = activeKeyboard.text;
 
                 strBuilder.Length = 0;
