@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 1687473455}
   - component: {fileID: 3727419574249174589}
-  - component: {fileID: 1696033560768345252}
   - component: {fileID: 2640070958616790543}
   - component: {fileID: 6449729661721560293}
   - component: {fileID: 3540451836420148534}
@@ -112,19 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSound: {fileID: 0}
---- !u!114 &1696033560768345252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d623a50b67320940b97e93e31d0a21b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seeThruMaterial: {fileID: 2100000, guid: 3bbb445147c574240a8b87a1193788b5, type: 2}
 --- !u!114 &2640070958616790543
 MonoBehaviour:
   m_ObjectHideFlags: 0

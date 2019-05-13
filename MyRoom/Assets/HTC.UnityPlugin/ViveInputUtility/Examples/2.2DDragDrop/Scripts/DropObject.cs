@@ -6,7 +6,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 {
     public MeshRenderer receivingRenderer;
     public Color highlightColor = Color.black;
-    public string textureName;
+    public string textureName = "";
 
     private Material rendererMat;
     private Color normalColor;
@@ -23,7 +23,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
     void Start()
     {
-        textureName = "";
+        
     }
 
     public void OnEnable()
