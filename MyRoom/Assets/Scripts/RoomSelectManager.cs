@@ -9,18 +9,10 @@ public class RoomSelectManager : MonoBehaviour
     public Transform roomParent;
     
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
         RoomList();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void RoomMake()
     {
@@ -29,24 +21,26 @@ public class RoomSelectManager : MonoBehaviour
         // Loads the second Scene
         SceneManager.LoadScene("Main");
 
-        GameObject.Find("NetworkManager").GetComponent<ServerController>().RunHost();
+        //GameObject.Find("NetworkManager").GetComponent<ServerController>().RunHost();
     }
 
     public void RoomList()
     {
-        string[] rooms;
-        rooms = Client.instance.RoomList();
-
-        for(int i=0; i<rooms.Length; i++)
+        if (Client.instance.isConnect)
         {
-            roomParent.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
-            Button btn = roomParent.GetChild(i).GetComponent<Button>();
-            int temp = i;
-            btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
-            btn.onClick.AddListener(() => SceneManager.LoadScene("Main"));
-            GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
-        }
+            string[] rooms;
+            rooms = Client.instance.RoomList();
 
-      
+            for (int i = 0; i < rooms.Length; i++)
+            {
+                roomParent.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
+                Button btn = roomParent.GetChild(i).GetComponent<Button>();
+                int temp = i;
+                btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
+                btn.onClick.AddListener(() => SceneManager.LoadScene("Main"));
+                GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
+            }
+
+        }
     }
 }

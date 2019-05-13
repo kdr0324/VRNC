@@ -14,6 +14,10 @@ public class Client : MonoBehaviour
     public static Client instance;
 
     public bool isOwner = false;
+    public string roomIp = null;
+
+    public bool isConnect = false;
+
 
     //통신 버퍼 사이즈
     private const int s_mtu = 1400;
@@ -29,7 +33,7 @@ public class Client : MonoBehaviour
     public Queue<byte[]> recvTask = new Queue<byte[]>();
 
 
-    public string roomIp = null;
+    
 
     //Task
     enum Task
@@ -54,7 +58,20 @@ public class Client : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //게임서버와 연결
         cli = GetComponent<LibraryClient>().Connect();
+
+        //연결 성공 혹은 실패 체크
+        if (cli == null)
+            isConnect = false;
+        else
+        {
+            isConnect = true;
+        }
+            
+
+
+
         //thread = new Thread(LoginTask);
         //thread.Start();
     }
@@ -63,60 +80,70 @@ public class Client : MonoBehaviour
 
     public bool Login(string id, string pwd)
     {
-        //로그인 정보 전송
-        byte[] buffer = new byte[s_mtu];
-
-        //서버에게 로그인 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.LOGIN;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
-        Array.Clear(buffer, 0, 1);
-
-        //로그인 정보 날림
-        //id
-        System.Text.Encoding.UTF8.GetBytes(id).CopyTo(buffer, 0);
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
-        Array.Clear(buffer, 0, buffer.Length);
-    
-
-        //password
-        System.Text.Encoding.UTF8.GetBytes(pwd).CopyTo(buffer, 0);
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
-        Array.Clear(buffer, 0, buffer.Length);
-
-
-
-        //로그인 성공 여부 받음
-        cli.Receive(buffer, buffer.Length, SocketFlags.None);
-        if (buffer[0] == 1)
+        if (isConnect)
         {
-            //성공
-            pwd = "Success";
-            return true;
-        }
-        else if(buffer[0] == 0)
-        {
-            //실패
-            pwd = "Fail";
-            GameObject.Find("InputFieldID").GetComponent<InputField>().text = "";
-            GameObject.Find("InputFieldPWD").GetComponent<InputField>().text = "";
+            //로그인 정보 전송
+            byte[] buffer = new byte[s_mtu];
+
+            //서버에게 로그인 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.LOGIN;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, 1);
+
+            //로그인 정보 날림
+            //id
+            System.Text.Encoding.UTF8.GetBytes(id).CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, buffer.Length);
+
+
+            //password
+            System.Text.Encoding.UTF8.GetBytes(pwd).CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, buffer.Length);
+
+
+
+            //로그인 성공 여부 받음
+            cli.Receive(buffer, buffer.Length, SocketFlags.None);
+            if (buffer[0] == 1)
+            {
+                //성공
+                pwd = "Success";
+                return true;
+            }
+            else if (buffer[0] == 0)
+            {
+                //실패
+                pwd = "Fail";
+                GameObject.Find("InputFieldID").GetComponent<InputField>().text = "";
+                GameObject.Find("InputFieldPWD").GetComponent<InputField>().text = "";
+                return false;
+            }
             return false;
         }
-        return false;
+        else
+        {
+            return true;
+        }
     }
 
     public void CharacterSelect(int idx)
     {
-        Debug.Log("Character Select");
+        if (isConnect)
+        {
+            Debug.Log("Character Select");
 
-        byte[] buffer = new byte[s_mtu];
+            byte[] buffer = new byte[s_mtu];
 
-        //서버에게 캐릭터 선택한다고 알림
-        buffer[0] = (byte)Task.CHARACTERSELECT;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //서버에게 캐릭터 선택한다고 알림
+            buffer[0] = (byte)Task.CHARACTERSELECT;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        //선택한 캐릭터 정보 보냄
-        buffer[0] = (byte)idx;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //선택한 캐릭터 정보 보냄
+            buffer[0] = (byte)idx;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+        }
     }
 
 
@@ -140,152 +167,175 @@ public class Client : MonoBehaviour
 
     public void RoomMake()
     {
-        Debug.Log("Room Make");
-        byte[] buffer = new byte[s_mtu];
+        if (isConnect)
+        {
+            byte[] buffer = new byte[s_mtu];
 
-        //서버에게 방만들기 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.ROOMMAKE;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //서버에게 방만들기 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.ROOMMAKE;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        //Play 시작///////////////////////////////////////
-        isOwner = true;
+            //Play 시작///////////////////////////////////////
+            isOwner = true;
 
+
+            //Play();
+        }
+        else
+        {
+            isOwner = true;
+        }
         
-        //Play();
-
     }
 
     public string[] RoomList()
     {
-        Debug.Log("Room List");
-        int n;
-        byte[] buffer = new byte[s_mtu];
-        string[] rooms;
-
-        //서버에게 방 리스트 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.ROOMLIST;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
-
-        //방 몇개 있는지 받음
-        cli.Receive(buffer, buffer.Length, SocketFlags.None);
-        n = buffer[0];
-        rooms = new string[n];
-
-        //방 개수 만큼 방 정보 받음
-        for(int i = 0; i < n; i++)
+        if (isConnect)
         {
+            int n;
+            byte[] buffer = new byte[s_mtu];
+            string[] rooms;
+
+            //서버에게 방 리스트 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.ROOMLIST;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            //방 몇개 있는지 받음
             cli.Receive(buffer, buffer.Length, SocketFlags.None);
-            string str = System.Text.Encoding.UTF8.GetString(buffer);
-            rooms[i] = str;
-            Debug.Log(str);
+            n = buffer[0];
+            rooms = new string[n];
+
+            //방 개수 만큼 방 정보 받음
+            for (int i = 0; i < n; i++)
+            {
+                cli.Receive(buffer, buffer.Length, SocketFlags.None);
+                string str = System.Text.Encoding.UTF8.GetString(buffer);
+                rooms[i] = str;
+                Debug.Log(str);
 
 
-            Array.Clear(buffer, 0, buffer.Length);
+                Array.Clear(buffer, 0, buffer.Length);
+            }
+
+            return rooms;
         }
-
-        return rooms;
+        else
+        {
+            return null;
+        }
     }
 
     public void RoomEnter(int idx)
     {
-        Debug.Log("Room Enter");
-        Debug.Log(idx);
-        byte[] buffer = new byte[s_mtu];
+        if (isConnect)
+        {
 
-        //서버에게 방 리스트 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.ROOMENTER;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Debug.Log(idx);
+            byte[] buffer = new byte[s_mtu];
 
-        //방 번호 선택 // 일단 0번 지정, 리스트에 나열하는 순서대로 방 번호
-        buffer[0] = (byte)idx;
-        //들어가고 방 번호 전달
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //서버에게 방 리스트 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.ROOMENTER;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        /*
-         * 
-         * 게임 진입
-         * 
-         * 
-         */
-        //Owner IP receive
-        cli.Receive(buffer, buffer.Length, SocketFlags.None);
+            //방 번호 선택 // 일단 0번 지정, 리스트에 나열하는 순서대로 방 번호
+            buffer[0] = (byte)idx;
+            //들어가고 방 번호 전달
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        roomIp = System.Text.Encoding.UTF8.GetString(buffer);
-        Debug.Log(roomIp);
+            /*
+             * 
+             * 게임 진입
+             * 
+             * 
+             */
+            //Owner IP receive
+            cli.Receive(buffer, buffer.Length, SocketFlags.None);
 
-        isOwner = false;
+            roomIp = System.Text.Encoding.UTF8.GetString(buffer);
+            Debug.Log(roomIp);
 
-        GetComponent<ClientController>().hostIP = roomIp;
-        //Play();
+            isOwner = false;
+
+            GetComponent<ClientController>().hostIP = roomIp;
+            //Play();
+        }
+        else
+        {
+            isOwner = false;
+        }
     }
 
 
     public void Play()
     {
+        if (isConnect)
+        {
 
-        Debug.Log("Play");
-        byte[] buffer = new byte[s_mtu];
+            byte[] buffer = new byte[s_mtu];
 
-        //서버에게 노로그인 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.PLAY;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //서버에게 노로그인 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.PLAY;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        sendThread = new Thread(SendMessage);
-        recvThread = new Thread(RecvMessage);
-        sendThread.Start();
-        recvThread.Start();
+            sendThread = new Thread(SendMessage);
+            recvThread = new Thread(RecvMessage);
+            sendThread.Start();
+            recvThread.Start();
+        }
     }
 
     public void Save(string jsonData)
     {
-        Debug.Log("SAVE");
-        byte[] buffer = new byte[s_mtu];
-        
-        //서버에게 노로그인 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.SAVE;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+        if (isConnect)
+        {
+            byte[] buffer = new byte[s_mtu];
 
-        //얼만큼의 길이를 보낼건지 보냄
-        byte[] intBytes = BitConverter.GetBytes(jsonData.Length);
-        intBytes.CopyTo(buffer, 0);
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //서버에게 노로그인 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.SAVE;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-        //실제 데이터 길이만큼 보냄
-        buffer = System.Text.Encoding.UTF8.GetBytes(jsonData);
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
+            //얼만큼의 길이를 보낼건지 보냄
+            byte[] intBytes = BitConverter.GetBytes(jsonData.Length);
+            intBytes.CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
+            //실제 데이터 길이만큼 보냄
+            buffer = System.Text.Encoding.UTF8.GetBytes(jsonData);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+        }
         
     }
 
     public void Load()
     {
-        Debug.Log("LOAD");
-        byte[] buffer = new byte[s_mtu];
-
-        //서버에게 노로그인 루틴 실행하라고 알림
-        buffer[0] = (byte)Task.LOAD;
-        cli.Send(buffer, buffer.Length, SocketFlags.None);
-
-        int len;
-        byte[] recvData = null;
-        while (true)
+        if (isConnect)
         {
-            cli.Receive(buffer, buffer.Length, SocketFlags.None);
-            len = BitConverter.ToInt32(buffer, 0);
+            byte[] buffer = new byte[s_mtu];
 
-            if (len == -1) break;
+            //서버에게 노로그인 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.LOAD;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-            recvData = new byte[len];
-            cli.Receive(recvData, len, SocketFlags.None);
+            int len;
+            byte[] recvData = null;
+            while (true)
+            {
+                cli.Receive(buffer, buffer.Length, SocketFlags.None);
+                len = BitConverter.ToInt32(buffer, 0);
+
+                if (len == -1) break;
+
+                recvData = new byte[len];
+                cli.Receive(recvData, len, SocketFlags.None);
+            }
+
+            if (recvData != null)
+            {
+                System.Text.Encoding.UTF8.GetString(recvData, 0, recvData.Length);
+                Debug.Log(System.Text.Encoding.UTF8.GetString(recvData));
+            }
+
         }
-
-        if(recvData != null)
-        {
-            System.Text.Encoding.UTF8.GetString(recvData, 0, recvData.Length);
-            Debug.Log(System.Text.Encoding.UTF8.GetString(recvData));
-        }
-        
-        
     }
 
     public void SendMessage()
