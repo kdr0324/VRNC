@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterManager: MonoBehaviour
-{ //SelectButton, QuitButton;
+{ 
+    //SelectButton, QuitButton;
     bool m_SceneLoaded;
 
     //private Client cli = Client.instance;
@@ -24,26 +25,29 @@ public class CharacterManager: MonoBehaviour
 
         GameObject GameRoomList = transform.parent.Find("GameRoomList").gameObject;
         GameRoomList.SetActive(true);
+
         // Check that the second Scene hasn't been added yet
-        if (m_SceneLoaded == false)
-        {
 
-            //선택한 캐릭터 정보 보내기 , 일단 0번
-            Client.instance.CharacterSelect(0);
 
-            //Main 씬 호출
-            // Loads the second Scene
-            SceneManager.LoadScene("Main");
+        //if (m_SceneLoaded == false)
+        //{
+
+        //    //선택한 캐릭터 정보 보내기 , 일단 0번
+        //    Client.instance.CharacterSelect(0);
+
+        //    //Main 씬 호출
+        //    // Loads the second Scene
+        //    SceneManager.LoadScene("Main");
             
             
-            //불려진 씬 확인 디버그
-            Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
+        //    //불려진 씬 확인 디버그
+        //    Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
 
-            // The Scene has been loaded, exit this method
-            m_SceneLoaded = true;
+        //    // The Scene has been loaded, exit this method
+        //    m_SceneLoaded = true;
 
             
-        }
+        //}
     }
 
 
