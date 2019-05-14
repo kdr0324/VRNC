@@ -38,6 +38,10 @@ unsigned WINAPI ThreadFunction(void* para)
 		case LOGIN:
 			curUser = login(para);
 			break;
+		case SIGNUP:
+			printf("Start signUp\n");
+			signUp(para);
+			break;
 		case CHARACTERSELECT:
 			characterSelect(para, curUser);
 			break;

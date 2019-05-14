@@ -40,6 +40,7 @@ public class Client : MonoBehaviour
     {
         NOLOGIN = 0,
         LOGIN = 1,
+        SIGNUP,
         CHARACTERSELECT,
         ROOMMAKE,
         ROOMLIST,
@@ -76,8 +77,6 @@ public class Client : MonoBehaviour
         //thread.Start();
     }
 
-    
-
     public bool Login(string id, string pwd)
     {
         if (isConnect)
@@ -109,15 +108,15 @@ public class Client : MonoBehaviour
             if (buffer[0] == 1)
             {
                 //성공
-                pwd = "Success";
+                //pwd = "Success";
                 return true;
             }
             else if (buffer[0] == 0)
             {
                 //실패
-                pwd = "Fail";
-                GameObject.Find("InputFieldID").GetComponent<InputField>().text = "";
-                GameObject.Find("InputFieldPWD").GetComponent<InputField>().text = "";
+                //pwd = "Fail";
+                //GameObject.Find("InputFieldID").GetComponent<InputField>().text = "";
+                //GameObject.Find("InputFieldPWD").GetComponent<InputField>().text = "";
                 return false;
             }
             return false;
@@ -127,6 +126,55 @@ public class Client : MonoBehaviour
             return true;
         }
     }
+
+    public bool SignUp(string id, string pwd)
+    {
+        if (isConnect)
+        {
+            Debug.Log("isConnect");
+            byte[] buffer = new byte[s_mtu];
+
+            //서버에게 회원가입 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.SIGNUP;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, 1);
+
+            //회원 가입 정보 날림
+            //id
+            System.Text.Encoding.UTF8.GetBytes(id).CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, buffer.Length);
+
+            //password
+            System.Text.Encoding.UTF8.GetBytes(pwd).CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+            Array.Clear(buffer, 0, buffer.Length);
+
+            //회원가입 성공 여부 받음
+            cli.Receive(buffer, buffer.Length, SocketFlags.None);
+            if (buffer[0] == 1)
+            {
+                //성공
+                //pwd = "Success";
+                return true;
+            }
+            else if (buffer[0] == 0)
+            {
+                //실패
+                //pwd = "Fail";
+                //GameObject.Find("InputFieldID").GetComponent<InputField>().text = "";
+                //GameObject.Find("InputFieldPWD").GetComponent<InputField>().text = "";
+                return false;
+            }
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    
 
     public void CharacterSelect(int idx)
     {

@@ -16,17 +16,20 @@ list roomlist;
 enum {
 	NOLOGIN,
 	LOGIN,
+	SIGNUP,
 	CHARACTERSELECT,
 	ROOMMAKING,
 	ROOMLIST,
 	ROOMENTER,
 	PLAY,
 	SAVE,
-	LOAD
+	LOAD,
+	
 };
 
 void noLogin(void *sock);
 user* login(void *sock);
+void signUp(void *sock);
 void characterSelect(void *sock, user* curUser);
 
 

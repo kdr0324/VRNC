@@ -1,17 +1,9 @@
-﻿  GameServer.c
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(32): warning C4013: 'server_login'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(135): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(171): warning C4013: 'data_save'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(183): warning C4013: 'data_load'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(191): warning C4098: 'load': 'void' 함수에서 값을 반환하고 있습니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(200): warning C4047: '함수': 'const char *'의 간접 참조 수준이 'MYSQL_ROW'과(와) 다릅니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(200): warning C4024: 'strlen': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(200): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\bit\documents\github\gameserver\gameserver\gameserver.c(183): warning C4047: '초기화 중': 'MYSQL *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-  mysql.c
-c:\users\bit\documents\github\gameserver\gameserver\mysql.c(18): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\bit\documents\github\gameserver\gameserver\mysql.c(94): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\bit\documents\github\gameserver\gameserver\mysql.c(154): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\bit\documents\github\gameserver\gameserver\mysql.c(153): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
-  코드를 생성하고 있습니다...
-  GameServer.vcxproj -> C:\Users\bit\Documents\GitHub\GameServer\x64\Debug\GameServer.exe
+﻿  mysql.c
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(52): warning C4244: '초기화 중': 'my_ulonglong'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(18): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(70): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(69): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(136): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(196): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(195): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
+  GameServer.vcxproj -> C:\Users\a\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe

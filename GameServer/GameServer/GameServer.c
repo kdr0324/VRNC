@@ -56,6 +56,37 @@ user* login(void *sock) {
 	}
 }
 
+void signUp(void *sock) {
+	//ID, PASSWORD 확인
+	char packetData[PACKETSIZE] = { 0, };
+	char id[PACKETSIZE] = { 0, };
+	char password[PACKETSIZE] = { 0, };
+
+	//ID 받음
+	recv(*(SOCKET*)sock, id, PACKETSIZE, 0);
+	printf("%s\n", id);
+
+
+	//비밀번호 받음
+	recv(*(SOCKET*)sock, password, PACKETSIZE, 0);
+	printf("%s\n", password);
+
+	
+	if (server_signUp(id, password))
+	{
+		//클라이언트에게 회원가입 성공했다고 알림
+		packetData[0] = 1;
+		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+		printf("SignUp Success (%s, %s)\n", id, password);
+	}
+	else {
+		//실패했다고 알림
+		packetData[0] = 0;
+		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+		printf("SignUp Fail\n");
+	}
+}
+
 void noLogin(void *sock)
 {
 	printf("NoLogin\n");
