@@ -158,27 +158,34 @@ public class MenuManager : MonoBehaviour
 
     public void Load()
     {
-        //JSON 파일 불러올 경로 설정
-        string path = Path.Combine(Application.dataPath, "objData.json");
-        //JSON 파일 불러옴
-        string jsonData = File.ReadAllText(path);
 
-        //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
-        ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
-
-        Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
 
 
         if (Client.instance != null)
         {
             //방장
-            //if(Client.instance.isOwner)
-            if (true)
+            if(Client.instance.isOwner)
             {
-                Client.instance.Load();
+                string jsonData = Client.instance.Load();
+
+                //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
+                ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
+
+                Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
             }
         }
+        else
+        {
+            //JSON 파일 불러올 경로 설정
+            string path = Path.Combine(Application.dataPath, "objData.json");
+            //JSON 파일 불러옴
+            string jsonData = File.ReadAllText(path);
 
+            //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
+            ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
+
+            Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
+        }
 
     }
 

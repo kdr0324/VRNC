@@ -211,36 +211,27 @@ void load(void *sock, user* curUser)
 	char packetData[PACKETSIZE] = { 0, };
 	memset(packetData, 0, PACKETSIZE);
 
-	MYSQL* conn_ptr = data_load(curUser->id);
-	MYSQL_RES* res;
-	MYSQL_ROW row;
+	char result[65535];
+	data_load(curUser->id, result);
 
+	int len;
 
-	res = mysql_store_result(conn_ptr); // 전속한 결과 값을 MYSQL_RES 변수에 저장
-	if (res == NULL) {
-		printf("failed\n");
-		return 0;
-	}
+	printf("%s", result);
+	
 
-	int len=0;
-	 //쿼리 결과 값 출력
-	while ((row = mysql_fetch_row(res)) != NULL) { // 한 ROW 씩 얻어 온다
-		
-		printf("%s\n", row[0]); // 결과 값 출력
-
-		len = strlen(row);
+	if (result != NULL) {
+		len = strlen(result);
+		printf("%d", len);
 		*((int *)packetData) = len;
 		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
 
-		send(*(SOCKET*)sock, row[0], len, 0);
+		send(*(SOCKET*)sock, result, len, 0);
 	}
-
-	len = -1;
-	*((int *)packetData) = len;
-	send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
-
-	mysql_free_result(res);
-	mysql_close(conn_ptr);
+	else {
+		len = -1;
+		*((int *)packetData) = len;
+		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	}
 }
 
 void play(void *sock, user* curUser, room* curRoom)

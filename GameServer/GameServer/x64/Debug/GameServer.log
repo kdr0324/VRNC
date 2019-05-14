@@ -1,9 +1,1 @@
-﻿  mysql.c
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(52): warning C4244: '초기화 중': 'my_ulonglong'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(18): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(70): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(69): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(136): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(196): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
-c:\users\a\documents\github\vrnc\gameserver\gameserver\mysql.c(195): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
-  GameServer.vcxproj -> C:\Users\a\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe
+﻿  GameServer.vcxproj -> C:\Users\bit\Documents\GitHub\GameServer\x64\Debug\GameServer.exe

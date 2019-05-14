@@ -354,8 +354,9 @@ public class Client : MonoBehaviour
         
     }
 
-    public void Load()
+    public string Load()
     {
+        string result= null;
         if (isConnect)
         {
             byte[] buffer = new byte[s_mtu];
@@ -366,24 +367,27 @@ public class Client : MonoBehaviour
 
             int len;
             byte[] recvData = null;
-            while (true)
-            {
-                cli.Receive(buffer, buffer.Length, SocketFlags.None);
-                len = BitConverter.ToInt32(buffer, 0);
 
-                if (len == -1) break;
+            cli.Receive(buffer, buffer.Length, SocketFlags.None);
+            len = BitConverter.ToInt32(buffer, 0);
+            Debug.Log(len + "=================");
 
-                recvData = new byte[len];
-                cli.Receive(recvData, len, SocketFlags.None);
-            }
+            if (len == -1) return result;
+
+            recvData = new byte[len];
+            cli.Receive(recvData, len, SocketFlags.None);
+            
+
 
             if (recvData != null)
             {
                 System.Text.Encoding.UTF8.GetString(recvData, 0, recvData.Length);
-                Debug.Log(System.Text.Encoding.UTF8.GetString(recvData));
+                result = System.Text.Encoding.UTF8.GetString(recvData);
+                Debug.Log(result);
             }
-
+            return result; 
         }
+        return result; 
     }
 
     public void SendMessage()

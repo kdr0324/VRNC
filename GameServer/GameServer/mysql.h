@@ -11,4 +11,4 @@
 int server_login(char* id, char* password);
 int server_signUp(char* id, char* password);
 int data_save(char* id, char* saveData, int dataLen);
-MYSQL* data_load(char* id);
+char* data_load(char* id, char* result); 

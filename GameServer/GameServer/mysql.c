@@ -127,7 +127,7 @@ int data_save(char* id, char* saveData, int dataLen)
 	}
 
 	
-	sprintf_s(query, 1024 + dataLen, "insert into room_data values ('%s', '%s');", id, saveData);
+	sprintf_s(query, 1024 + dataLen, "insert into room_data values ('%s', '%s') on duplicate key update data = values (data);", id, saveData);
 	printf("%s", query);
 	int len;
 
@@ -181,7 +181,7 @@ int data_save(char* id, char* saveData, int dataLen)
 }
 
 
-MYSQL* data_load(char* id)
+char* data_load(char* id, char * result)
 {
 
 	char query[256]; // 실행할 쿼리
@@ -219,8 +219,31 @@ MYSQL* data_load(char* id)
 		fprintf(stderr, "Mysql query error : %s", mysql_error(conn_ptr));
 		return 0;
 	}
+	res = mysql_store_result(conn_ptr); // 전속한 결과 값을 MYSQL_RES 변수에 저장
+	if (res == NULL) {
+		printf("failed\n");
+		return 0;
+	}
+	// 쿼리 결과 값 출력
 
+	
 
-	return conn_ptr;
+	if ((row = mysql_fetch_row(res)) != NULL) { // 한 ROW 씩 얻어 온다
+		//result = malloc(strlen(row[0])+1);
+		printf("len == %d", strlen(row[0]));
+
+		strncpy_s(result, 65535, row[0], strlen(row[0]));
+		printf("%s \n", result); // 결과 값 출력
+		
+	}
+	else { 
+		return NULL; 
+	}
+
+	// 할당 된 메모리 해제
+	//mysql_free_result(res);
+	mysql_close(conn_ptr);
+	
+	return result;
 }
 
