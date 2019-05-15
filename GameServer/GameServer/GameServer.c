@@ -211,7 +211,7 @@ void load(void *sock, user* curUser)
 	char packetData[PACKETSIZE] = { 0, };
 	memset(packetData, 0, PACKETSIZE);
 
-	char result[65535];
+	char result[100001];
 	data_load(curUser->id, result);
 
 	int len;

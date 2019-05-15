@@ -111,11 +111,9 @@ public class MenuManager : MonoBehaviour
         //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
         string jsonData = JsonUtility.ToJson(obj, true);
         //JSON 파일 저장할 경로 설정
-        string path = Path.Combine(Application.dataPath, "objData.json");
-        //JSON 파일로 저장
-        File.WriteAllText(path, jsonData);
-
-
+        //string path = Path.Combine(Application.dataPath, "objData.json");
+        ////JSON 파일로 저장
+        //File.WriteAllText(path, jsonData);
         
         if(Client.instance != null)
         {
@@ -125,6 +123,12 @@ public class MenuManager : MonoBehaviour
             {
                 Client.instance.Save(jsonData);
             }
+        }
+        else
+        {
+            string path = Path.Combine(Application.dataPath, "objData.json");
+            //JSON 파일로 저장
+            File.WriteAllText(path, jsonData);
         }
     }
     //뒤로가기
