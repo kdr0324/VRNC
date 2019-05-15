@@ -1,8 +1,7 @@
 Win64
 PlayerPath?
-C:/Users/BIT/새 폴더/MyRoom.exe
+C:/Users/a/Desktop/새 폴더/MyRoom.exe
 SceneListBegin?
-Assets/Scenes/StartUI.unity
 Assets/Scenes/Main.unity
 SceneListEnd?
 b550db5b05fb5f8fe325a077c10956d9 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceRoleSetPanelController
@@ -20,6 +19,7 @@ b640470eaa5c5e26ad97edae148d0eba Assembly-CSharp-firstpass.dll:RootMotion.FinalI
 4b119a15e4f723b732e672e7f91586b9 Assembly-CSharp-firstpass.dll:RootMotion.Demos.PendulumExample
 d2c31f8209a68deac9789fccc42ed85e Assembly-CSharp.dll:.ShowMenuOnClick
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
+98da04c2f2abc3c967c3bebb143886dc Assembly-CSharp.dll:.VRUIToggle
 5b4a54e7172f94264f14bd8b82c65266 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceRoleSetButtonItem
 57ea3e29725e1c484f437309fbd1820b Assembly-CSharp-firstpass.dll:RootMotion.Demos.CharacterAnimationSimple
 70a375ad9af4bc70299da7e15b2b9ef4 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.CCDIKJ
@@ -145,6 +145,7 @@ a4614c9adf684f412e5e83ebfc3bae99 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.Bindin
 1834077a69235486c45931f07f154641 SteamVR.dll:Valve.VR.SteamVR_Behaviour_Boolean
 40b8d860054d994bf78f8f8c97dbc4c4 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.Physics2DRaycastMethod
 2e4d26187828ec6fc78fe78f0712f15b SteamVR.dll:Valve.VR.InteractionSystem.Sample.CustomSkeletonHelper
+05e12271c7c54db7b7d6d90d04384e4c Assembly-CSharp.dll:.VRUIColorPalette
 18628813c7aad3d4328ffde18c4d9d59 SteamVR.dll:Valve.VR.InteractionSystem.Sample.JoeJeffController
 1c2479a7d4666ec3a3da0c3f9ab7f7f2 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.RotationLimitHinge
 6a77bf8a6622108e73cfcd0356550328 SteamVR.dll:Valve.VR.InteractionSystem.UIElement
@@ -202,23 +203,25 @@ d1567eac46b185ec9136470c6b81f98d Assembly-CSharp.dll:HTC.UnityPlugin.Vive.ExCamC
 294f109ebbff21c2cdf9b7a45d2fb03c Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.FBBIKHeadEffector
 9b772226ee7d01b0b90b7d6ec5915a6b Assembly-CSharp.dll:.CustomDropObject
 eccb730f467441090bf062add4e71527 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceRolePanelController
+5fc094978ce3e3591a7500ed380d854a Assembly-CSharp.dll:.VRUITabButton
 fa6b176496b6ec624200eb654d7d340c Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.InteractionObject
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.FlowerPlanted
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 a72b59fc029116362b3317d54b5ec7e0 Assembly-CSharp.dll:.TiltWindow
 b03d1c51938aa5acf14208025059c8af SteamVR.dll:Valve.VR.InteractionSystem.Sample.LockToPoint
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.setParent
+422c7dfdb37f73f47a98238a5975856c Assembly-CSharp.dll:.setParent
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.InteractableExample
 1e60b594c810419da447862ce8e657f6 SteamVR.dll:Valve.VR.SteamVR_Skeleton_Pose
+9780b70846cfdf9313b796e2eaa13bd6 Assembly-CSharp.dll:.position
 db611b54dd95c6a50f62d2c8ed9b838d Assembly-CSharp-firstpass.dll:RootMotion.Demos.MechSpider
 9fc3f19334d5c8086a3c31c922c8a827 SteamVR.dll:Valve.VR.InteractionSystem.SoundDeparent
 69c3579751e3821bfb104a84def5d48a SteamVR.dll:Valve.VR.SteamVR_Behaviour_Vector3
 3de4c6f873fad9c2ab9ea6e2e4e9c6d9 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.Teleportable
-4097ec9f5c6850f2f4cb98ba38d29f75 Assembly-CSharp.dll:.MenuManager
+0ab0a089f4a30f72aaa6a8b62b50f4fa Assembly-CSharp.dll:.MenuManager
 93d766d07dd6c88f4af7607fb06e3041 Assembly-CSharp.dll:HTC.UnityPlugin.VRModuleManagement.VRModule
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
-60c2a38cf2dec6bf9273597b8bc18388 Assembly-CSharp.dll:.DropObject
+830d92abc23b071ff9124bae05e974c9 Assembly-CSharp.dll:.DropObject
 1e14977dab694bfa2c108bc988128fa8 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.GrounderBipedIK
 38660fb6a819acd484f23071a25cfa46 Assembly-CSharp.dll:.ReticlePoser
 e3fd6ecc9d6caa468d7bd91e02a94aba SteamVR.dll:Valve.VR.InteractionSystem.ComplexThrowable
@@ -228,13 +231,14 @@ ad9fcd104a7dc00ddaae42b5e2292085 Assembly-CSharp-firstpass.dll:RootMotion.Demos.
 eade5a5efd53b0e50dfe8fb48b76f0f7 SteamVR.dll:Valve.VR.InteractionSystem.SoundPlayOneshot
 3149e68b62b82493254e1c995849f227 Assembly-CSharp-firstpass.dll:RootMotion.Demos.GrounderDemo
 d46bf02823d9fd3a7eaca4c32fd9b48e SteamVR.dll:Valve.VR.InteractionSystem.HapticRack
+9780b70846cfdf9313b796e2eaa13bd6 Assembly-CSharp.dll:.DeleteFurniture
 6af03e1e3b3ad7381b695c209f744e6c SteamVR.dll:Valve.VR.InteractionSystem.Sample.BuggyBuddy
 d0f72e335ba63de49df35d5745fee637 SteamVR.dll:Valve.VR.InteractionSystem.LinearDisplacement
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Vive.ViveRoleBindingsHelper
 58a89415d518eb45b073f6212913a74a SteamVR.dll:Valve.VR.InteractionSystem.Sample.TargetHitEffect
 23b8cfaf4c6677b71aa2b7f006c32a68 Assembly-CSharp-firstpass.dll:RootMotion.Demos.MechSpiderController
 badc8d355a63a7b0291547b12e2277fc SteamVR.dll:Valve.VR.InteractionSystem.SpawnAndAttachAfterControllerIsTracking
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ButtonController
+152ad0d9339aeabe8faa55b9a8aa8f91 Assembly-CSharp.dll:.ButtonController
 7d60b1fef3607377096713ebe110e9ab SteamVR.dll:Valve.VR.InteractionSystem.InteractableHoverEvents
 1a4755f05ec71c9b6306329842c0803c Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.IKJBoneParams
 c6bfb6b96dfa8d98e8ee48353bcacfe0 SteamVR.dll:Valve.VR.InteractionSystem.LinearBlendshape
@@ -258,9 +262,10 @@ a1fb17cca6bffda930e23dec9de87b03 Assembly-CSharp.dll:.ResetButton
 699582968bf572a4f5f4654f266dca73 Assembly-CSharp.dll:.DropMe
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.Sample.SkeletonUIOptions
 a282d0e7a99be0ad3155bf9ee760446b Assembly-CSharp-firstpass.dll:RootMotion.SolverManager
-4f39ec44cfc9dbc8fb32d9a3362babbb Assembly-CSharp.dll:.LoginManager
+13c4d9eb2758e79ede07942d791924b5 Assembly-CSharp.dll:.LoginManager
 0e34024813b298d8a4afe283e5b9ee2a Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.Amplifier
 3bee2395426404357b101dd55c61cd87 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.InteractionTarget
+d650b64d9240dd458d24f24fae2a115d Assembly-CSharp.dll:.VRUISlider
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.DefaultGenerator
 a17530eccbeaddd301bb125543f9c8f3 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.RagdollUtility
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ScrollbarController
@@ -284,6 +289,7 @@ d61c7ccc637ab4387b08e7bc7e335203 Assembly-CSharp-firstpass.dll:RootMotion.FinalI
 605bd17ba84a0a4d4e2212228b229f5d Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.HitReaction
 85af9a2367da2c6ce09bf448bd7d9ae1 SteamVR.dll:Valve.VR.InteractionSystem.LinearMapping
 c5f70f5b7c7a83974f2d15052d9fc171 Assembly-CSharp.dll:.OverlayKeyboardSample
+98da04c2f2abc3c967c3bebb143886dc Assembly-CSharp.dll:.VRUICheckbox
 e83bac24ab53a1108f5b78e04d6e5782 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.ProjectionGenerator
 dafe0d9a003f35cffc48c2feaeac7b74 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.RotationLimitAngle
 bb7a673e4fcf1b5651a3698dd5d52909 Assembly-CSharp.dll:HTC.UnityPlugin.Pointer3D.Pointer3DRaycaster
@@ -306,6 +312,7 @@ e57e39b8201f200433921b64dd104035 Assembly-CSharp.dll:.ImageAlphaRaycastFilter
 33f5fb6162669a3c887965548d614567 SteamVR.dll:Valve.VR.InteractionSystem.SoundBowClick
 df92be8afbb77170e7d53a2979e6f36e Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.FABRIKRoot
 e25a967e75bf2da82f0c5d4b19c8be5b Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.FingerRig
+98da04c2f2abc3c967c3bebb143886dc Assembly-CSharp.dll:.VRUIRadio
 0270c83f76ec2a12e20ff3527e42277e Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.Inertia
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.SteamVR_Fade
 0c585c36b8abe687e6ca2c90f2962383 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.AimIK
@@ -334,6 +341,7 @@ ef01145d01005ab9549541e17c69be56 SteamVR.dll:Valve.VR.SteamVR_Skybox
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CharacterManager
 7d19057642c463daceac505ab19dd37e SteamVR.dll:Valve.VR.Extras.SteamVR_ForceSteamVRMode
 369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragMe
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MenuWindow
 148051f3064d3418568411e9fc26aed5 Assembly-CSharp.dll:HTC.UnityPlugin.PoseTracker.PoseTracker
 5f7d3b561fe1cc8eb27fa9146892bd71 Assembly-CSharp-firstpass.dll:RootMotion.Demos.CharacterController3rdPerson
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.isLocalPlayer
@@ -413,6 +421,7 @@ c7ec94b3a364d408238f5084f5de631f Assembly-CSharp.dll:HTC.UnityPlugin.Vive.VivePo
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.InteractionSystem.DebugUI
 34fd5f9e78d453beca6de579d730c46a Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.FullBodyBipedIK
+5fc094978ce3e3591a7500ed380d854a Assembly-CSharp.dll:.VRUIControlBarButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 e3057685504c89a5436b7b12d98d38a4 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.ViveInput
 31e399a9c9d2eb93766eca9ca7507125 Assembly-CSharp.dll:.FunitureSelect
@@ -433,6 +442,7 @@ f91cb688355a2c7124846064fa9b7918 SteamVR.dll:Valve.VR.InteractionSystem.ArcheryT
 9aefe490fb3ebc4b4adaf0bfb58366fd Assembly-CSharp-firstpass.dll:RootMotion.Demos.CharacterAnimationThirdPerson
 369421eaa26a31b7617fb067c6e27c2e Assembly-CSharp.dll:.DragImage
 48aa7e3a10ad49e34c99883f1c252b8d Assembly-CSharp.dll:.CameraLogic
+81cd27fa7a49d41a63183dbf13735c4f Assembly-CSharp.dll:.SampleSceneManager
 2d9278a089ab00f34f77ccb7e2f7a0c8 Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.FBBIKArmBending
 5db9b7ffd679e5ea8e000a80206c6b01 Assembly-CSharp-firstpass.dll:RootMotion.Demos.TransferMotion
 3f949c49b5ce67202d0fc54ec3641060 Assembly-CSharp-firstpass.dll:RootMotion.Demos.AimSwing
@@ -445,10 +455,11 @@ c87edf8ff0115c1887bbc5415b64db02 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.Render
 cafe8f659ec4810167e189e3e06c6f57 SteamVR.dll:Valve.VR.InteractionSystem.PlaySound
 6f194e0261aecd5aab82aab33643d4b3 SteamVR.dll:Valve.VR.InteractionSystem.BalloonColliders
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
+5fc094978ce3e3591a7500ed380d854a Assembly-CSharp.dll:.VRUIOutlineButton
 9a7a61dc67a31c5abf1a3a9c5dbee3ec Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.LegIK
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:HTC.UnityPlugin.Vive.VRCameraHook
 9c1b93beeace9e0143c7495c06b318c2 Assembly-CSharp-firstpass.dll:RootMotion.Demos.PlatformRotator
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.FurnitureManager
+8f25463e17bfffbb70fef1bff8d3a64d Assembly-CSharp.dll:.FurnitureManager
 96cb31f4a8c9acd984491f5c26d3f7b2 Assembly-CSharp.dll:HTC.UnityPlugin.Vive.BindingInterface.BindingInterfaceConfigPanelController
 5fbad81cc475bdea3b91433f8ab5de71 Assembly-CSharp-firstpass.dll:RootMotion.Demos.MotionAbsorb
 dcc608e96ec2ac8ad8de1fc54d7d0b7a SteamVR.dll:Valve.VR.InteractionSystem.Sample.SquishyToy
@@ -484,7 +495,7 @@ d287c185a119d79ff1e89b8a6a2ad8aa SteamVR.dll:Valve.VR.SteamVR_Frustum
 827788bf62ad53d2c918573e88943cd0 SteamVR.dll:Valve.VR.SteamVR_Render
 1ba001e1051dbf18703ca59a4cbf3476 SteamVR.dll:Valve.VR.InteractionSystem.LinearDrive
 29a60a87f1d7ef46732c0a5a9eed5e55 Assembly-CSharp-firstpass.dll:RootMotion.Demos.PickUpSphere
-446cebaa9ee5b183267000f134005aac Assembly-CSharp.dll:.Client
+e0c570964634bd86b3817dfc51c5697d Assembly-CSharp.dll:.Client
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ChangeColor
 75cd39a1f6026e63f483b86039e2c4cb SteamVR.dll:Valve.VR.SteamVR_Camera
 e487c3cf4c71d6994c22f2ca726883fb Assembly-CSharp-firstpass.dll:RootMotion.FinalIK.GrounderFBBIK

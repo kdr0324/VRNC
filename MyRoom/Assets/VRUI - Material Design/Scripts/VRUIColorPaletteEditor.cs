@@ -1,78 +1,78 @@
-﻿using UnityEngine;
-using UnityEditor;
-using VRUITagManager;
-[InitializeOnLoad]
-[ExecuteInEditMode]
+﻿//using UnityEngine;
+//using UnityEditor;
+//using VRUITagManager;
+//[InitializeOnLoad]
+//[ExecuteInEditMode]
 
-// Custom Editor for assigning colors and themes to the UI
+//// Custom Editor for assigning colors and themes to the UI
 
-[CustomEditor(typeof(VRUIColorPalette))]
-[CanEditMultipleObjects]
-public class VRUIColorPaletteEditor : Editor 
-{
-	SerializedProperty isDarkTheme;
-	SerializedProperty accentColor;
-	SerializedProperty hoverColor;
-	SerializedProperty pressedColor;
-	SerializedProperty disabledColor;
+//[CustomEditor(typeof(VRUIColorPalette))]
+//[CanEditMultipleObjects]
+//public class VRUIColorPaletteEditor : Editor 
+//{
+//	SerializedProperty isDarkTheme;
+//	SerializedProperty accentColor;
+//	SerializedProperty hoverColor;
+//	SerializedProperty pressedColor;
+//	SerializedProperty disabledColor;
 
-	void OnEnable()
-	{
-		// Find all the relevant properties from the GUI
+//	void OnEnable()
+//	{
+//		// Find all the relevant properties from the GUI
 
-		isDarkTheme = serializedObject.FindProperty("isDarkTheme");
-		accentColor = serializedObject.FindProperty("accentColor");
-		hoverColor = serializedObject.FindProperty("hoverColor");
-		pressedColor = serializedObject.FindProperty("pressedColor");
-		disabledColor = serializedObject.FindProperty("disabledColor");
+//		isDarkTheme = serializedObject.FindProperty("isDarkTheme");
+//		accentColor = serializedObject.FindProperty("accentColor");
+//		hoverColor = serializedObject.FindProperty("hoverColor");
+//		pressedColor = serializedObject.FindProperty("pressedColor");
+//		disabledColor = serializedObject.FindProperty("disabledColor");
 
-		// Add all the necessary tags
+//		// Add all the necessary tags
 
-		TagsAndLayers.AddTag ("VRUIBackground");
-		TagsAndLayers.AddTag ("VRUIText");
-		TagsAndLayers.AddTag ("VRUIIcon");
-		TagsAndLayers.AddTag ("VRUIOutline");
-		TagsAndLayers.AddTag ("VRUIButton");
-		TagsAndLayers.AddTag ("VRUIButtonTab");
-		TagsAndLayers.AddTag ("VRUIButtonControlBar");
-		TagsAndLayers.AddTag ("VRUIButtonList");
-		TagsAndLayers.AddTag ("VRUICheckbox");
-		TagsAndLayers.AddTag ("VRUIToggle");
-		TagsAndLayers.AddTag ("VRUIRadio");
-		TagsAndLayers.AddTag ("VRUISlider");
-	}
+//		TagsAndLayers.AddTag ("VRUIBackground");
+//		TagsAndLayers.AddTag ("VRUIText");
+//		TagsAndLayers.AddTag ("VRUIIcon");
+//		TagsAndLayers.AddTag ("VRUIOutline");
+//		TagsAndLayers.AddTag ("VRUIButton");
+//		TagsAndLayers.AddTag ("VRUIButtonTab");
+//		TagsAndLayers.AddTag ("VRUIButtonControlBar");
+//		TagsAndLayers.AddTag ("VRUIButtonList");
+//		TagsAndLayers.AddTag ("VRUICheckbox");
+//		TagsAndLayers.AddTag ("VRUIToggle");
+//		TagsAndLayers.AddTag ("VRUIRadio");
+//		TagsAndLayers.AddTag ("VRUISlider");
+//	}
 
-	public override void OnInspectorGUI()
-	{
+//	public override void OnInspectorGUI()
+//	{
 
-		// Create labels and fields for inputing of properties
+//		// Create labels and fields for inputing of properties
 
-		EditorGUILayout.PropertyField(isDarkTheme);
+//		EditorGUILayout.PropertyField(isDarkTheme);
 
-		EditorGUILayout.LabelField ("Color Palette");
+//		EditorGUILayout.LabelField ("Color Palette");
 
-		EditorGUI.indentLevel++;
+//		EditorGUI.indentLevel++;
 
-		EditorGUILayout.PropertyField(accentColor);
+//		EditorGUILayout.PropertyField(accentColor);
 
-		EditorGUILayout.LabelField ("Button State Colors");
+//		EditorGUILayout.LabelField ("Button State Colors");
 
-		EditorGUI.indentLevel++;
+//		EditorGUI.indentLevel++;
 
-		EditorGUILayout.PropertyField(hoverColor);
+//		EditorGUILayout.PropertyField(hoverColor);
 
-		EditorGUILayout.PropertyField(pressedColor);
+//		EditorGUILayout.PropertyField(pressedColor);
 
-		EditorGUILayout.PropertyField(disabledColor);
+//		EditorGUILayout.PropertyField(disabledColor);
 
-		// Apply input properties and call script to update colors
+//		// Apply input properties and call script to update colors
 
-		serializedObject.ApplyModifiedProperties();
+//		serializedObject.ApplyModifiedProperties();
 
-		VRUIColorPalette colorPalette = (VRUIColorPalette)target;
+//		VRUIColorPalette colorPalette = (VRUIColorPalette)target;
 
-		colorPalette.UpdateColors ();
+//		colorPalette.UpdateColors ();
 
-	}
+//	}
 		
-}
+//}
