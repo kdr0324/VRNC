@@ -161,7 +161,15 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
         
         var hitDistance = 0f;
 
-        switch (eventData.button)
+        //수정한 코드
+        VivePointerEventData viveEventData;
+        if (eventData.TryGetViveButtonEventData(out viveEventData))
+        {
+            if (viveEventData.viveButton == ControllerButton.Pad)
+                return; 
+        }
+        /////////////////////////////////
+            switch (eventData.button)
         {
             case PointerEventData.InputButton.Middle:
             case PointerEventData.InputButton.Right:
