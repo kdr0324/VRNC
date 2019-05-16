@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class RoomSelectManager : MonoBehaviour
 {
+    public AudioClip ButtonSound;
+
     public Transform roomParent;
     
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class RoomSelectManager : MonoBehaviour
     public void RoomMake()
     {
         Client.instance.RoomMake();
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
 
         // Loads the second Scene
         SceneManager.LoadScene("Main");
@@ -26,6 +30,9 @@ public class RoomSelectManager : MonoBehaviour
 
     public void RoomList()
     {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
         if (Client.instance.isConnect)
         {
             string[] rooms;
@@ -37,7 +44,10 @@ public class RoomSelectManager : MonoBehaviour
                 Button btn = roomParent.GetChild(i).GetComponent<Button>();
                 int temp = i;
                 btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
+                btn.onClick.AddListener(() => GetComponent<AudioSource>().clip = ButtonSound);
+                btn.onClick.AddListener(() => GetComponent<AudioSource>().Play());
                 btn.onClick.AddListener(() => SceneManager.LoadScene("Main"));
+                
                 GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
             }
 

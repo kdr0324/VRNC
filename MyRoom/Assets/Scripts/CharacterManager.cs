@@ -8,6 +8,7 @@ public class CharacterManager: MonoBehaviour
 { 
     //SelectButton, QuitButton;
     bool m_SceneLoaded;
+    public AudioClip ButtonSound;
 
     //private Client cli = Client.instance;
 
@@ -19,6 +20,9 @@ public class CharacterManager: MonoBehaviour
     // Load the Scene when this Button is pressed
     public void LoadSceneButton()
     {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
         GameObject SelectCharacter = transform.parent.Find("SelectCharacter").gameObject;
         SelectCharacter.SetActive(false);
 

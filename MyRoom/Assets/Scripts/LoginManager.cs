@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LoginManager : MonoBehaviour
 {
+    public AudioClip Logins;
+    public AudioClip Loginf;
+
     //인풋 필드
     public InputField login;
     public InputField password;
@@ -30,11 +33,13 @@ public class LoginManager : MonoBehaviour
         Debug.Log(login.text);
         Debug.Log(password.text);
 
-        //if(true)
-        if(Client.instance.Login(login.text, password.text))
+       //if(false)
+       if(Client.instance.Login(login.text, password.text))
         {
             //login success
             Debug.Log("Login Success");
+            GetComponent<AudioSource>().clip = Logins;
+            GetComponent<AudioSource>().Play();
             LoginUI.SetActive(false);
             SelectCharacterUI.SetActive(true);
         
@@ -42,6 +47,8 @@ public class LoginManager : MonoBehaviour
         else
         {
             Debug.Log("Login Fail");
+            GetComponent<AudioSource>().clip = Loginf;
+            GetComponent<AudioSource>().Play();
             login.text = "";
             password.text = "";
         }
@@ -55,6 +62,8 @@ public class LoginManager : MonoBehaviour
         {
             //login success
             Debug.Log("SignUp Success");
+            GetComponent<AudioSource>().clip = Logins;
+            GetComponent<AudioSource>().Play();
             login.text = "";
             password.text = "";
 
@@ -62,6 +71,8 @@ public class LoginManager : MonoBehaviour
         else
         {
             Debug.Log("SignUp Fail");
+            GetComponent<AudioSource>().clip = Loginf;
+            GetComponent<AudioSource>().Play();
             login.text = "";
             password.text = "";
         }

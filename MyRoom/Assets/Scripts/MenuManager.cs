@@ -10,9 +10,11 @@ using UnityEngine.EventSystems;
 public class MenuManager : MonoBehaviour
 {
     private AudioSource audio;
-    public AudioClip clickSound;
+    public AudioClip ButtonSound;
+    public AudioClip SaveSound;
+    public AudioClip LoadSound;
+    public AudioClip ScreenshotSound;
 
-   
     public GameObject mainMenu;
     public GameObject furnitureMenu;
     public GameObject settingsMenu;
@@ -25,6 +27,8 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Menu manager Start");
         audio = gameObject.GetComponent<AudioSource>();
+        Furniture = GameObject.Find("Furniture");
+
 
     }
 
@@ -63,6 +67,9 @@ public class MenuManager : MonoBehaviour
     //프로그램 종료
     public void Quit()
     {
+        audio.clip = ButtonSound;
+        audio.Play();
+
         Debug.Log("ClickedQuit");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -98,6 +105,9 @@ public class MenuManager : MonoBehaviour
         //transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
         settingsMenu.SetActive(true);
 
+        audio.clip = ButtonSound;
+        audio.Play();
+
     }
 
 
@@ -121,6 +131,7 @@ public class MenuManager : MonoBehaviour
             //if(Client.instance.isOwner)
             if(true)
             {
+                
                 Client.instance.Save(jsonData);
             }
         }
@@ -130,6 +141,8 @@ public class MenuManager : MonoBehaviour
             //JSON 파일로 저장
             File.WriteAllText(path, jsonData);
         }
+        audio.clip = SaveSound;
+        audio.Play();
     }
     //뒤로가기
     public void Back()
@@ -141,11 +154,15 @@ public class MenuManager : MonoBehaviour
         //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
         //transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
         //transform.parent.Find("MainMenu").gameObject.SetActive(true);
+        audio.clip = ButtonSound;
+        audio.Play();
     }
 
     public void Cancel()
     {
         mainMenu.SetActive(false);
+        audio.clip = ButtonSound;
+        audio.Play();
     }
     //메뉴창 키기
     public void CallMainMenu()
@@ -158,6 +175,8 @@ public class MenuManager : MonoBehaviour
         {
             mainMenu.SetActive(false);
         }
+        audio.clip = ButtonSound;
+        audio.Play();
     }
 
     public void Load()
@@ -190,6 +209,8 @@ public class MenuManager : MonoBehaviour
 
             Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
         }
+        audio.clip = LoadSound;
+        audio.Play();
 
     }
 
