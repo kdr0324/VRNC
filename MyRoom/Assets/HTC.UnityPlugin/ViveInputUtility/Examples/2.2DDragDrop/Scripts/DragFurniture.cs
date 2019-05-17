@@ -105,6 +105,7 @@ public class DragFurniture : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
             obj.name = name;
 
+            GetComponentInParent<AudioSource>().Play();
         }
 
 

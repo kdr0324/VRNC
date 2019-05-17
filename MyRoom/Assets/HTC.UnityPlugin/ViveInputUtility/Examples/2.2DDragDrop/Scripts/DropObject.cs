@@ -53,6 +53,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
                 string[] spiltString = droppedTexture.name.Split('(') ;
                 textureName = spiltString[0].Trim();
                 //GetComponent<setParent>().childTexture;
+                GameObject.Find("Furniture").GetComponent<AudioSource>().Play();
             }
         }
     }
@@ -92,7 +93,9 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         var srcImage = originalObj.GetComponent<Image>();
         if (srcImage == null) { return null; }
 
+        
         return srcImage.sprite;
+    
     }
 
     //추가한 코드
