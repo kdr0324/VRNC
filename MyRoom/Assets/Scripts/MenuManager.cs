@@ -44,6 +44,8 @@ public class MenuManager : MonoBehaviour
                 File.WriteAllBytes(path, bytes);
                 Debug.Log("360 render saved to " + path);
             }
+            audio.clip = ScreenshotSound;
+            audio.Play();
         }
         //else if (Input.GetKeyUp(KeyCode.E))
         //{
@@ -81,7 +83,9 @@ public class MenuManager : MonoBehaviour
     //방만들기 UI 활성화 시켜줌
     public void CallFurnitureMenu()
     {
+        audio.clip = ButtonSound;
         audio.Play();
+
     
         //기존에 떠있는 메인메뉴 UI 종료
         //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public AudioClip ButtonSound;
     public GameObject FurnitureMenu;
     public GameObject TextureMenu;
     public GameObject Delete;
@@ -28,6 +29,9 @@ public class ButtonController : MonoBehaviour
 
     public void onAButtonClicked()
     {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
         FurnitureMenu.SetActive(true);
         TextureMenu.SetActive(false);
         Delete.SetActive(false);
@@ -35,6 +39,9 @@ public class ButtonController : MonoBehaviour
 
     public void onBButtonClicked()
     {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
         FurnitureMenu.SetActive(false);
         TextureMenu.SetActive(true);
         Delete.SetActive(false);
@@ -43,6 +50,9 @@ public class ButtonController : MonoBehaviour
 
     public void onCButtonClicked()
     {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
         FurnitureMenu.SetActive(false);
         TextureMenu.SetActive(false);
         Delete.SetActive(true);

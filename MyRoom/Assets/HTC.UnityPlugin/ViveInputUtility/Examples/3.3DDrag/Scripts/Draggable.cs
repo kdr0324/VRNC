@@ -222,7 +222,7 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
 
     public virtual void OnEndDrag(PointerEventData eventData)
     {
-        GetComponent<AudioSource>().Play();
+        
         if (m_eventGrabberSet == null) { return; }
 
         Grabber grabber;

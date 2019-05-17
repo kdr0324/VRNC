@@ -7,11 +7,12 @@ public class CreateFurniture : MonoBehaviour
 {
     //public Transform Furniture;
     private List<GameObject> list;
-
-
+    public AudioClip FurnitureSound;
+    
     // Start is called before the first frame update
     void Start()
     {
+
 
     }
 
@@ -23,6 +24,9 @@ public class CreateFurniture : MonoBehaviour
 
     public void FurnitureCreate()
     {
+        //GetComponentInParent<AudioSource>().clip = GetComponentInParent<AudioSource>().clip;
+        GetComponentInParent<AudioSource>().Play();
+
         string current_name = EventSystem.current.currentSelectedGameObject.name;
 
         //Debug.Log(transform.root.name);
