@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/6.ControllerManagerSample/ControllerManagerSample.unity
+- path: Assets/Scenes/StartUI.unity
   isLoaded: 1
   isActive: 1

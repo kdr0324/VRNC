@@ -4198,9 +4198,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9125283035722926316}
-  - component: {fileID: 9125283035722926313}
-  - component: {fileID: 9125283035722926318}
-  - component: {fileID: 9125283035722926319}
   m_Layer: 0
   m_Name: ViveCameraRig
   m_TagString: Untagged
@@ -4228,78 +4225,6 @@ Transform:
   m_Father: {fileID: 9125283036363175173}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &9125283035722926313
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125283035722926317}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &9125283035722926318
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125283035722926317}
-  m_Mesh: {fileID: 0}
---- !u!114 &9125283035722926319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125283035722926317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0522eaef74d984591c060d05a095c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  borderThickness: 0.1
-  wireframeHeight: 2
-  drawWireframeWhenSelectedOnly: 0
-  drawInGame: 1
-  size: 0
-  color: {r: 0, g: 1, b: 1, a: 1}
-  vertices:
-  - {x: 0.49999997, y: 0.01, z: -0.49999997}
-  - {x: -0.49999997, y: 0.01, z: -0.49999997}
-  - {x: -0.49999997, y: 0.01, z: 0.49999997}
-  - {x: 0.49999997, y: 0.01, z: 0.49999997}
-  - {x: 0.59999996, y: 0.01, z: -0.59999996}
-  - {x: -0.59999996, y: 0.01, z: -0.59999996}
-  - {x: -0.59999996, y: 0.01, z: 0.59999996}
-  - {x: 0.59999996, y: 0.01, z: 0.59999996}
 --- !u!1 &9125283035743998330
 GameObject:
   m_ObjectHideFlags: 0

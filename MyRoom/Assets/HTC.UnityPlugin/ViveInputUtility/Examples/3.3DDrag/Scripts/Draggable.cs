@@ -202,7 +202,17 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
 
     protected virtual void Update()
     {
+
         if (!isGrabbed) { return; }
+
+
+        //회전에 필요한 수정 내용
+        var rotDelta = ViveInput.GetPadTouchAxis(HandRole.LeftHand);
+        if (rotDelta != Vector2.zero)
+        {
+            Quaternion cur = currentGrabber.grabOffset.rot;
+        }
+        //
 
         if (!moveByVelocity)
         {
@@ -216,6 +226,7 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
             currentGrabber.hitDistance = Mathf.Max(0f, currentGrabber.hitDistance + scrollDelta.y);
         }
     }
+
 
     public virtual void OnDrag(PointerEventData eventData) {
     }
