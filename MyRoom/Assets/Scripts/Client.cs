@@ -32,6 +32,8 @@ public class Client : MonoBehaviour
     public Queue<byte[]> sendTask = new Queue<byte[]>();
     public Queue<byte[]> recvTask = new Queue<byte[]>();
 
+    public int charType = 0;
+
 
     
 
@@ -178,6 +180,7 @@ public class Client : MonoBehaviour
 
     public void CharacterSelect(int idx)
     {
+        charType = idx;
         if (isConnect)
         {
             Debug.Log("Character Select");

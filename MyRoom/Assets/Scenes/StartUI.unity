@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -646,8 +646,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8499224069136008882}
-        m_MethodName: Login
+      - m_Target: {fileID: 8499224069136008783}
+        m_MethodName: Select4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1047,7 +1047,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9552438, guid: bd014b8a14c67a543927d3c801518be4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd014b8a14c67a543927d3c801518be4, type: 3}
 --- !u!4 &394032403 stripped
 Transform:
@@ -2463,7 +2464,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9524664, guid: ca70370e3245f1249a40aad35700c0af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca70370e3245f1249a40aad35700c0af, type: 3}
 --- !u!4 &950250568 stripped
 Transform:
@@ -2737,6 +2739,7 @@ MonoBehaviour:
   isOwner: 0
   roomIp: 
   isConnect: 0
+  charType: 0
 --- !u!114 &1157337475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,7 +2934,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9547138, guid: 8ab8dafd9e17d9b4281e639560002602, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ab8dafd9e17d9b4281e639560002602, type: 3}
 --- !u!4 &1186714790 stripped
 Transform:
@@ -3303,7 +3307,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9558348, guid: 9fb982b8e50671b43a6e60fd1bae20e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fb982b8e50671b43a6e60fd1bae20e9, type: 3}
 --- !u!4 &1426995689 stripped
 Transform:
@@ -3391,7 +3396,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8499224069136008783}
-        m_MethodName: LoadSceneButton
+        m_MethodName: Select3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3520,7 +3525,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8499224069136008783}
-        m_MethodName: LoadSceneButton
+        m_MethodName: Select2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4409,7 +4414,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9508516, guid: 8bdf4acc2fa299d4eb87a43bc97b7c22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8bdf4acc2fa299d4eb87a43bc97b7c22, type: 3}
 --- !u!4 &2080726005 stripped
 Transform:
@@ -4655,7 +4661,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8499224069136008783}
-        m_MethodName: LoadSceneButton
+        m_MethodName: Select1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5189,7 +5195,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8499224069136008783}
-        m_MethodName: LoadSceneButton
+        m_MethodName: Select0
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

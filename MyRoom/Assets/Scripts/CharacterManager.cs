@@ -17,8 +17,33 @@ public class CharacterManager: MonoBehaviour
         //cli = GameObject.Find("NetworkManager").GetComponent<Client>();
     }
 
+    public void Select0()
+    {
+        Client.instance.charType = 0;
+        LoadRoomList();
+    }
+    public void Select1()
+    {
+        Client.instance.charType = 1;
+        LoadRoomList();
+    }
+    public void Select2()
+    {
+        Client.instance.charType = 2;
+        LoadRoomList();
+    }
+    public void Select3()
+    {
+        Client.instance.charType = 3;
+        LoadRoomList();
+    }
+    public void Select4()
+    {
+        Client.instance.charType = 4;
+        LoadRoomList();
+    }
     // Load the Scene when this Button is pressed
-    public void LoadSceneButton()
+    public void LoadRoomList()
     {
         GetComponent<AudioSource>().clip = ButtonSound;
         GetComponent<AudioSource>().Play();
