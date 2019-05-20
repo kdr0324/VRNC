@@ -48,7 +48,7 @@ public class RoomSelectManager : MonoBehaviour
                 btn.onClick.AddListener(() => GetComponent<AudioSource>().Play());
                 btn.onClick.AddListener(() => SceneManager.LoadScene("Main"));
                 
-                GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
+                //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
             }
 
         }

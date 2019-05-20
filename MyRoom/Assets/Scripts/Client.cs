@@ -307,7 +307,7 @@ public class Client : MonoBehaviour
 
             isOwner = false;
 
-            GetComponent<ClientController>().hostIP = roomIp;
+            //GetComponent<ClientController>().hostIP = roomIp;
             //Play();
         }
         else
