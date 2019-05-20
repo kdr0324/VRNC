@@ -28,6 +28,12 @@ public class RoomNetwork : NetworkManager
             }
 
         }
+
+        for(int i=0; i< Character.Length; i++)
+        {
+            spawnPrefabs.Add(Character[i]);
+        }
+            
     }
     void Start()
     {
@@ -83,11 +89,10 @@ public class RoomNetwork : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
     {
-        //VR Player 인지 알려주는 메시지 생성
+        //캐릭터 타입 전달 위해 사용하는 메시지
         SpawnMessage message = new SpawnMessage();
         //Read를 위해 Deserialize
         message.Deserialize(extraMessageReader);
-
 
         //message 에서 실제 VrPlayer 인지 받음
         int character = message.CharacterType;
@@ -100,6 +105,7 @@ public class RoomNetwork : NetworkManager
         //VrPlayer인 경우와 아닌 경우
 
         newPlayer = (GameObject)Instantiate(Character[character], spawnPoint.position, spawnPoint.rotation);
+
 
         //새로 스폰된 플레이어를 모든 클라이언트에 알림
         NetworkServer.AddPlayerForConnection(conn, newPlayer, playerControllerId);
