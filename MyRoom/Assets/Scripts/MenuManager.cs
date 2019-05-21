@@ -22,6 +22,10 @@ public class MenuManager : MonoBehaviour
 
     public GameObject Furniture;
 
+    public GameObject saveWindow;
+    public GameObject loadWindow;
+    public GameObject screenshotWindow;
+
       // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +99,8 @@ public class MenuManager : MonoBehaviour
         audio.clip = SaveSound;
         audio.Play();
 
+        saveWindow.GetComponent<FadeInOut>().Fade();
+
     }
 
     //불러오기
@@ -128,6 +134,7 @@ public class MenuManager : MonoBehaviour
         audio.clip = LoadSound;
         audio.Play();
 
+        loadWindow.GetComponent<FadeInOut>().Fade();
     }
 
     //스크린샷 찍기
@@ -143,6 +150,7 @@ public class MenuManager : MonoBehaviour
         audio.clip = ScreenshotSound;
         audio.Play();
 
+        screenshotWindow.GetComponent<FadeInOut>().Fade();
     }
 
     // 설정하기
@@ -189,6 +197,10 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
     }
+
+
+
+
 
 }
 

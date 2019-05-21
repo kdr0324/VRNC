@@ -203,6 +203,7 @@
     <Compile Include="Assets\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Scripts\FadeInOut.cs" />
     <Compile Include="Assets\Scripts\FunitureSelect.cs" />
     <Compile Include="Assets\Scripts\FurnitureManager.cs" />
     <Compile Include="Assets\Scripts\isLocalPlayer.cs" />
