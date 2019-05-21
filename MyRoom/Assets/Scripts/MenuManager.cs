@@ -21,51 +21,14 @@ public class MenuManager : MonoBehaviour
     public GameObject selectTextureMenu;
 
     public GameObject Furniture;
-    
-    // Start is called before the first frame update
+
+      // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Menu manager Start");
         audio = gameObject.GetComponent<AudioSource>();
         Furniture = GameObject.Find("Furniture");
-
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            byte[] bytes = I360Render.Capture(1024, true);
-            if (bytes != null)
-            {   // 파일 저장 경로 추후에 변경필요
-                string path = Path.Combine(Application.dataPath, "360render.png");
-                File.WriteAllBytes(path, bytes);
-                Debug.Log("360 render saved to " + path);
-            }
-            audio.clip = ScreenshotSound;
-            audio.Play();
-        }
-        //else if (Input.GetKeyUp(KeyCode.E))
-        //{
-        //    MakingRoom();
-        //}
-        //else if (Input.GetKeyUp(KeyCode.R))
-        //{
-        //    Settings();
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Backspace))
-        //{
-        //    Back();
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    Esc();
-        //}
-    }
-   
-    
     //프로그램 종료
     public void Quit()
     {
@@ -86,7 +49,7 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
 
-    
+
         //기존에 떠있는 메인메뉴 UI 종료
         //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
 
@@ -98,23 +61,7 @@ public class MenuManager : MonoBehaviour
         furnitureMenu.SetActive(true);
 
     }
-    // 설정하기
-    public void CallSettingsMenu()
-    {
-        
-        //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
-        //GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
-        mainMenu.SetActive(false);
-        //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
-        //transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
-        settingsMenu.SetActive(true);
-
-        audio.clip = ButtonSound;
-        audio.Play();
-
-    }
-
-
+    
     //저장하기
     public void Save()
     {
@@ -128,14 +75,14 @@ public class MenuManager : MonoBehaviour
         //string path = Path.Combine(Application.dataPath, "objData.json");
         ////JSON 파일로 저장
         //File.WriteAllText(path, jsonData);
-        
-        if(Client.instance != null)
+
+        if (Client.instance != null)
         {
             //방장
             //if(Client.instance.isOwner)
-            if(true)
+            if (true)
             {
-                
+
                 Client.instance.Save(jsonData);
             }
         }
@@ -147,51 +94,16 @@ public class MenuManager : MonoBehaviour
         }
         audio.clip = SaveSound;
         audio.Play();
-    }
-    //뒤로가기
-    public void Back()
-    {
-        furnitureMenu.SetActive(false);
-        settingsMenu.SetActive(false);
-        //selectTextureMenu.SetActive(false);
-        mainMenu.SetActive(true);
-        //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
-        //transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
-        //transform.parent.Find("MainMenu").gameObject.SetActive(true);
-        audio.clip = ButtonSound;
-        audio.Play();
+
     }
 
-    public void Cancel()
-    {
-        mainMenu.SetActive(false);
-        audio.clip = ButtonSound;
-        audio.Play();
-    }
-    //메뉴창 키기
-    public void CallMainMenu()
-    {
-        if(!mainMenu.activeSelf)
-        {
-            mainMenu.SetActive(true);
-        }
-        else
-        {
-            mainMenu.SetActive(false);
-        }
-        audio.clip = ButtonSound;
-        audio.Play();
-    }
-
+    //불러오기
     public void Load()
     {
-
-
-
         if (Client.instance != null)
         {
             //방장
-            if(Client.instance.isOwner)
+            if (Client.instance.isOwner)
             {
                 string jsonData = Client.instance.Load();
 
@@ -216,6 +128,66 @@ public class MenuManager : MonoBehaviour
         audio.clip = LoadSound;
         audio.Play();
 
+    }
+
+    //스크린샷 찍기
+    public void Screenshot()
+    {
+        byte[] bytes = I360Render.Capture(1024, true);
+        if (bytes != null)
+        {   // 파일 저장 경로 추후에 변경필요
+            string path = Path.Combine(Application.dataPath, "360render.png");
+            File.WriteAllBytes(path, bytes);
+            Debug.Log("360 render saved to " + path);
+        }
+        audio.clip = ScreenshotSound;
+        audio.Play();
+
+    }
+
+    // 설정하기
+    public void CallSettingsMenu()
+    {
+
+        //GameObject mainMenu = transform.parent.Find("MainMenu").gameObject;
+        //GameObject mainMenu = GameObject.Find("Player/CanvasMainMenu/MainMenu");
+        mainMenu.SetActive(false);
+        //Instantiate(furnitureMenu, transform.position + Vector3.forward*2, furnitureMenu.transform.rotation);
+        //transform.parent.Find("SettingsMenu").gameObject.SetActive(true);
+        settingsMenu.SetActive(true);
+
+        audio.clip = ButtonSound;
+        audio.Play();
+
+    }
+
+    //뒤로가기
+    public void Back()
+    {
+        furnitureMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        //selectTextureMenu.SetActive(false);
+        mainMenu.SetActive(true);
+        //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);
+        //transform.parent.Find("SettingsMenu").gameObject.SetActive(false);
+        //transform.parent.Find("MainMenu").gameObject.SetActive(true);
+        audio.clip = ButtonSound;
+        audio.Play();
+    }
+
+    //메뉴창 키기
+    public void CallMainMenu()
+    {
+        if (!mainMenu.activeSelf)
+        {
+            mainMenu.SetActive(true);
+        }
+        else
+        {
+            mainMenu.SetActive(false);
+        }
+        audio.clip = ButtonSound;
+        audio.Play();
     }
 
 }

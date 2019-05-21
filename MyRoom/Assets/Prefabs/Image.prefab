@@ -170,3 +170,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242f53c3eaccde941b02edd6524b9cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FurnitureSound: {fileID: 8300000, guid: d8d04c6f80a1140db85ede568dab1f51, type: 3}
