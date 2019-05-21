@@ -97,13 +97,13 @@ public class DragFurniture : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             string current_name = transform.name;
 
-            //transform.root.GetComponent<isLocalPlayer>().
-            //    SpawnObject(current_name, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0));
-            GameObject NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
+            transform.root.GetComponent<isLocalPlayer>().
+                SpawnObject(current_name, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0));
+            //GameObject NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
 
 
-            GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
-            obj.name = name;
+           // GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
+            //obj.name = name;
 
             GetComponentInParent<AudioSource>().Play();
         }

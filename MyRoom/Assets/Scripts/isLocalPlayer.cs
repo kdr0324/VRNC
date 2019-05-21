@@ -53,6 +53,7 @@ public class isLocalPlayer : NetworkBehaviour
         GameObject obj = Instantiate(NewGameObject, pos, NewGameObject.transform.rotation);
         obj.name = name;
 
-        NetworkServer.Spawn(obj);
+        NetworkServer.SpawnWithClientAuthority(obj, connectionToClient);
+        //NetworkServer.SpawnWithClientAuthority
     }
 }
