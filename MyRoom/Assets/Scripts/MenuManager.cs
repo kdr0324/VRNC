@@ -140,17 +140,36 @@ public class MenuManager : MonoBehaviour
     //스크린샷 찍기
     public void Screenshot()
     {
-        byte[] bytes = I360Render.Capture(1024, true);
-        if (bytes != null)
-        {   // 파일 저장 경로 추후에 변경필요
-            string path = Path.Combine(Application.dataPath, "360render.png");
-            File.WriteAllBytes(path, bytes);
-            Debug.Log("360 render saved to " + path);
+        //byte[] bytes = I360Render.Capture(1024, true);
+        //if (bytes != null)
+        //{   // 파일 저장 경로 추후에 변경필요
+        //    string path = Path.Combine(Application.dataPath, "360render.png");
+        //    File.WriteAllBytes(path, bytes);
+        //    Debug.Log("360 render saved to " + path);
+        //}
+
+        //take a screenshot
+        for(int i=0; i< 10000; i++)
+        {
+            if (!Capture.doesScreenshotExist(i))
+            {
+                Capture.TakeScreenShot(i);
+                break;
+            }
         }
+        
+
+        //record the location of the cube
+        //CubesPos = GameObject.Find("Cube (1)").gameObject.transform.position;
+
+        //you need to wait a small amount of time for the screenshot to be saved
+        Invoke("screenshotWindow.GetComponent<FadeInOut>().Fade()", 0.5f);
+
         audio.clip = ScreenshotSound;
         audio.Play();
 
-        screenshotWindow.GetComponent<FadeInOut>().Fade();
+        
+        
     }
 
     // 설정하기
