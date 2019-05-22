@@ -27,7 +27,8 @@ public class DeleteFurniture : MonoBehaviour
         
         if(collision.transform.parent.name == "Furniture" )
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            transform.root.GetComponent<isLocalPlayer>().CmdDeleteFurniture(collision.gameObject);
             GetComponent<AudioSource>().Play();
 
            

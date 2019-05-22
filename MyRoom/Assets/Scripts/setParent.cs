@@ -16,10 +16,12 @@ public class setParent : NetworkBehaviour
 
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-   
+    void Update()
+    {
+        if (transform.position.y < -15)
+        {
+            GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdDeleteFurniture(gameObject);
+        }
+    }
+
 }

@@ -190,6 +190,10 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
         m_eventGrabberSet.Add(eventData, grabber);
 
         AddGrabber(grabber);
+
+
+        GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdClientAuthority(gameObject);
+
     }
 
     protected virtual void FixedUpdate()
@@ -229,6 +233,8 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
 
 
     public virtual void OnDrag(PointerEventData eventData) {
+        
+
     }
 
     public virtual void OnEndDrag(PointerEventData eventData)
@@ -242,5 +248,7 @@ public class Draggable : GrabbableBase<Draggable.Grabber>
         RemoveGrabber(grabber);
         m_eventGrabberSet.Remove(eventData);
         Grabber.Release(grabber);
+
+        GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdServerAuthority(gameObject);
     }
 }

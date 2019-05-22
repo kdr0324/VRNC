@@ -15,10 +15,12 @@ public class isLocalPlayer : NetworkBehaviour
         if (isServer)
         {
             Debug.Log("this is server");
+            
         }
         if (isLocalPlayer)
         {
             Debug.Log("this is local player");
+            name = "LocalPlayer";
         }
 
         if (!isLocalPlayer)
@@ -53,7 +55,31 @@ public class isLocalPlayer : NetworkBehaviour
         GameObject obj = Instantiate(NewGameObject, pos, NewGameObject.transform.rotation);
         obj.name = name;
 
-        NetworkServer.SpawnWithClientAuthority(obj, connectionToClient);
+        //NetworkServer.SpawnWithClientAuthority(obj, connectionToClient);
+        NetworkServer.Spawn(obj);
         //NetworkServer.SpawnWithClientAuthority
+    }
+
+    [Command]
+    public void CmdClientAuthority(GameObject obj)
+    {
+        //if(!hasAuthority)
+        //    obj.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        NetworkServer.objects[obj.GetComponent<NetworkIdentity>().netId].AssignClientAuthority(connectionToClient);
+    }
+
+    [Command]
+    public void CmdServerAuthority(GameObject obj)
+    {
+        //if(hasAuthority)
+        //    obj.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
+
+        NetworkServer.objects[obj.GetComponent<NetworkIdentity>().netId].RemoveClientAuthority(connectionToClient);
+    }
+
+    [Command]
+    public void CmdDeleteFurniture(GameObject obj)
+    {
+        NetworkServer.Destroy(obj);
     }
 }
