@@ -54,6 +54,7 @@ public class CharacterManager: MonoBehaviour
 
         GameObject GameRoomList = transform.parent.Find("GameRoomList").gameObject;
         GameRoomList.SetActive(true);
+        GetComponent<RoomSelectManager>().RoomList();
 
         // Check that the second Scene hasn't been added yet
 

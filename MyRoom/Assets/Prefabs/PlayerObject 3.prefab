@@ -932,7 +932,7 @@ MonoBehaviour:
       pelvisRotationWeight: 0
       chestGoal: {fileID: 0}
       chestGoalWeight: 0
-      minHeadHeight: 0.8
+      minHeadHeight: 0.4
       bodyPosStiffness: 0.55
       bodyRotStiffness: 0.1
       neckStiffness: 0.2
@@ -6526,6 +6526,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5556681291019511059}
     m_Modifications:
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
         type: 3}
       propertyPath: saveWindow
@@ -6541,6 +6556,26 @@ PrefabInstance:
       propertyPath: screenshotWindow
       value: 
       objectReference: {fileID: 5745291924316813014}
+    - target: {fileID: 8564392491919712652, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564392491919712652, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575392358622370889, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575392358622370889, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 10767116529429364, guid: 0173575ffd4739a459b997ed82f03936,
         type: 3}
       propertyPath: m_Name

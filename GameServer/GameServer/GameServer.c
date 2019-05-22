@@ -155,13 +155,13 @@ room* roomEnter(void *sock, user* curUser)
 	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
 	roomidx = packetData[0];
 
-	printf("room Enter %d\n", roomidx);
+	//printf("room Enter %d\n", roomidx);
 	//전달받은 방 노드 받아옴
 	room* target = get_idx(&roomlist, roomidx);
 	
 
 	//전달받은 방의 게스트 리스트에 요청한 유저 추가한다.
-	push_back(&(target->guestlist), curUser);
+	//push_back(&(target->guestlist), curUser);
 	//디버깅용 방 정보 출력
 	printRoom(target);
 
@@ -276,11 +276,11 @@ void play(void *sock, user* curUser, room* curRoom)
 
 
 		//send
-		node* cur = curRoom->guestlist.head->next;
-		while (cur) {
-			send((*((user*)cur->value)->sock), buf, PACKETSIZE, 0);
-			cur = cur->next;
-		}
+		//node* cur = curRoom->guestlist.head->next;
+		//while (cur) {
+		//	send((*((user*)cur->value)->sock), buf, PACKETSIZE, 0);
+		//	cur = cur->next;
+		//}
 
 		Sleep(1000);
 

@@ -64,7 +64,7 @@ unsigned WINAPI ThreadFunction(void* para)
 			roomList(para);
 			break;
 		case ROOMENTER:
-			curRoom = roomEnter(para, curUser);
+			roomEnter(para, curUser);
 			break;
 		case PLAY:
 			play(para, curUser, curRoom);

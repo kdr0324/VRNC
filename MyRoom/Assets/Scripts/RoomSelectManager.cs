@@ -13,8 +13,9 @@ public class RoomSelectManager : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
-        RoomList();
+        //RoomList();
     }
+
 
     public void RoomMake()
     {

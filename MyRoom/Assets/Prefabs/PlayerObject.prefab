@@ -7073,6 +7073,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
         type: 3}
       propertyPath: saveWindow
@@ -7088,6 +7103,26 @@ PrefabInstance:
       propertyPath: screenshotWindow
       value: 
       objectReference: {fileID: 8337612402533524527}
+    - target: {fileID: 8564392491919712652, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564392491919712652, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575392358622370889, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575392358622370889, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0173575ffd4739a459b997ed82f03936, type: 3}
 --- !u!224 &6128897892575408258 stripped

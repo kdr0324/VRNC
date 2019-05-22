@@ -5,8 +5,8 @@ room* createRoom(user* owner)
 {
 	room* newRoom = (room*)malloc(sizeof(room));
 	newRoom->owner = owner;
-	init_list(&(newRoom->guestlist));
-	push_back(&(newRoom->guestlist), owner);
+	//init_list(&(newRoom->guestlist));
+	//push_back(&(newRoom->guestlist), owner);
 
 	return newRoom;
 }
@@ -18,8 +18,8 @@ void printRoom(room* a)
 	printf("Room Info\n");
 	printf("owner : %s\n", (a->owner)->id);
 	printf("-----------------------------------\n");
-	printf("Guest Info\n");
-	printGuest(&(a->guestlist));
+	//printf("Guest Info\n");
+	//printGuest(&(a->guestlist));
 	printf("-----------------------------------\n");
 }
 

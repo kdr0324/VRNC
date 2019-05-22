@@ -9,7 +9,7 @@
 
 typedef struct room {
 	user* owner;
-	list guestlist;
+	//list guestlist;
 } room;
 
 room* createRoom(user* owner);
