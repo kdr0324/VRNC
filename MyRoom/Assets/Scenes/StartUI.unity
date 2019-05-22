@@ -417,11 +417,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 6
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RoomList
+  m_Text: "\uC5C5\uB370\uC774\uD2B8"
 --- !u!222 &122276093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5E0\uC81C\uC774"
+  m_Text: "\uC81C\uC774\uC5E0"
 --- !u!222 &481500455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2207,8 +2207,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: 390c04284d077b44e858faf3fea64f24, type: 3}
+    m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RoomList
+  m_Text: "\uC785\uC7A5\uAC00\uB2A5\uD55C \uBC29"
 --- !u!222 &866313274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2768,7 +2768,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5E0\uC81C\uC774"
+  m_Text: "\uD50C\uB79C\uBE44"
 --- !u!222 &1116655117
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2960,11 +2960,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: 390c04284d077b44e858faf3fea64f24, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 6
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2972,7 +2972,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CreateRoom
+  m_Text: "\uBC29\uB9CC\uB4E4\uAE30"
 --- !u!222 &1248160540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4102,7 +4102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5E0\uC81C\uC774"
+  m_Text: "\uBC18\uC7A5\uB2D8"
 --- !u!222 &1878764925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5341,7 +5341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5E0\uC81C\uC774"
+  m_Text: "\uB300\uB871\uC2DC"
 --- !u!222 &7234830576220234581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5525,7 +5525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &7234830576755789305
 Canvas:
   m_ObjectHideFlags: 0
