@@ -18,6 +18,7 @@ public class ObjData
 [System.Serializable]
 public class ObjDataList
 {
+    public int top, wall1, wall2, wall3, wall4, bottom;
     public List<ObjData> objDataList;
 }
 
@@ -119,9 +120,39 @@ public class FurnitureManager : MonoBehaviour
     {
         //자식 객체 카운트 구함
         int childCnt = transform.childCount;
+        int len = FurnitureTextures.Length;
 
         //가구정보들을 담는 리스트 객체 초기화
         ObjDataList obj = new ObjDataList();
+
+        string[] wallTexture = new  string[6];
+        wallTexture[0] = GameObject.Find("Room").transform.Find("Top").GetComponent<DropObject>().textureName;
+        wallTexture[1] = GameObject.Find("Room").transform.Find("Wall1").GetComponent<DropObject>().textureName;
+        wallTexture[2] = GameObject.Find("Room").transform.Find("Wall2").GetComponent<DropObject>().textureName;
+        wallTexture[3] = GameObject.Find("Room").transform.Find("Wall3").GetComponent<DropObject>().textureName;
+        wallTexture[4] = GameObject.Find("Room").transform.Find("Wall4").GetComponent<DropObject>().textureName;
+        wallTexture[5] = GameObject.Find("Room").transform.Find("Bottom").GetComponent<DropObject>().textureName;
+
+        
+        if (wallTexture[0] == "") obj.top = -1;
+        if (wallTexture[1] == "") obj.wall1 = -1;
+        if (wallTexture[2] == "") obj.wall2 = -1;
+        if (wallTexture[3] == "") obj.wall3 = -1;
+        if (wallTexture[4] == "") obj.wall4 = -1;
+        if (wallTexture[5] == "") obj.bottom= -1;
+
+        for (int k = 0; k < len; k++)
+        {
+            //Debug.Log(cur.GetChild(j).GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k]);
+
+            if (FurnitureTextures[k].name == wallTexture[0]) obj.top = k;
+            if (FurnitureTextures[k].name == wallTexture[1]) obj.wall1  = k;
+            if (FurnitureTextures[k].name == wallTexture[2]) obj.wall2  = k;
+            if (FurnitureTextures[k].name == wallTexture[3]) obj.wall3  = k;
+            if (FurnitureTextures[k].name == wallTexture[4]) obj.wall4  = k;
+            if (FurnitureTextures[k].name == wallTexture[5]) obj.bottom = k;
+
+        }
         obj.objDataList = new List<ObjData>();
 
         //총 가구 개수 만큼 리스트에 추가함
@@ -143,7 +174,7 @@ public class FurnitureManager : MonoBehaviour
             
             //색 저장
             int cnt = cur.childCount;
-            int len = FurnitureTextures.Length;
+            
 
             if (cnt > 0)
             {
@@ -206,6 +237,33 @@ public class FurnitureManager : MonoBehaviour
     public void ListToFurniture(ObjDataList obj)
     {
         Debug.Log(obj.objDataList.Count);
+        GameObject[] wallTexture = new GameObject[6];
+        wallTexture[0] = GameObject.Find("Room").transform.Find("Top").gameObject;
+        wallTexture[1] = GameObject.Find("Room").transform.Find("Wall1").gameObject;
+        wallTexture[2] = GameObject.Find("Room").transform.Find("Wall2").gameObject;
+        wallTexture[3] = GameObject.Find("Room").transform.Find("Wall3").gameObject;
+        wallTexture[4] = GameObject.Find("Room").transform.Find("Wall4").gameObject;
+        wallTexture[5] = GameObject.Find("Room").transform.Find("Bottom").gameObject;
+
+
+        int[] walls = new int[6] {obj.top, obj.wall1, obj.wall2, obj.wall3, obj.wall4, obj.bottom};
+
+        for (int i = 0; i < wallTexture.Length; i++)
+        {
+            if (walls[i] != -1)
+            {
+                wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[i]];
+                wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[i]]);
+                wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[i]].name;
+            }
+        }
+        
+        
+        
+
+
+
+
 
         int furnitureLen = transform.childCount;
         for(int i=0; i<furnitureLen; i++)
@@ -218,6 +276,7 @@ public class FurnitureManager : MonoBehaviour
         {
             //가구 이름 받아옴
             string name = obj.objDataList[i].name;
+
             //이름에 맞는 가구 Prefab Load
             GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
             //Load 된 Prefab을 가구 정보에 맞게 생성
