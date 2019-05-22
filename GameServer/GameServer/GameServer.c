@@ -8,7 +8,15 @@
 #include <Windows.h>
 #include <mysql.h>
 
+int compId(void *data1, void* data2)
+{
+	printf("user %s --- find %s\n", ((user*)data1)->id, data2);
+	return strcmp(((user*)data1)->id, data2);
+}
+
+//로그인 
 user* login(void *sock) {
+
 	//ID, PASSWORD 확인
 	char packetData[PACKETSIZE] = { 0, };
 	char id[PACKETSIZE] = { 0, };
@@ -29,7 +37,7 @@ user* login(void *sock) {
 	//if (!strcmp(id, "123") && !strcmp(password, "123"))
 	//if(1)
 	//if(strcmp(id, "") || strcmp(password, ""))
-	if(server_login(id, password))
+	if(server_login(id, password) && find_node(&userlist, id, compId))
 	{
 		//클라이언트에게 로그인 성공했다고 알림
 		packetData[0] = 1;
@@ -47,6 +55,7 @@ user* login(void *sock) {
 
 		return newUser;
 	}
+	
 	else {
 		//실패했다고 알림
 		packetData[0] = 0;

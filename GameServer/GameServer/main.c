@@ -9,6 +9,16 @@
 
 #include "GameServer.h"
 
+int cmpRoom(void* data1, void* data2)
+{
+	return strcmp(((room*)data1)->owner->id, ((room*)data2)->owner->id);
+}
+
+int cmpUser(void* data1, void* data2)
+{
+	return strcmp(((user*)data1)->id, ((user*)data2)->id);
+}
+
 
 //실행되는 쓰레드 부분
 unsigned WINAPI ThreadFunction(void* para)
@@ -25,6 +35,8 @@ unsigned WINAPI ThreadFunction(void* para)
 		//어떤 일 할지 먼저 전달 받음 ( 첫 번째 바이트로 전달 받음 )
 		c = recv(*(SOCKET*)para, PacketData, PACKETSIZE, 0);
 
+		if (!c)
+			break;
 		//전달 받은 내용 실행
 		/*
 			0 - Login
@@ -54,7 +66,6 @@ unsigned WINAPI ThreadFunction(void* para)
 		case ROOMENTER:
 			curRoom = roomEnter(para, curUser);
 			break;
-
 		case PLAY:
 			play(para, curUser, curRoom);
 			break;
@@ -67,6 +78,24 @@ unsigned WINAPI ThreadFunction(void* para)
 		}
 
 	}
+
+	//룸 정리
+	if (curRoom)
+	{
+		delete_node(&roomlist, curRoom, cmpRoom);
+		roomlist.size--;
+		free(curRoom);
+
+	}
+	
+	//유저 정리
+	if (curUser)
+	{
+		delete_node(&userlist, curUser, cmpUser);
+		userlist.size--;
+		free(curUser);
+	}
+
 
 	//클라이언트 소켓 종료
 	closesocket(*(SOCKET*)para);

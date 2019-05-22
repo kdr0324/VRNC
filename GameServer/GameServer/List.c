@@ -47,16 +47,28 @@ void free_node(node* current_node) {
 	free(current_node);
 }
 
-void* find_node(list* mylist, int(*find)(void*))
-{
+int find_node(list* mylist,void *data, int(*find)(void*, void*)){
 	int count = 0;
 	for (node* pre_node = mylist->head; pre_node->next != NULL; pre_node = pre_node->next) {
-		if (find(pre_node->next->value)) {
-			return pre_node->next->value;
+		if (!find(pre_node->next->value, data)) { 
+			return 0;
 		}
-		
+	}
+	return 1;
 
+}
+
+void* delete_node(list* mylist, void *data, int(*find)(void*, void*)) {
+	node* cur;
+	void* del;
+	for (node* pre_node = mylist->head; pre_node->next != NULL; pre_node = pre_node->next) {
+		if (!find(pre_node->next->value, data)) {
+			cur = pre_node->next;
+			pre_node->next = cur->next;
+			del = cur->value;
+			free_node(cur);
+			return del;
+		}
 	}
 	return NULL;
-
 }

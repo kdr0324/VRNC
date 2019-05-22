@@ -19,7 +19,7 @@ void* get_idx(list* mylist, int idx);
 int count_target(list* mylist, int target);
 void clear_list(list* mylist);
 void free_node(node* current_node);
-void* find_node(list* mylist, int(*find)(void*));
-
+int find_node(list* mylist, void *data, int(*find)(void*, void*));
+void* delete_node(list* mylist, void *data, int(*find)(void*, void*));
 
 #endif
