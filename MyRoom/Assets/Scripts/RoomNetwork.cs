@@ -13,23 +13,14 @@ public class RoomNetwork : NetworkManager
     private void Awake()
     {
         //스폰 프리팹 추가
-        string FolderName = "Assets\\Resources\\Prefabs";
-        System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(FolderName);
-        foreach (System.IO.FileInfo File in di.GetFiles())
+        object[] t0 = Resources.LoadAll("Prefabs");
+        for (int i = 0; i < t0.Length; i++)
         {
-            if (File.Extension.ToLower().CompareTo(".prefab") == 0)
-            {
-                string FileNameOnly = File.Name.Substring(0, File.Name.Length - 7);
-                string FullFileName = File.FullName;
-
-                GameObject prefab = Resources.Load<GameObject>("Prefabs/" + FileNameOnly);
-                // spawnPrefabs 리스트에 스폰할 오브젝트를 추가
-                spawnPrefabs.Add(prefab);
-            }
+            GameObject t1 = (GameObject)(t0[i]);
+            spawnPrefabs.Add(t1);
 
         }
-
-        for(int i=0; i< Character.Length; i++)
+        for (int i=0; i< Character.Length; i++)
         {
             spawnPrefabs.Add(Character[i]);
         }

@@ -980,16 +980,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FurnitureTextures:
-  - {fileID: 2800000, guid: db4265b11df6af1438db306cd16c60ee, type: 3}
-  - {fileID: 2800000, guid: 06d346647450a0d4688aa76e20b03d78, type: 3}
-  - {fileID: 2800000, guid: 5b23a0b3534da9b44975ad134ad8033a, type: 3}
-  - {fileID: 2800000, guid: e985334e4a9d3ab448b77393b5c06265, type: 3}
-  - {fileID: 2800000, guid: 4acc9fdd66048cb4e96d08ca021d5f41, type: 3}
-  - {fileID: 2800000, guid: b85f57159dd296e40941510cbde61814, type: 3}
-  - {fileID: 2800000, guid: 8742cf5389ec13846ae404783db50532, type: 3}
-  - {fileID: 2800000, guid: 2d3f16073f817e74ca26282b96b3593b, type: 3}
-  - {fileID: 2800000, guid: e062115192ae44040b73f45112562490, type: 3}
-  - {fileID: 2800000, guid: b8daff8b7c3733a4c89e2dc3cbd49222, type: 3}
+  - {fileID: 2800000, guid: 4599f33648dd53b4496c686197a999ae, type: 3}
+  - {fileID: 2800000, guid: e46dfe31c8ee4ca4382e830d3d140e19, type: 3}
+  - {fileID: 2800000, guid: 177eeaaee500fe548a78db25419680d5, type: 3}
+  - {fileID: 2800000, guid: eb2a994310922154e96ded0185f9cc63, type: 3}
+  - {fileID: 2800000, guid: 3a18c43e43d67814781c691815cd25d1, type: 3}
+  - {fileID: 2800000, guid: 4d664a05181932a44bf20671ce0eb10d, type: 3}
+  - {fileID: 2800000, guid: 2a734c420a01d56479fe33aac05fbb12, type: 3}
+  - {fileID: 2800000, guid: eca5f15cbdaafec43bf539e89e5386df, type: 3}
+  - {fileID: 2800000, guid: beaa6d4f9cb55e1419e26aabd1098297, type: 3}
+  - {fileID: 2800000, guid: 849eaff87a6034944bba5f2f828e3b06, type: 3}
+  - {fileID: 2800000, guid: 811362e8ddb5cff479dab13c220f0f24, type: 3}
+  - {fileID: 2800000, guid: 145f041642569aa4097adf8913970e0a, type: 3}
+  - {fileID: 2800000, guid: 8130eba1df4048e469a48394cd0f5d8d, type: 3}
+  - {fileID: 2800000, guid: 99c7543ed9a2fb34494c3c6669af5b56, type: 3}
+  - {fileID: 2800000, guid: e357affb8e5862f438eec78e9528e858, type: 3}
+  - {fileID: 2800000, guid: 66195b449ce9343498df494f31311158, type: 3}
+  - {fileID: 2800000, guid: 39335378be0a17b4fab54e1559088707, type: 3}
+  - {fileID: 2800000, guid: 46eb821bcf515db43a24d381c19d916b, type: 3}
+  - {fileID: 2800000, guid: a50521cfafbbadc4bbaeee5d78fbe3b5, type: 3}
+  - {fileID: 2800000, guid: aed960d7e98020b43a8a4096cba4615f, type: 3}
 --- !u!82 &1853550873
 AudioSource:
   m_ObjectHideFlags: 0
