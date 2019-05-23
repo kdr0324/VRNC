@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 2026087118444474302}
   - component: {fileID: 4951141335869481325}
   - component: {fileID: 4660223255238463845}
+  - component: {fileID: 4996964010471677604}
+  - component: {fileID: 7081390104282994752}
+  - component: {fileID: 3560388719152168742}
   m_Layer: 0
   m_Name: RFAIPP_Chair_2
   m_TagString: Untagged
@@ -95,7 +98,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 931fee668d1c0474b8c743afd352b213, type: 3}
 --- !u!114 &8934316917967053888
@@ -253,3 +256,42 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!65 &4996964010471677604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067051383327214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63530004, y: 0.7315366, z: 0.15168309}
+  m_Center: {x: -0.000050008297, y: 0.79473174, z: -0.202319}
+--- !u!65 &7081390104282994752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067051383327214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63530004, y: 0.0634861, z: 0.5774}
+  m_Center: {x: -0.000050008297, y: 0.44345927, z: 0}
+--- !u!65 &3560388719152168742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067051383327214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63530004, y: 0.45405555, z: 0.42803597}
+  m_Center: {x: -0.000050008297, y: 0.22492778, z: 0.07468205}
