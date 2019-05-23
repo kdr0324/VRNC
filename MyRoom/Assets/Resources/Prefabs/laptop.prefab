@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 4763079543819776}
   - component: {fileID: 33919374049460832}
   - component: {fileID: 23575542720409670}
-  - component: {fileID: 5020178230520850087}
-  - component: {fileID: 7680739034146400293}
   m_Layer: 0
   m_Name: screen
   m_TagString: Untagged
@@ -79,33 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5020178230520850087
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028298447856264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300006, guid: 164019ee72ba6df4b934f413f2374e40, type: 3}
---- !u!65 &7680739034146400293
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028298447856264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.28043833, y: 0.19134258, z: 0.054263286}
-  m_Center: {x: -0.0000320971, y: 0.09198616, z: -0.025996111}
 --- !u!1 &1451490347123022
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +88,6 @@ GameObject:
   - component: {fileID: 4143365056100512}
   - component: {fileID: 33852944419961820}
   - component: {fileID: 23211258989282010}
-  - component: {fileID: 4040254866844161749}
-  - component: {fileID: 2929208417803092110}
   m_Layer: 0
   m_Name: laptop
   m_TagString: Untagged
@@ -185,33 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4040254866844161749
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451490347123022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300004, guid: 164019ee72ba6df4b934f413f2374e40, type: 3}
---- !u!65 &2929208417803092110
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451490347123022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.28190458, y: 0.03173698, z: 0.19687617}
-  m_Center: {x: 0, y: 0.006706102, z: 0.000115945935}
 --- !u!1 &1716111664439686
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +170,8 @@ GameObject:
   - component: {fileID: 6580893039812553005}
   - component: {fileID: 8023359013418478852}
   - component: {fileID: 1662914669163185323}
-  - component: {fileID: 1033747615932936978}
+  - component: {fileID: 3211478166719211886}
+  - component: {fileID: 6487922182942861557}
   m_Layer: 0
   m_Name: laptop
   m_TagString: Untagged
@@ -444,7 +387,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1033747615932936978
+--- !u!64 &3211478166719211886
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -458,3 +401,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!65 &6487922182942861557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716111664439686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30211923, y: 0.20255089, z: 0.26672822}
+  m_Center: {x: 0.003524676, y: 0.098296285, z: -0.021148175}
