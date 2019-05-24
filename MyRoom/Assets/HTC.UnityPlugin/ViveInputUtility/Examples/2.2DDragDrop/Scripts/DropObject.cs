@@ -58,7 +58,8 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
                 //벽
                 if(transform.root.name == "Room")
                 {
-
+                    Debug.Log("Room Texture");
+                    GetComponent<setTexture>().SetSyncWallTexture(0, GetComponent<setTexture>().getTextureNum(textureName));
                 }
                 //자식 없는 객체
                 else if (transform.parent.name == "Furniture")

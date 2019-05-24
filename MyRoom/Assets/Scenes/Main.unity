@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 29060695}
   - component: {fileID: 29060694}
   - component: {fileID: 29060697}
+  - component: {fileID: 29060699}
+  - component: {fileID: 29060698}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -220,6 +222,51 @@ MonoBehaviour:
   receivingRenderer: {fileID: 29060695}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
   textureName: 
+--- !u!114 &29060698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29060692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &29060699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29060692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &87043140
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +280,8 @@ GameObject:
   - component: {fileID: 87043143}
   - component: {fileID: 87043142}
   - component: {fileID: 87043145}
+  - component: {fileID: 87043147}
+  - component: {fileID: 87043146}
   m_Layer: 0
   m_Name: Wall4
   m_TagString: Untagged
@@ -328,6 +377,51 @@ MonoBehaviour:
   receivingRenderer: {fileID: 87043143}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
   textureName: 
+--- !u!114 &87043146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87043140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &87043147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87043140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +507,8 @@ GameObject:
   - component: {fileID: 191927891}
   - component: {fileID: 191927892}
   - component: {fileID: 191927893}
+  - component: {fileID: 191927895}
+  - component: {fileID: 191927894}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Floor
@@ -554,6 +650,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &191927894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191927885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &191927895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191927885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &396728854
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +708,8 @@ GameObject:
   - component: {fileID: 396728857}
   - component: {fileID: 396728856}
   - component: {fileID: 396728859}
+  - component: {fileID: 396728861}
+  - component: {fileID: 396728860}
   m_Layer: 0
   m_Name: Wall3
   m_TagString: Untagged
@@ -662,6 +805,51 @@ MonoBehaviour:
   receivingRenderer: {fileID: 396728857}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
   textureName: 
+--- !u!114 &396728860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396728854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &396728861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396728854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033482270
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +863,8 @@ GameObject:
   - component: {fileID: 1033482273}
   - component: {fileID: 1033482272}
   - component: {fileID: 1033482275}
+  - component: {fileID: 1033482277}
+  - component: {fileID: 1033482276}
   m_Layer: 0
   m_Name: Wall1
   m_TagString: Untagged
@@ -770,6 +960,51 @@ MonoBehaviour:
   receivingRenderer: {fileID: 1033482273}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
   textureName: 
+--- !u!114 &1033482276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033482270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &1033482277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033482270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1210267271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1453,8 @@ GameObject:
   - component: {fileID: 2134451060}
   - component: {fileID: 2134451059}
   - component: {fileID: 2134451062}
+  - component: {fileID: 2134451064}
+  - component: {fileID: 2134451063}
   m_Layer: 0
   m_Name: Wall2
   m_TagString: Untagged
@@ -1313,6 +1550,51 @@ MonoBehaviour:
   receivingRenderer: {fileID: 2134451060}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
   textureName: 
+--- !u!114 &2134451063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134451057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &2134451064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134451057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f37c450ed34244a918f1b86a5688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2145980193
 GameObject:
   m_ObjectHideFlags: 0

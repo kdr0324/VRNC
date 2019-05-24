@@ -90,4 +90,11 @@ public class isLocalPlayer : NetworkBehaviour
         Debug.Log("CmdSet Int : " + idx);
         obj.GetComponent<setParent>().syncListTexture[idx] = num;
     }
+
+    [Command]
+    public void CmdSetSyncWallTexture(GameObject obj, int idx, int num)
+    {
+        Debug.Log("CmdSet Int : " + idx);
+        obj.GetComponent<setTexture>().syncListTexture[idx] = num;
+    }
 }
