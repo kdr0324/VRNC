@@ -90,22 +90,13 @@ public class setParent : NetworkBehaviour
     public void SetSyncListInt(int idx, int num)
     {
         Debug.Log("Set Int : " + idx);
-        CmdSetSyncListInt(idx, num);
+        
+        GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdSetSyncListInt(gameObject, idx, num);
+        
         //syncListTexture[idx] = num;
     }
 
-    [Command]
-    public void CmdSetSyncListInt(int idx, int num)
-    {
-        Debug.Log("CmdSet Int : " + idx);
-        syncListTexture[idx] = num;
-    }
 
-    [ClientRpc]
-    public void RpcSetSyncListInt(int idx, int num)
-    {
-        syncListTexture[idx] = num;
-    }
 
     public int getTextureNum(string textureName)
     {

@@ -83,4 +83,11 @@ public class isLocalPlayer : NetworkBehaviour
     {
         NetworkServer.Destroy(obj);
     }
+
+    [Command]
+    public void CmdSetSyncListInt(GameObject obj, int idx, int num)
+    {
+        Debug.Log("CmdSet Int : " + idx);
+        obj.GetComponent<setParent>().syncListTexture[idx] = num;
+    }
 }
