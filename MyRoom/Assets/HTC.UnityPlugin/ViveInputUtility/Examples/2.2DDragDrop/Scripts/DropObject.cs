@@ -54,6 +54,23 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
                 textureName = spiltString[0].Trim();
                 //GetComponent<setParent>().childTexture;
                 GameObject.Find("Furniture").GetComponent<AudioSource>().Play();
+                
+                //벽
+                if(transform.root.name == "Room")
+                {
+
+                }
+                //자식 없는 객체
+                else if (transform.parent.name == "Furniture")
+                {
+                    GetComponent<setParent>().SetSyncListInt(0, GetComponent<setParent>().getTextureNum(textureName));
+                }
+                //자식 있는 객체
+                else
+                {
+                    transform.parent.GetComponent<setParent>().SetSyncListInt(transform.GetSiblingIndex(),
+                        transform.parent.GetComponent<setParent>().getTextureNum(textureName));
+                }  
             }
         }
     }

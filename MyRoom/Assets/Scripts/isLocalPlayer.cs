@@ -74,6 +74,7 @@ public class isLocalPlayer : NetworkBehaviour
         //if(hasAuthority)
         //    obj.GetComponent<NetworkIdentity>().RemoveClientAuthority(connectionToServer);
 
+        
         NetworkServer.objects[obj.GetComponent<NetworkIdentity>().netId].RemoveClientAuthority(connectionToClient);
     }
 
