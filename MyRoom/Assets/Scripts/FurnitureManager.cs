@@ -44,13 +44,15 @@ public class FurnitureManager : MonoBehaviour
         //네트워크 
         if (Client.instance == null)
         {
+
             Debug.Log("NO");
             isOnline = false;
 
         }
         else
         {
-            Debug.Log("YES");
+
+                Debug.Log("YES");
             isOnline = true;
             cli = Client.instance;
             

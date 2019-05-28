@@ -33,6 +33,8 @@ public class Client : MonoBehaviour
     public Queue<byte[]> recvTask = new Queue<byte[]>();
 
     public int charType = 0;
+    public int roomType = 0; 
+
 
 
     

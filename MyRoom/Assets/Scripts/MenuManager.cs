@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour
 
     public GameObject saveSlotMenu;
     public GameObject loadSlotMenu;
+    public GameObject firendSlotMenu;
+    public Transform  roomList; 
     public GameObject screenshotWindow;
 
       // Start is called before the first frame update
@@ -32,6 +34,14 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Menu manager Start");
         audio = gameObject.GetComponent<AudioSource>();
         Furniture = GameObject.Find("Furniture");
+
+        if (Client.instance.isConnect)
+        {
+            if (Client.instance.roomType != 0)
+            {
+                loadSlot(Client.instance.roomType);
+            }
+        }
     }
     //프로그램 종료
     public void Quit()
@@ -295,7 +305,47 @@ public class MenuManager : MonoBehaviour
         audio.Play();
     }
 
+    //친구네집
+    public void CallFriendMenu()
+    {
+        mainMenu.SetActive(false);
+        firendSlotMenu.SetActive(true);
 
+        audio.clip = ButtonSound;
+        audio.Play();
+
+        FriendsList(); 
+    }
+
+
+    public void FriendsList()
+    {
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
+        if (Client.instance.isConnect)
+        {
+            string[] rooms;
+            rooms = Client.instance.RoomList();
+            Debug.Log("firendSlotMenu.start");
+            for (int i = 0; i < rooms.Length; i++)
+            {
+                Debug.Log("firendSlotMenu=======================");
+                roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
+                Button btn = roomList.GetChild(i).GetComponent<Button>();
+                int temp = i;
+                
+                btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
+                btn.onClick.AddListener(() => GetComponent<AudioSource>().clip = ButtonSound);
+                btn.onClick.AddListener(() => GetComponent<AudioSource>().Play());
+                btn.onClick.AddListener(() => Debug.Log("firendSlotMenu.transform"));
+                
+
+                //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
+            }
+
+        }
+    }
 
 
 

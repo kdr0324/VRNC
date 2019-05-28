@@ -52,9 +52,9 @@ public class CharacterManager: MonoBehaviour
         SelectCharacter.SetActive(false);
 
 
-        GameObject GameRoomList = transform.parent.Find("GameRoomList").gameObject;
-        GameRoomList.SetActive(true);
-        GetComponent<RoomSelectManager>().RoomList();
+        GameObject selectSlotmenu = transform.parent.Find("selectSlotMenu").gameObject;
+        selectSlotmenu.SetActive(true);
+        GetComponent<selectSlotMenu>().timestamp();
 
         // Check that the second Scene hasn't been added yet
 

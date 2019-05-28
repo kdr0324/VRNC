@@ -220,6 +220,7 @@
     <Compile Include="Assets\Scripts\RoomSelectManager.cs" />
     <Compile Include="Assets\Scripts\ScrollbarController.cs" />
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\selectSlotMenu.cs" />
     <Compile Include="Assets\Scripts\SelectTexture.cs" />
     <Compile Include="Assets\Scripts\ServerController.cs" />
     <Compile Include="Assets\Scripts\setParent.cs" />
