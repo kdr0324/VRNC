@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -22,8 +22,8 @@ public class MenuManager : MonoBehaviour
 
     public GameObject Furniture;
 
-    public GameObject saveWindow;
-    public GameObject loadWindow;
+    public GameObject saveSlotMenu;
+    public GameObject loadSlotMenu;
     public GameObject screenshotWindow;
 
       // Start is called before the first frame update
@@ -65,76 +65,154 @@ public class MenuManager : MonoBehaviour
         furnitureMenu.SetActive(true);
 
     }
-    
+    //슬롯 text 자동갱신
+    public void timestamp(bool chk)
+    {
+        if (Client.instance != null)
+        {
+
+            //방장
+            if (Client.instance.isOwner)
+            {
+                string[] timeStamp = Client.instance.Label_Load();
+                Text[] Labels; 
+                if (chk)
+                {
+                   Labels = saveSlotMenu.GetComponentsInChildren<Text>();
+                }
+                else
+                {
+                    Labels = loadSlotMenu.GetComponentsInChildren<Text>();
+                }
+                for (int i = 0; i<4; i++)
+                {
+                    Labels[i].text = timeStamp[i]; 
+                }
+                //string obj = jsonData;
+                //Debug.Log(i);
+                Debug.Log(timeStamp[0]);
+                Debug.Log(timeStamp[1]);
+                Debug.Log(timeStamp[2]);
+                Debug.Log(timeStamp[3]);
+
+            }
+        }
+    }
+
     //저장하기
     public void Save()
     {
-        //가구를 리스트에 담아서 반환하는 함수 호출
-        ObjDataList obj =
-            Furniture.GetComponent<FurnitureManager>().FurnitureToList();
+        mainMenu.SetActive(false);
+        saveSlotMenu.SetActive(true);
+        
+        audio.clip = ButtonSound;
+        audio.Play();
 
-        //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
-        string jsonData = JsonUtility.ToJson(obj, true);
-        //JSON 파일 저장할 경로 설정
-        //string path = Path.Combine(Application.dataPath, "objData.json");
-        ////JSON 파일로 저장
-        //File.WriteAllText(path, jsonData);
+        timestamp(true);
+    }
 
-        if (Client.instance != null)
+    public void saveSlot(int idx)
+    {
+        if (idx == 0)
         {
-            //방장
-            //if(Client.instance.isOwner)
-            if (true)
-            {
+            saveSlotMenu.SetActive(false);
+            mainMenu.SetActive(true);
 
-                Client.instance.Save(jsonData);
-            }
+            audio.clip = ButtonSound;
+            audio.Play();
         }
         else
         {
-            string path = Path.Combine(Application.dataPath, "objData.json");
-            //JSON 파일로 저장
-            File.WriteAllText(path, jsonData);
-        }
-        audio.clip = SaveSound;
-        audio.Play();
 
-        saveWindow.GetComponent<FadeInOut>().Fade();
+            //가구를 리스트에 담아서 반환하는 함수 호출
+            ObjDataList obj =
+                Furniture.GetComponent<FurnitureManager>().FurnitureToList();
+
+            //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
+            string jsonData = JsonUtility.ToJson(obj, true);
+            //JSON 파일 저장할 경로 설정
+            //string path = Path.Combine(Application.dataPath, "objData.json");
+            ////JSON 파일로 저장
+            //File.WriteAllText(path, jsonData);
+
+            if (Client.instance != null)
+            {
+                //방장
+                //if(Client.instance.isOwner)
+                if (true)
+                {
+                    Client.instance.Save(jsonData, idx);
+                }
+            }
+            else
+            {
+                string path = Path.Combine(Application.dataPath, "objData.json");
+                //JSON 파일로 저장
+                File.WriteAllText(path, jsonData);
+            }
+            audio.clip = SaveSound;
+            audio.Play();
+            timestamp(true);
+        }
 
     }
 
     //불러오기
     public void Load()
     {
-        if (Client.instance != null)
+        mainMenu.SetActive(false);
+        loadSlotMenu.SetActive(true);
+
+        audio.clip = ButtonSound;
+        audio.Play();
+        timestamp(false); 
+    }
+
+    public void loadSlot(int idx)
+    {
+        if (idx == 0)
         {
-            //방장
-            if (Client.instance.isOwner)
+            loadSlotMenu.SetActive(false);
+            mainMenu.SetActive(true);
+
+            audio.clip = ButtonSound;
+            audio.Play();
+        }
+        else if (idx == 5)
+        {
+            // 빈방 불러오기
+        }
+
+        else
+        {
+            if (Client.instance != null)
             {
-                string jsonData = Client.instance.Load();
+                //방장
+                if (Client.instance.isOwner)
+                {
+                    string jsonData = Client.instance.Load(idx);
+
+                    //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
+                    ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
+
+                    Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
+                }
+            }
+            else
+            {
+                //JSON 파일 불러올 경로 설정
+                string path = Path.Combine(Application.dataPath, "objData.json");
+                //JSON 파일 불러옴
+                string jsonData = File.ReadAllText(path);
 
                 //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
                 ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
 
                 Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
             }
+            audio.clip = LoadSound;
+            audio.Play();
         }
-        else
-        {
-            //JSON 파일 불러올 경로 설정
-            string path = Path.Combine(Application.dataPath, "objData.json");
-            //JSON 파일 불러옴
-            string jsonData = File.ReadAllText(path);
-
-            //읽어온 JSON 파일을 가구 정보를 담는 리스트 객체(ObjDataList)로 변환
-            ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
-
-            Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
-        }
-        audio.clip = LoadSound;
-        audio.Play();
-
-        loadWindow.GetComponent<FadeInOut>().Fade();
     }
 
     //스크린샷 찍기

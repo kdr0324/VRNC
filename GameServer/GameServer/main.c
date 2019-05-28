@@ -75,6 +75,9 @@ unsigned WINAPI ThreadFunction(void* para)
 		case LOAD:
 			load(para, curUser);
 			break;
+		case LABELLOAD:
+			labelload(para, curUser); 
+			break; 
 		}
 
 	}

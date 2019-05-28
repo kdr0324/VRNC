@@ -24,6 +24,7 @@ enum {
 	PLAY,
 	SAVE,
 	LOAD,
+	LABELLOAD,
 	
 };
 
@@ -40,6 +41,7 @@ void roomList(void *sock);
 void play(void *sock, user* curUser, room* curRoom);
 void save(void *sock, user* curUser);
 void load(void *sock, user* curUser);
+void labelload(void *sock, user* curUser);
 
 
 

@@ -187,12 +187,14 @@ room* roomEnter(void *sock, user* curUser)
 	return target;
 }
 
-void save(void *sock, user* curUser)
+void save(void *sock, user* curUser )
 {
 	char packetData[PACKETSIZE] = { 0, };
 	int dataLen = 0;
+	int idx; 
+	int scrshotLen = 0; 
 
-
+	//[data]
 	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
 	dataLen = *((int *)packetData);
 
@@ -206,22 +208,44 @@ void save(void *sock, user* curUser)
 		printf("recv Success %s\n", saveData);
 	}
 
-	printf("call data_save function\n");
+	//[idx]
+	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	idx = *((int *)packetData);
+	memset(packetData, 0, PACKETSIZE);
+
+	printf("recv idx value %d\n", idx);
+
+	////[scrshot]
+	//recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	//scrshotLen = *((int *)packetData);
+
+	//printf("recv screenshot length %d\n", scrshotLen);
+
+	//char *scrshot = malloc(scrshotLen);
+
+	//result = recv(*(SOCKET*)sock, scrshot, scrshotLen, 0);
+	//if (result == scrshotLen)
+	//{
+	//	printf("recv Success %s\n", scrshot);
+	//}
+	//printf("call data_save function\n");
 	//쿼리문 발송
-	data_save(curUser->id, saveData, dataLen);
+	data_save(curUser->id, saveData, dataLen, idx);
 	
 	
 	//에러나서 죽여놓음 왜 죽는지 모르겠음
 	//free(saveData);
 }
 
-void load(void *sock, user* curUser)
+void load(void *sock, user* curUser, int idx)
 {
 	char packetData[PACKETSIZE] = { 0, };
 	memset(packetData, 0, PACKETSIZE);
 
 	char result[100001];
-	data_load(curUser->id, result);
+	recv(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	idx = *((int *)packetData); 
+	data_load(curUser->id, result, idx);
 
 	int len;
 
@@ -240,6 +264,30 @@ void load(void *sock, user* curUser)
 		len = -1;
 		*((int *)packetData) = len;
 		send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+	}
+}
+
+void labelload(void *sock, user* curUser) 
+{
+	char packetData[PACKETSIZE] = { 0, };
+	memset(packetData, 0, PACKETSIZE);
+
+	for (int i = 1; i < 5; i++) {
+
+		label_load(curUser->id, packetData, i);
+
+		int len;
+
+		if (strlen(packetData) != 0) {
+			send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+			printf("s  = %s\n", packetData);
+
+		}
+		else {
+			
+			send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
+			printf("f  = %s\n", packetData);
+		}memset(packetData, 0, PACKETSIZE);
 	}
 }
 

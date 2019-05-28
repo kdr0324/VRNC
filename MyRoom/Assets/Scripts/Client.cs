@@ -49,7 +49,9 @@ public class Client : MonoBehaviour
         ROOMENTER,
         PLAY,
         SAVE,
-        LOAD
+        LOAD,
+        LABELLOAD,
+        
     }
 
     
@@ -335,7 +337,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    public void Save(string jsonData)
+    public void Save(string jsonData, int idx)
     {
         if (isConnect)
         {
@@ -345,7 +347,7 @@ public class Client : MonoBehaviour
             buffer[0] = (byte)Task.SAVE;
             cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-            //얼만큼의 길이를 보낼건지 보냄
+            //[DATA] 얼만큼의 길이를 보낼건지 보냄
             byte[] intBytes = BitConverter.GetBytes(jsonData.Length);
             intBytes.CopyTo(buffer, 0);
             cli.Send(buffer, buffer.Length, SocketFlags.None);
@@ -353,11 +355,55 @@ public class Client : MonoBehaviour
             //실제 데이터 길이만큼 보냄
             buffer = System.Text.Encoding.UTF8.GetBytes(jsonData);
             cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            //[index] 얼만큼의 길이를 보낼건지 보냄
+            buffer = new byte[s_mtu];
+
+            intBytes = BitConverter.GetBytes(idx);
+            intBytes.CopyTo(buffer, 0);
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            ////[scrshot] 얼만큼의 길이를 보낼건지 보냄
+            //intBytes = BitConverter.GetBytes(scrshot.Length);
+            //intBytes.CopyTo(buffer, 0);
+            //cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            ////[scrshot] 실제 데이터 길이만큼 보냄
+            ////buffer = System.Text.Encoding.UTF8.GetBytes(scrshot);
+
+            //Debug.Log(System.Text.Encoding.UTF8.GetString(scrshot));
+            //cli.Send(scrshot, scrshot.Length, SocketFlags.None);
         }
-        
+
     }
 
-    public string Load()
+    
+    public string[] Label_Load()
+    {
+
+        string[] result = null;
+        result = new string[4];
+
+        if (isConnect)
+        {
+            byte[] buffer = new byte[s_mtu];
+
+            //서버에게 노로그인 루틴 실행하라고 알림
+            buffer[0] = (byte)Task.LABELLOAD;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            for (int i = 0; i < 4; i++)
+            {
+                cli.Receive(buffer, buffer.Length, SocketFlags.None);
+                result[i] = System.Text.Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+                Array.Clear(buffer, '\0', buffer.Length);
+            }
+            
+        }
+        return result; 
+    }
+
+    public string Load(int idx)
     {
         string result= null;
         if (isConnect)
@@ -367,6 +413,10 @@ public class Client : MonoBehaviour
             //서버에게 노로그인 루틴 실행하라고 알림
             buffer[0] = (byte)Task.LOAD;
             cli.Send(buffer, buffer.Length, SocketFlags.None);
+
+            buffer[0] = (byte)idx;
+            cli.Send(buffer, buffer.Length, SocketFlags.None);
+
 
             int len;
             byte[] recvData = null;
@@ -379,7 +429,6 @@ public class Client : MonoBehaviour
 
             recvData = new byte[len];
             cli.Receive(recvData, len, SocketFlags.None);
-            
 
 
             if (recvData != null)
