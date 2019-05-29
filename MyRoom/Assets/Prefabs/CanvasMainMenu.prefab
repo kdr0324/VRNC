@@ -9844,6 +9844,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6249133498887424943, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6918652101482854361}
+    - target: {fileID: 6249133498887424943, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249133498371900535, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uB3CC\uC544\uAC00\uAE30"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a55336657545940964be6accae776b, type: 3}
 --- !u!1 &6279788294324269198 stripped
@@ -9994,7 +10009,12 @@ PrefabInstance:
     - target: {fileID: 1941679281165280592, guid: 020520c9f2b7dc142bc6819fa5b50953,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: loadSlot
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941679281165280592, guid: 020520c9f2b7dc142bc6819fa5b50953,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5931802708638999040, guid: 020520c9f2b7dc142bc6819fa5b50953,
         type: 3}
@@ -10290,12 +10310,12 @@ PrefabInstance:
     - target: {fileID: 64781419861475496, guid: 48b80eadc6ea61744887ecdb467ed3e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: saveSlot
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 64781419861475496, guid: 48b80eadc6ea61744887ecdb467ed3e2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 64781420199999730, guid: 48b80eadc6ea61744887ecdb467ed3e2,
         type: 3}

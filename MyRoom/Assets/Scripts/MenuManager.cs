@@ -21,7 +21,6 @@ public class MenuManager : MonoBehaviour
     public GameObject selectTextureMenu;
 
     public GameObject Furniture;
-
     public GameObject saveSlotMenu;
     public GameObject loadSlotMenu;
     public GameObject firendSlotMenu;
@@ -123,17 +122,7 @@ public class MenuManager : MonoBehaviour
 
     public void saveSlot(int idx)
     {
-        if (idx == 0)
-        {
-            saveSlotMenu.SetActive(false);
-            mainMenu.SetActive(true);
-
-            audio.clip = ButtonSound;
-            audio.Play();
-        }
-        else
-        {
-
+     
             //가구를 리스트에 담아서 반환하는 함수 호출
             ObjDataList obj =
                 Furniture.GetComponent<FurnitureManager>().FurnitureToList();
@@ -163,7 +152,6 @@ public class MenuManager : MonoBehaviour
             audio.clip = SaveSound;
             audio.Play();
             timestamp(true);
-        }
 
     }
 
@@ -180,21 +168,10 @@ public class MenuManager : MonoBehaviour
 
     public void loadSlot(int idx)
     {
-        if (idx == 0)
-        {
-            loadSlotMenu.SetActive(false);
-            mainMenu.SetActive(true);
 
-            audio.clip = ButtonSound;
-            audio.Play();
-        }
-        else if (idx == 5)
+        if (idx != 5)
         {
-            // 빈방 불러오기
-        }
-
-        else
-        {
+            Furniture.GetComponent<FurnitureManager>().Clear();
             if (Client.instance != null)
             {
                 //방장
@@ -220,8 +197,15 @@ public class MenuManager : MonoBehaviour
 
                 Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
             }
+            Debug.Log("!!!!!!!!!!!!!!!!!!");
             audio.clip = LoadSound;
             audio.Play();
+        }
+        
+        else 
+        {            
+            Furniture.GetComponent<FurnitureManager>().Clear();
+            Back();
         }
     }
 
@@ -281,6 +265,10 @@ public class MenuManager : MonoBehaviour
     {
         furnitureMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        loadSlotMenu.SetActive(false);
+        saveSlotMenu.SetActive(false);
+        firendSlotMenu.SetActive(false);
+
         //selectTextureMenu.SetActive(false);
         mainMenu.SetActive(true);
         //transform.parent.Find("FurnitureMenu").gameObject.SetActive(false);

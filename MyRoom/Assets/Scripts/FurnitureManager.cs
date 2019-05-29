@@ -32,6 +32,7 @@ public struct StructFurniture
 }
 
 
+
 public class FurnitureManager : MonoBehaviour
 {
     public Texture[] FurnitureTextures;
@@ -90,13 +91,43 @@ public class FurnitureManager : MonoBehaviour
 
     public void Clear()
     {
+        Debug.Log("clear_1");
         // 전체 삭제
         isLocalPlayer LocalPlayer = GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>();
         foreach (Transform child in transform)
         {
             LocalPlayer.CmdDeleteFurniture(child.gameObject);
         }
+
+        ObjDataList obj = new ObjDataList();
+        Debug.Log("clear_2");
+        GameObject[] wallTexture = new GameObject[6];
+        wallTexture[0] = GameObject.Find("Room").transform.Find("Top").gameObject;
+        wallTexture[1] = GameObject.Find("Room").transform.Find("Wall1").gameObject;
+        wallTexture[2] = GameObject.Find("Room").transform.Find("Wall2").gameObject;
+        wallTexture[3] = GameObject.Find("Room").transform.Find("Wall3").gameObject;
+        wallTexture[4] = GameObject.Find("Room").transform.Find("Wall4").gameObject;
+        wallTexture[5] = GameObject.Find("Room").transform.Find("Bottom").gameObject;
+
+        Debug.Log("clear_3");
+        int[] walls = new int[6] { obj.top, obj.wall1, obj.wall2, obj.wall3, obj.wall4, obj.bottom };
+
+        for (int i = 0; i < wallTexture.Length; i++)
+        {           
+                wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[0]];
+                wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[0]]);
+                wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[0]].name;
+            
+        }
+        Debug.Log("clear_4");
+
+
     }
+
+
+
+
+
 
     public byte[] StructToArray()
     {
