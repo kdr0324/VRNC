@@ -322,20 +322,27 @@ public class MenuManager : MonoBehaviour
                 roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
                 Button btn = roomList.GetChild(i).GetComponent<Button>();
                 int temp = i;
-                
-                btn.onClick.AddListener(() => Client.instance.RoomEnter(temp));
-                btn.onClick.AddListener(() => GetComponent<AudioSource>().clip = ButtonSound);
-                btn.onClick.AddListener(() => GetComponent<AudioSource>().Play());
-                btn.onClick.AddListener(() => Debug.Log("firendSlotMenu.transform"));
+                   
+                btn.onClick.AddListener(() => EnterFriendRoom(temp));
                 
 
                 //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
             }
-
         }
     }
 
+    public void EnterFriendRoom(int idx)
+    {
+        Client.instance.RoomEnter(idx);
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
 
+        RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
+        roomNetwork.StopHost();
+        roomNetwork.StopClient();
+        roomNetwork.networkAddress = Client.instance.roomIp;
+        roomNetwork.StartClient();
+    }
 
 }
 
