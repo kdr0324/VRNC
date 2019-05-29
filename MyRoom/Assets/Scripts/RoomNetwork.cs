@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Photon.Voice.Unity.UtilityScripts;
 
 public class RoomNetwork : NetworkManager
 {
@@ -68,9 +69,13 @@ public class RoomNetwork : NetworkManager
                     Debug.Log("Client Start");
                 }
             }
+
+            //음성 채팅 연결
+            //방 이름을 IP로 받아서 음성 채팅 방에 연결한다.
+            GetComponent<ConnectAndJoin>().RoomName = Client.instance.roomIp;
+            GetComponent<ConnectAndJoin>().ConnectNow();
+            
         }
-
-
     }
 
     // Update is called once per frame

@@ -1,2 +1,11 @@
-﻿  GameServer.c
-  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\Debug\GameServer.exe
+﻿mysql.obj : error LNK2019: _mysql_num_rows@4 외부 기호(참조 위치: _server_login 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_error@4 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_init@4 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_real_connect@32 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_query@8 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_store_result@4 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_free_result@4 외부 기호(참조 위치: _data_save 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_fetch_row@4 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+mysql.obj : error LNK2019: _mysql_close@4 외부 기호(참조 위치: _data_load 함수)에서 확인하지 못했습니다.
+C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.lib : warning LNK4272: 'x64' 라이브러리 컴퓨터 종류가 'x86' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\a\Documents\GitHub\VRNC2\GameServer\Debug\GameServer.exe : fatal error LNK1120: 9개의 확인할 수 없는 외부 참조입니다.

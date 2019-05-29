@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using UnityEngine;
@@ -233,6 +234,10 @@ public class Client : MonoBehaviour
             //Play 시작///////////////////////////////////////
             isOwner = true;
 
+            //방 IP 받아옴
+            roomIp = GetComponent<LibraryClient>().LocalIPAddress();
+            Debug.Log("Room Make : " + roomIp);
+            
 
             //Play();
         }
@@ -240,6 +245,8 @@ public class Client : MonoBehaviour
         {
             isOwner = true;
         }
+
+        //roomIp = 
         
     }
 

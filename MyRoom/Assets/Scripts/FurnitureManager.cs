@@ -66,7 +66,7 @@ public class FurnitureManager : MonoBehaviour
     //    {
     //        lock (cli.sendLockObject)
     //        {
-                
+
     //            Debug.Log(cli.sendTask.Count);
     //            Byte[] temp = StructToArray();
     //            cli.sendTask.Enqueue(temp);
@@ -76,7 +76,7 @@ public class FurnitureManager : MonoBehaviour
 
     //        //if (cli.recvTask.Count > 0)
     //        //{
-                
+
     //        //    byte[] buf = cli.recvTask.Dequeue();
     //        //    Debug.Log("recv Pakcet" + buf.Length);
 
@@ -87,6 +87,16 @@ public class FurnitureManager : MonoBehaviour
 
     //    }
     //}
+
+    public void Clear()
+    {
+        // 전체 삭제
+        isLocalPlayer LocalPlayer = GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>();
+        foreach (Transform child in transform)
+        {
+            LocalPlayer.CmdDeleteFurniture(child.gameObject);
+        }
+    }
 
     public byte[] StructToArray()
     {
@@ -209,21 +219,24 @@ public class FurnitureManager : MonoBehaviour
             }
             else
             {
-                if (cur.GetComponent<DropObject>().textureName == "")
+                if (cur.GetComponent<DropObject>() != null)
                 {
-                    objData.textures[0] = -1;
-                }
-                else 
-                {
-                    for (int k = 0; k < len; k++)
+                    if (cur.GetComponent<DropObject>().textureName == "")
                     {
-                        //Debug.Log(cur.GetChild(j).GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k]);
-                        if (FurnitureTextures[k].name == cur.GetComponent<DropObject>().textureName)
+                        objData.textures[0] = -1;
+                    }
+                    else
+                    {
+                        for (int k = 0; k < len; k++)
                         {
-                            Debug.Log(cur.GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k].name);
-                            objData.textures[0] = k;
-                        }
+                            //Debug.Log(cur.GetChild(j).GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k]);
+                            if (FurnitureTextures[k].name == cur.GetComponent<DropObject>().textureName)
+                            {
+                                Debug.Log(cur.GetComponent<DropObject>().textureName + ", " + FurnitureTextures[k].name);
+                                objData.textures[0] = k;
+                            }
 
+                        }
                     }
                 }
             }
@@ -238,6 +251,10 @@ public class FurnitureManager : MonoBehaviour
 
     public void ListToFurniture(ObjDataList obj)
     {
+        //가구 생성에 필요한 스크립트 호출
+        isLocalPlayer LocalPlayer = GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>();
+
+
         Debug.Log(obj.objDataList.Count);
         GameObject[] wallTexture = new GameObject[6];
         wallTexture[0] = GameObject.Find("Room").transform.Find("Top").gameObject;
@@ -260,18 +277,12 @@ public class FurnitureManager : MonoBehaviour
             }
         }
         
-        
-        
 
-
-
-
-
-        int furnitureLen = transform.childCount;
-        for(int i=0; i<furnitureLen; i++)
-        {
-            Destroy(transform.GetChild(0).gameObject);
-        }
+        //int furnitureLen = transform.childCount;
+        //for(int i=0; i<furnitureLen; i++)
+        //{
+        //    Destroy(transform.GetChild(0).gameObject);
+        //}
 
         //리스트의 길이 만큼 반복
         for (int i = 0; i < obj.objDataList.Count; i++)
@@ -279,6 +290,7 @@ public class FurnitureManager : MonoBehaviour
             //가구 이름 받아옴
             string name = obj.objDataList[i].name;
 
+            
             //이름에 맞는 가구 Prefab Load
             GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
             //Load 된 Prefab을 가구 정보에 맞게 생성

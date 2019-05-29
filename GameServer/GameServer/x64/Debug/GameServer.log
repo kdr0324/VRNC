@@ -1,12 +1,1 @@
-﻿  GameServer.c
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(13): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'void *'입니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(40): warning C4013: 'server_login'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(84): warning C4013: 'server_signUp'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(175): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(233): warning C4013: 'data_save'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(241): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(248): warning C4013: 'data_load'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(256): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(277): warning C4013: 'label_load'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-c:\users\bit\documents\vrnc2\gameserver\gameserver\gameserver.c(279): warning C4101: 'len' :참조되지 않은 지역 변수입니다.
-  GameServer.vcxproj -> C:\Users\bit\Documents\VRNC2\GameServer\x64\Debug\GameServer.exe
+﻿  GameServer.vcxproj -> C:\Users\a\Documents\GitHub\VRNC2\GameServer\x64\Debug\GameServer.exe

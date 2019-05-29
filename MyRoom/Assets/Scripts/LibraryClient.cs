@@ -20,7 +20,7 @@ public class LibraryClient : MonoBehaviour {
 
 
     // 접속할 곳의 IP주소.
-    public string m_address = "127.0.0.1";
+    public string m_address;
     // 접속할 곳의 포트 번호.
     public const int m_port = 12345;
 
@@ -58,5 +58,19 @@ public class LibraryClient : MonoBehaviour {
 
     }
 
-
+    public string LocalIPAddress()
+    {
+        IPHostEntry host;
+        string localIP = "";
+        host = Dns.GetHostEntry(Dns.GetHostName());
+        foreach (IPAddress ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                localIP = ip.ToString();
+                break;
+            }
+        }
+        return localIP;
+    }
 }
