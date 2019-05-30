@@ -1226,3 +1226,7 @@ C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Input_Editor.csproj.CoreCo
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Input_Editor.csproj.CopyComplete
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Input_Editor.dll
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Input_Editor.pdb
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.dll
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\websocket-sharp.dll
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.pdb
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.xml

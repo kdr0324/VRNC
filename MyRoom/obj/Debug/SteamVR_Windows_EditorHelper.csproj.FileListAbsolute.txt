@@ -1214,3 +1214,7 @@ C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Windows_EditorHelper.cspro
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Windows_EditorHelper.csproj.CopyComplete
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Windows_EditorHelper.dll
 C:\Users\bit\Documents\VRNC2\MyRoom\obj\Debug\SteamVR_Windows_EditorHelper.pdb
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.dll
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\websocket-sharp.dll
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.pdb
+C:\Users\bit\Documents\GitHub\VRNC\MyRoom\Temp\bin\Debug\Photon3Unity3D.xml
