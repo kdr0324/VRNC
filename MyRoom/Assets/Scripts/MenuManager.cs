@@ -239,8 +239,6 @@ public class MenuManager : MonoBehaviour
 
         audio.clip = ScreenshotSound;
         audio.Play();
-
-        
         
     }
 
@@ -311,6 +309,7 @@ public class MenuManager : MonoBehaviour
         GetComponent<AudioSource>().clip = ButtonSound;
         GetComponent<AudioSource>().Play();
 
+        
         if (Client.instance.isConnect)
         {
             string[] rooms;
@@ -329,6 +328,7 @@ public class MenuManager : MonoBehaviour
                 //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
             }
         }
+
     }
 
     public void EnterFriendRoom(int idx)
@@ -342,6 +342,24 @@ public class MenuManager : MonoBehaviour
         roomNetwork.StopClient();
         roomNetwork.networkAddress = Client.instance.roomIp;
         roomNetwork.StartClient();
+    }
+
+    public void EnterMyRoom()
+    {
+       
+        loadSlotMenu.SetActive(true);
+
+        Furniture.GetComponent<FurnitureManager>().Clear();
+
+        Client.instance.RoomMake(); 
+        GetComponent<AudioSource>().clip = ButtonSound;
+        GetComponent<AudioSource>().Play();
+
+        RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
+        roomNetwork.StopHost();
+        roomNetwork.StopClient();
+        roomNetwork.networkAddress = Client.instance.roomIp;
+        roomNetwork.StartHost();
     }
 
 }

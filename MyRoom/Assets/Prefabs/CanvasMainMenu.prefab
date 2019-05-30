@@ -9844,6 +9844,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6249133498434225415, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6918652101482854361}
+    - target: {fileID: 6249133498434225415, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterMyRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249133498434225415, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6249133498887424943, guid: 98a55336657545940964be6accae776b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9857,7 +9872,12 @@ PrefabInstance:
     - target: {fileID: 6249133498371900535, guid: 98a55336657545940964be6accae776b,
         type: 3}
       propertyPath: m_Text
-      value: "\uB3CC\uC544\uAC00\uAE30"
+      value: "\uBA54\uC778\uBA54\uB274"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249133499528193936, guid: 98a55336657545940964be6accae776b,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uB0B4\uBC29\uAC00\uAE30"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a55336657545940964be6accae776b, type: 3}
