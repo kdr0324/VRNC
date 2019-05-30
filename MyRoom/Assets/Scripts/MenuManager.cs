@@ -341,6 +341,7 @@ public class MenuManager : MonoBehaviour
         roomNetwork.StopHost();
         roomNetwork.StopClient();
         roomNetwork.networkAddress = Client.instance.roomIp;
+        StartCoroutine(Wait(0.5f));
         roomNetwork.StartClient();
     }
 
@@ -359,7 +360,13 @@ public class MenuManager : MonoBehaviour
         roomNetwork.StopHost();
         roomNetwork.StopClient();
         roomNetwork.networkAddress = Client.instance.roomIp;
+        StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();
+    }
+
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
 }
