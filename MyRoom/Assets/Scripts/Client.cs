@@ -275,7 +275,6 @@ public class Client : MonoBehaviour
                 rooms[i] = str;
                 Debug.Log(str);
 
-
                 Array.Clear(buffer, 0, buffer.Length);
             }
 
@@ -311,6 +310,7 @@ public class Client : MonoBehaviour
              * 
              */
             //Owner IP receive
+            Array.Clear(buffer, 0, buffer.Length);
             cli.Receive(buffer, buffer.Length, SocketFlags.None);
 
             roomIp = System.Text.Encoding.UTF8.GetString(buffer);
