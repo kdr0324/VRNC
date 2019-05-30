@@ -6,6 +6,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Photon.Voice.Unity;
+using Photon.Voice.Unity.UtilityScripts;
 
 public class MenuManager : MonoBehaviour
 {
@@ -337,12 +339,21 @@ public class MenuManager : MonoBehaviour
         GetComponent<AudioSource>().clip = ButtonSound;
         GetComponent<AudioSource>().Play();
 
+        //연결 해제
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
         roomNetwork.StopHost();
         roomNetwork.StopClient();
+
+        //Get Component
+        //음성 해제
+        GetComponent<VoiceConnection>().Client.Disconnect();
+
         roomNetwork.networkAddress = Client.instance.roomIp;
+        GetComponent<ConnectAndJoin>().RoomName = roomNetwork.networkAddress;
+        
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartClient();
+        GetComponent<ConnectAndJoin>().ConnectNow();
     }
 
     public void EnterMyRoom()
@@ -359,9 +370,13 @@ public class MenuManager : MonoBehaviour
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
         roomNetwork.StopHost();
         roomNetwork.StopClient();
+        GetComponent<VoiceConnection>().Client.Disconnect();
+
         roomNetwork.networkAddress = Client.instance.roomIp;
+        GetComponent<ConnectAndJoin>().RoomName = roomNetwork.networkAddress;
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();
+        GetComponent<ConnectAndJoin>().ConnectNow();
     }
 
     IEnumerator Wait(float time)

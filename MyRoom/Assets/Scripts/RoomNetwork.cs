@@ -143,21 +143,21 @@ public class RoomNetwork : NetworkManager
 
     //}
 
-    //public override void OnServerDisconnect(NetworkConnection conn)
-    //{
+    public override void OnServerDisconnect(NetworkConnection conn)
+    {
 
-    //    NetworkServer.DestroyPlayersForConnection(conn);
+        NetworkServer.DestroyPlayersForConnection(conn);
 
-    //    if (conn.lastError != NetworkError.Ok)
-    //    {
+        if (conn.lastError != NetworkError.Ok)
+        {
 
-    //        if (LogFilter.logError) { Debug.LogError("ServerDisconnected due to error: " + conn.lastError); }
+            if (LogFilter.logError) { Debug.LogError("ServerDisconnected due to error: " + conn.lastError); }
 
-    //    }
+        }
 
-    //    Debug.Log("A client disconnected from the server: " + conn);
+        Debug.Log("A client disconnected from the server: " + conn);
 
-    //}
+    }
 
     //public override void OnServerReady(NetworkConnection conn)
     //{
