@@ -50,6 +50,7 @@ public class RoomNetwork : NetworkManager
             if (Client.instance.isOwner)
             {
                 //Host Start
+                networkAddress = Client.instance.roomIp;
                 StartHost();
                 Debug.Log("Start Host Success");
 
