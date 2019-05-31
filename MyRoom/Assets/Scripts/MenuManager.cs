@@ -33,7 +33,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         Debug.Log("Menu manager Start");
-        audio = gameObject.GetComponent<AudioSource>();
+        audio = GameObject.Find("Room").GetComponent<AudioSource>();
         Furniture = GameObject.Find("Furniture");
 
         if (Client.instance.isConnect)

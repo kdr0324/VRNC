@@ -326,6 +326,7 @@
     <Compile Include="Assets\position.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\AudioCheck.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\Capture.cs" />
     <Compile Include="Assets\Scripts\Capture_Example.cs" />
@@ -358,6 +359,7 @@
     <Compile Include="Assets\Scripts\ServerController.cs" />
     <Compile Include="Assets\Scripts\setParent.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SpawMessage.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\setTexture.cs" />
