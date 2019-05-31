@@ -3529,7 +3529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &158441058452610225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11245,16 +11245,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5369639012335432252}
     m_Modifications:
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Name
-      value: VRUI-Checkbox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1531088791267603163, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11359,6 +11349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Name
+      value: VRUI-Checkbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1530580868150196991, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
@@ -11982,16 +11982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5369639012335432252}
     m_Modifications:
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Name
-      value: VRUI-Checkbox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1531088791267603163, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12096,6 +12086,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Name
+      value: VRUI-Checkbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1530580868150196991, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}

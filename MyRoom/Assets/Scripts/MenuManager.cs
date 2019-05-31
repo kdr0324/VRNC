@@ -26,10 +26,10 @@ public class MenuManager : MonoBehaviour
     public GameObject saveSlotMenu;
     public GameObject loadSlotMenu;
     public GameObject firendSlotMenu;
-    public Transform  roomList; 
+    public Transform roomList;
     public GameObject screenshotWindow;
 
-      // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Menu manager Start");
@@ -86,18 +86,18 @@ public class MenuManager : MonoBehaviour
             if (Client.instance.isOwner)
             {
                 string[] timeStamp = Client.instance.Label_Load();
-                Text[] Labels; 
+                Text[] Labels;
                 if (chk)
                 {
-                   Labels = saveSlotMenu.GetComponentsInChildren<Text>();
+                    Labels = saveSlotMenu.GetComponentsInChildren<Text>();
                 }
                 else
                 {
                     Labels = loadSlotMenu.GetComponentsInChildren<Text>();
                 }
-                for (int i = 0; i<4; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    Labels[i].text = timeStamp[i]; 
+                    Labels[i].text = timeStamp[i];
                 }
                 //string obj = jsonData;
                 //Debug.Log(i);
@@ -115,7 +115,7 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         saveSlotMenu.SetActive(true);
-        
+
         audio.clip = ButtonSound;
         audio.Play();
 
@@ -124,36 +124,36 @@ public class MenuManager : MonoBehaviour
 
     public void saveSlot(int idx)
     {
-     
-            //가구를 리스트에 담아서 반환하는 함수 호출
-            ObjDataList obj =
-                Furniture.GetComponent<FurnitureManager>().FurnitureToList();
 
-            //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
-            string jsonData = JsonUtility.ToJson(obj, true);
-            //JSON 파일 저장할 경로 설정
-            //string path = Path.Combine(Application.dataPath, "objData.json");
-            ////JSON 파일로 저장
-            //File.WriteAllText(path, jsonData);
+        //가구를 리스트에 담아서 반환하는 함수 호출
+        ObjDataList obj =
+            Furniture.GetComponent<FurnitureManager>().FurnitureToList();
 
-            if (Client.instance != null)
+        //가구 정보를 담는 리스트 클래스를 JSON 으로 변경
+        string jsonData = JsonUtility.ToJson(obj, true);
+        //JSON 파일 저장할 경로 설정
+        //string path = Path.Combine(Application.dataPath, "objData.json");
+        ////JSON 파일로 저장
+        //File.WriteAllText(path, jsonData);
+
+        if (Client.instance != null)
+        {
+            //방장
+            //if(Client.instance.isOwner)
+            if (true)
             {
-                //방장
-                //if(Client.instance.isOwner)
-                if (true)
-                {
-                    Client.instance.Save(jsonData, idx);
-                }
+                Client.instance.Save(jsonData, idx);
             }
-            else
-            {
-                string path = Path.Combine(Application.dataPath, "objData.json");
-                //JSON 파일로 저장
-                File.WriteAllText(path, jsonData);
-            }
-            audio.clip = SaveSound;
-            audio.Play();
-            timestamp(true);
+        }
+        else
+        {
+            string path = Path.Combine(Application.dataPath, "objData.json");
+            //JSON 파일로 저장
+            File.WriteAllText(path, jsonData);
+        }
+        audio.clip = SaveSound;
+        audio.Play();
+        timestamp(true);
 
     }
 
@@ -165,7 +165,7 @@ public class MenuManager : MonoBehaviour
 
         audio.clip = ButtonSound;
         audio.Play();
-        timestamp(false); 
+        timestamp(false);
     }
 
     public void loadSlot(int idx)
@@ -203,9 +203,9 @@ public class MenuManager : MonoBehaviour
             audio.clip = LoadSound;
             audio.Play();
         }
-        
-        else 
-        {            
+
+        else
+        {
             Furniture.GetComponent<FurnitureManager>().Clear();
             Back();
         }
@@ -223,7 +223,7 @@ public class MenuManager : MonoBehaviour
         //}
 
         //take a screenshot
-        for(int i=0; i< 10000; i++)
+        for (int i = 0; i < 10000; i++)
         {
             if (!Capture.doesScreenshotExist(i))
             {
@@ -231,7 +231,7 @@ public class MenuManager : MonoBehaviour
                 break;
             }
         }
-        
+
 
         //record the location of the cube
         //CubesPos = GameObject.Find("Cube (1)").gameObject.transform.position;
@@ -241,7 +241,7 @@ public class MenuManager : MonoBehaviour
 
         audio.clip = ScreenshotSound;
         audio.Play();
-        
+
     }
 
     // 설정하기
@@ -302,7 +302,7 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
 
-        FriendsList(); 
+        FriendsList();
     }
 
 
@@ -311,7 +311,7 @@ public class MenuManager : MonoBehaviour
         GetComponent<AudioSource>().clip = ButtonSound;
         GetComponent<AudioSource>().Play();
 
-        
+
         if (Client.instance.isConnect)
         {
             string[] rooms;
@@ -322,9 +322,9 @@ public class MenuManager : MonoBehaviour
                 roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
                 Button btn = roomList.GetChild(i).GetComponent<Button>();
                 int temp = i;
-                   
+
                 btn.onClick.AddListener(() => EnterFriendRoom(temp));
-                
+
 
                 //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
             }
@@ -351,22 +351,35 @@ public class MenuManager : MonoBehaviour
         roomNetwork.networkAddress = Client.instance.roomIp;
         //음성네트워크 방제
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
-        
+
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartClient();
-        roomNetwork.JoinOrCreateRoom(roomList.GetChild(idx).GetComponentInChildren<Text>().text);
+        string voiceRoom = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
+
+        char[] checkName = roomList.GetChild(idx).GetComponentInChildren<Text>().text.ToCharArray();
+        for (int i = 0; i < checkName.Length; i++)
+        {
+            Debug.Log("lalala");
+            if (!char.IsLetterOrDigit(checkName[i]))
+            {
+                Debug.Log(i);
+                voiceRoom = roomList.GetChild(idx).GetComponentInChildren<Text>().text.Remove(i);
+                break;
+            }
+        }
+        roomNetwork.JoinOrCreateRoom(voiceRoom);
         //voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
 
     }
 
     public void EnterMyRoom()
     {
-       
+
         loadSlotMenu.SetActive(true);
 
         Furniture.GetComponent<FurnitureManager>().Clear();
 
-        Client.instance.RoomMake(); 
+        Client.instance.RoomMake();
         GetComponent<AudioSource>().clip = ButtonSound;
         GetComponent<AudioSource>().Play();
 
@@ -381,6 +394,8 @@ public class MenuManager : MonoBehaviour
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = Client.instance.UserID;
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();
+
+
         roomNetwork.JoinOrCreateRoom(Client.instance.UserID);
         //voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
     }
