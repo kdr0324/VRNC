@@ -16,6 +16,7 @@ public class Client : MonoBehaviour
 
     public bool isOwner = false;
     public string roomIp = null;
+    public string UserID = null;
 
     public bool isConnect = false;
 
@@ -116,6 +117,7 @@ public class Client : MonoBehaviour
             {
                 //성공
                 //pwd = "Success";
+                UserID = id;
                 return true;
             }
             else if (buffer[0] == 0)

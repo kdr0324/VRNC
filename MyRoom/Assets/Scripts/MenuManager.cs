@@ -319,7 +319,6 @@ public class MenuManager : MonoBehaviour
             Debug.Log("firendSlotMenu.start");
             for (int i = 0; i < rooms.Length; i++)
             {
-                Debug.Log("firendSlotMenu=======================");
                 roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
                 Button btn = roomList.GetChild(i).GetComponent<Button>();
                 int temp = i;
@@ -347,15 +346,17 @@ public class MenuManager : MonoBehaviour
 
         //Get Component
         //음성 해제
-        voiceNetwork.GetComponent<VoiceConnection>().Client.OpLeaveRoom(false);
+        //voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
 
         roomNetwork.networkAddress = Client.instance.roomIp;
-        voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomNetwork.networkAddress;
+        //음성네트워크 방제
+        //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
         
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartClient();
-        voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
-        
+        roomNetwork.JoinOrCreateRoom(roomList.GetChild(idx).GetComponentInChildren<Text>().text);
+        //voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
+
     }
 
     public void EnterMyRoom()
@@ -373,13 +374,15 @@ public class MenuManager : MonoBehaviour
         GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
         roomNetwork.StopHost();
         roomNetwork.StopClient();
-        voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
+        //voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
+        //voiceNetwork.GetComponent<VoiceConnection>().
 
         roomNetwork.networkAddress = Client.instance.roomIp;
-        voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomNetwork.networkAddress;
+        //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = Client.instance.UserID;
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();
-        voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
+        roomNetwork.JoinOrCreateRoom(Client.instance.UserID);
+        //voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
     }
 
     IEnumerator Wait(float time)

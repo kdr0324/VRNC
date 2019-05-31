@@ -75,7 +75,7 @@ public class RoomNetwork : NetworkManager
 
             //음성 채팅 연결
             //방 이름을 IP로 받아서 음성 채팅 방에 연결한다.
-            GetComponent<ConnectAndJoin>().RoomName = Client.instance.roomIp;
+            GetComponent<ConnectAndJoin>().RoomName = Client.instance.UserID;
             GetComponent<ConnectAndJoin>().ConnectNow();
             
         }
@@ -84,6 +84,29 @@ public class RoomNetwork : NetworkManager
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void JoinOrCreateRoom(string roomname)
+    {
+        roomname = roomname.Trim();
+        ConnectAndJoin caj = this.GetComponent<ConnectAndJoin>();
+        if (caj == null) return;
+
+        //Debug.LogFormat("JoinOrCreateRoom() roomname: {0}", roomname);
+
+        if (string.IsNullOrEmpty(roomname))
+        {
+            caj.RoomName = string.Empty;
+            caj.RandomRoom = true;
+            //caj.HideRoom = false;
+        }
+        else
+        {
+            caj.RoomName = roomname;
+            caj.RandomRoom = false;
+            //caj.HideRoom = true;
+        }
+        this.GetComponent<Photon.Voice.Unity.VoiceConnection>().Client.OpLeaveRoom(false);
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
