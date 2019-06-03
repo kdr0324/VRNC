@@ -39,6 +39,7 @@ public class selectSlotMenu : MonoBehaviour
                     //만약 TimeStamp를 받아오지 않았다면 클릭되지 않게 수정한다.
                     if(!Labels[i].text.Contains("2"))
                     {
+                        Labels[i].text = "비어 있음";
                         buttons[i].interactable = false;
                     }
                 }

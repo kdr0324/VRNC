@@ -86,29 +86,63 @@ public class MenuManager : MonoBehaviour
         {
 
             //방장
-            if (Client.instance.isOwner)
+            if (Client.instance != null)
             {
-                string[] timeStamp = Client.instance.Label_Load();
-                Text[] Labels;
-                if (chk)
+                if (Client.instance.isOwner)
                 {
-                    Labels = saveSlotMenu.GetComponentsInChildren<Text>();
-                }
-                else
-                {
-                    Labels = loadSlotMenu.GetComponentsInChildren<Text>();
-                }
-                for (int i = 0; i < 4; i++)
-                {
-                    Labels[i].text = timeStamp[i];
-                }
-                //string obj = jsonData;
-                //Debug.Log(i);
-                Debug.Log(timeStamp[0]);
-                Debug.Log(timeStamp[1]);
-                Debug.Log(timeStamp[2]);
-                Debug.Log(timeStamp[3]);
+                    string[] timeStamp = Client.instance.Label_Load();
+                    Text[] Labels;
+                    Button[] buttons;
 
+                    if (chk)
+                    {
+                        Labels = saveSlotMenu.GetComponentsInChildren<Text>();
+                        buttons = saveSlotMenu.transform.GetComponentsInChildren<Button>();
+                    }
+                    else
+                    {
+                        Labels = loadSlotMenu.GetComponentsInChildren<Text>();
+                        buttons = loadSlotMenu.transform.GetComponentsInChildren<Button>();
+                    }
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Labels[i].text = timeStamp[i];
+                        if (!Labels[i].text.Contains("2"))
+                        {
+                            Labels[i].text = "비어 있음";
+                            buttons[i].interactable = false;
+                        }
+
+
+                    }
+                    //string obj = jsonData;
+                    //Debug.Log(i);
+                    Debug.Log(timeStamp[0]);
+                    Debug.Log(timeStamp[1]);
+                    Debug.Log(timeStamp[2]);
+                    Debug.Log(timeStamp[3]);
+
+                }
+            }
+        }
+        else
+        {
+            Text[] Labels;
+            Button[] buttons;
+            if (chk)
+            {
+                Labels = saveSlotMenu.GetComponentsInChildren<Text>();
+                buttons = saveSlotMenu.transform.GetComponentsInChildren<Button>();
+            }
+            else
+            {
+                Labels = loadSlotMenu.GetComponentsInChildren<Text>();
+                buttons = loadSlotMenu.transform.GetComponentsInChildren<Button>();
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                Labels[i].text = "비어 있음";
+                buttons[i].interactable = false;
             }
         }
     }
@@ -337,24 +371,50 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
 
-        if (Client.instance.isConnect)
+        if (Client.instance != null)
         {
-            string[] rooms;
-            rooms = Client.instance.RoomList();
-            Debug.Log("firendSlotMenu.start");
-            for (int i = 0; i < rooms.Length; i++)
+            if (Client.instance.isConnect)
             {
-                roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
-                Button btn = roomList.GetChild(i).GetComponent<Button>();
-                int temp = i;
+                string[] rooms;
+                rooms = Client.instance.RoomList();
+                Debug.Log("firendSlotMenu.start");
+                int i;
+                for (i = 0; i < rooms.Length; i++)
+                {
+                    roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
 
-                btn.onClick.AddListener(() => EnterFriendRoom(temp));
+                    char[] checkSpell = rooms[i].ToCharArray();
+                    Debug.Log("Room Name is " + rooms[i] + ", " + char.IsLetterOrDigit(checkSpell[0]));
 
+                    //if (char.IsLetterOrDigit(checkSpell[0]))
+                    //{
+                        Button btn = roomList.GetChild(i).GetComponent<Button>();
+                        btn.onClick.AddListener(() => EnterFriendRoom(i));
+                    //}
+                    //else
+                    //{
+                    //    Button btn = roomList.GetChild(i).GetComponent<Button>();
+                    //    roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
+                    //    roomList.GetChild(i).GetComponent<Button>().interactable = false;
 
-                //GameObject.Find("NetworkManager").GetComponent<ClientController>().RunClient();
+                    //    Debug.Log("왜 안되니?");
+                    //}
+                }
+                for (i = 0; i < roomList.childCount; i++)
+                {
+                    roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
+                    roomList.GetChild(i).GetComponent<Button>().interactable = false;
+                }
             }
         }
-
+        else
+        {
+            for (int i=0; i<roomList.childCount; i++)
+            {
+                roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
+                roomList.GetChild(i).GetComponent<Button>().interactable = false;
+            }
+        }
     }
 
     public void EnterFriendRoom(int idx)
