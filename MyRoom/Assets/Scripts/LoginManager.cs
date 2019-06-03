@@ -33,6 +33,26 @@ public class LoginManager : MonoBehaviour
         Debug.Log(login.text);
         Debug.Log(password.text);
 
+        //ID 와 비밀번호 영어와 숫자로만 입력 받을 수 있게 체크
+        char[] ids = login.text.ToCharArray();
+        char[] pass = password.text.ToCharArray();
+
+        for(int i=0; i<ids.Length; i++)
+        {
+            //문자나 숫자가 아닌 경우 return
+            if(!char.IsLetterOrDigit(ids[i]))
+            {
+                Debug.Log("ID 혹은 PASSWORD는 영문과 숫자만 입력 가능합니다");
+            }
+        }
+        for(int i=0; i<pass.Length; i++)
+        {
+            if (!char.IsLetterOrDigit(pass[i]))
+            {
+                Debug.Log("ID 혹은 PASSWORD는 영문과 숫자만 입력 가능합니다");
+            }
+        }
+
        //if(false)
        if(Client.instance.Login(login.text, password.text))
         {
@@ -58,6 +78,27 @@ public class LoginManager : MonoBehaviour
     {
         Debug.Log(login.text);
         Debug.Log(password.text);
+
+        char[] ids = login.text.ToCharArray();
+        char[] pass = password.text.ToCharArray();
+
+        for (int i = 0; i < ids.Length; i++)
+        {
+            //문자나 숫자가 아닌 경우 return
+            if (!char.IsLetterOrDigit(ids[i]))
+            {
+                Debug.Log("ID 혹은 PASSWORD는 영문과 숫자만 입력 가능합니다");
+            }
+        }
+        for (int i = 0; i < pass.Length; i++)
+        {
+            if (!char.IsLetterOrDigit(pass[i]))
+            {
+                Debug.Log("ID 혹은 PASSWORD는 영문과 숫자만 입력 가능합니다");
+            }
+        }
+
+
         if (Client.instance.SignUp(login.text, password.text))
         {
             //login success
