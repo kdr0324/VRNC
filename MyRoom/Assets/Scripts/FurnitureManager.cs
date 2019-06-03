@@ -91,7 +91,7 @@ public class FurnitureManager : MonoBehaviour
 
     public void Clear()
     {
-        Debug.Log("clear_1");
+        Debug.Log("Clear Room");
         // 전체 삭제
         isLocalPlayer LocalPlayer = GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>();
         foreach (Transform child in transform)
@@ -100,7 +100,6 @@ public class FurnitureManager : MonoBehaviour
         }
 
         ObjDataList obj = new ObjDataList();
-        Debug.Log("clear_2");
         GameObject[] wallTexture = new GameObject[6];
         wallTexture[0] = GameObject.Find("Room").transform.Find("Top").gameObject;
         wallTexture[1] = GameObject.Find("Room").transform.Find("Wall1").gameObject;
@@ -109,19 +108,18 @@ public class FurnitureManager : MonoBehaviour
         wallTexture[4] = GameObject.Find("Room").transform.Find("Wall4").gameObject;
         wallTexture[5] = GameObject.Find("Room").transform.Find("Bottom").gameObject;
 
-        Debug.Log("clear_3");
         int[] walls = new int[6] { obj.top, obj.wall1, obj.wall2, obj.wall3, obj.wall4, obj.bottom };
 
         for (int i = 0; i < wallTexture.Length; i++)
-        {           
-                wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[0]];
-                wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[0]]);
-                wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[0]].name;
-            
+        {
+            //벽지 초기화
+            LocalPlayer.CmdSetSyncWallTexture(wallTexture[i], 0, walls[0]);
+            LocalPlayer.CmdSetSyncWallTexture(wallTexture[i], 0, -1);
+            //wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[0]];
+            //wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[0]]);
+            //wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[0]].name;
+
         }
-        Debug.Log("clear_4");
-
-
     }
 
 
@@ -284,8 +282,9 @@ public class FurnitureManager : MonoBehaviour
     {
         //가구 생성에 필요한 스크립트 호출
         isLocalPlayer LocalPlayer = GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>();
+       
 
-
+        //벽 객체 받아옴
         Debug.Log(obj.objDataList.Count);
         GameObject[] wallTexture = new GameObject[6];
         wallTexture[0] = GameObject.Find("Room").transform.Find("Top").gameObject;
@@ -295,25 +294,22 @@ public class FurnitureManager : MonoBehaviour
         wallTexture[4] = GameObject.Find("Room").transform.Find("Wall4").gameObject;
         wallTexture[5] = GameObject.Find("Room").transform.Find("Bottom").gameObject;
 
-
+        //저장된 리스트에서 벽지 정보 받아옴
         int[] walls = new int[6] {obj.top, obj.wall1, obj.wall2, obj.wall3, obj.wall4, obj.bottom};
 
+        //벽지 씌워줌
         for (int i = 0; i < wallTexture.Length; i++)
         {
             if (walls[i] != -1)
             {
-                wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[i]];
-                wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[i]]);
-                wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[i]].name;
+                LocalPlayer.CmdSetSyncWallTexture(wallTexture[i], 0, walls[i]);
+
+                //wallTexture[i].GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[walls[i]];
+                //wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[i]]);
+                //wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[i]].name;
             }
         }
         
-
-        //int furnitureLen = transform.childCount;
-        //for(int i=0; i<furnitureLen; i++)
-        //{
-        //    Destroy(transform.GetChild(0).gameObject);
-        //}
 
         //리스트의 길이 만큼 반복
         for (int i = 0; i < obj.objDataList.Count; i++)
@@ -321,41 +317,48 @@ public class FurnitureManager : MonoBehaviour
             //가구 이름 받아옴
             string name = obj.objDataList[i].name;
 
-            
-            //이름에 맞는 가구 Prefab Load
-            GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
-            //Load 된 Prefab을 가구 정보에 맞게 생성
-            GameObject newObj = Instantiate(NewGameObject, obj.objDataList[i].position, obj.objDataList[i].rotation);
-            newObj.name = name;
-            int cnt = newObj.transform.childCount;
 
-            if (cnt == 0)
-            {
-                if (obj.objDataList[i].textures[0] == -1) break;
+            LocalPlayer.SpawnObject(name, obj.objDataList[i].position, obj.objDataList[i].textures);
 
-                newObj.GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[0]];
-                newObj.GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[0]]);
-                newObj.GetComponent<DropObject>().textureName = FurnitureTextures[obj.objDataList[i].textures[0]].name;
 
-            }
-            else
-            {
-                for (int j = 0; j < cnt; j++)
-                {
-                    if (newObj.transform.GetChild(j).GetComponent<MeshRenderer>() != null)
-                    {
-                        if (obj.objDataList[i].textures[j] == -1)
-                        {
-                            continue;
-                        }
-                        newObj.transform.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[j]];
-                        newObj.transform.GetChild(j).GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[j]]);
-                        newObj.transform.GetChild(j).GetComponent<DropObject>().textureName = FurnitureTextures[obj.objDataList[i].textures[j]].name;
-                        //Debug.Log(newObj.transform.GetChild(j).GetComponent<DropObject>().textureName);
-                    }
+            ////이름에 맞는 가구 Prefab Load
+            //GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
+            ////Load 된 Prefab을 가구 정보에 맞게 생성
+            //GameObject newObj = Instantiate(NewGameObject, obj.objDataList[i].position, obj.objDataList[i].rotation);
+            //newObj.name = name;
+            //int cnt = newObj.transform.childCount;
 
-                }
-            }
+            ////자식 오브젝트가 없는 경우 자기 자신 오브젝트에 Drop Object
+            //if (cnt == 0)
+            //{
+            //    //씌워진 텍스쳐가 없는 경우 혹은 Drop Object가  경우 break;
+            //    if (obj.objDataList[i].textures[0] == -1) break;
+            //    LocalPlayer.CmdSetSyncListInt(newObj, 0, obj.objDataList[i].textures[0]);
+            //    //newObj.GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[0]];
+            //    //newObj.GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[0]]);
+            //    //newObj.GetComponent<DropObject>().textureName = FurnitureTextures[obj.objDataList[i].textures[0]].name;
+
+            //}
+            ////자식 오브젝트가 있는 경우 자식 오브젝트에 Drop Object
+            //else
+            //{
+            //    for (int j = 0; j < cnt; j++)
+            //    {
+            //        if (newObj.transform.GetChild(j).GetComponent<MeshRenderer>() != null)
+            //        {
+            //            if (obj.objDataList[i].textures[j] == -1)
+            //            {
+            //                continue;
+            //            }
+            //            LocalPlayer.CmdSetSyncListInt(newObj, j, obj.objDataList[i].textures[j]);
+            //            //newObj.transform.GetChild(j).GetComponent<MeshRenderer>().material.mainTexture = FurnitureTextures[obj.objDataList[i].textures[j]];
+            //            //newObj.transform.GetChild(j).GetComponent<DropObject>().SetMaterial(FurnitureTextures[obj.objDataList[i].textures[j]]);
+            //            //newObj.transform.GetChild(j).GetComponent<DropObject>().textureName = FurnitureTextures[obj.objDataList[i].textures[j]].name;
+            //            //Debug.Log(newObj.transform.GetChild(j).GetComponent<DropObject>().textureName);
+            //        }
+
+            //    }
+            //}
         }
     }
 

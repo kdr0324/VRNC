@@ -9,6 +9,7 @@ public class setParent : NetworkBehaviour
     private int childCnt = 0;
 
     public SyncListInt syncListTexture = new SyncListInt();
+    public int[] loadTextures;
     
 
 
@@ -29,16 +30,41 @@ public class setParent : NetworkBehaviour
 
         if (isServer)
         {
+            Debug.Log("Server Has SyncListTexture for" + gameObject.name);
             //자식 없는 경우
             if (childCnt == 0)
-                syncListTexture.Add(-1);
-            //자식 있는 경우
-            else
             {
-                for (int i = 0; i < childCnt; i++)
+                if (loadTextures.Length > 0)
+                {
+                    syncListTexture.Add(loadTextures[0]);
+                    SetTexture(gameObject, syncListTexture[0]);
+                }
+                else
                 {
                     syncListTexture.Add(-1);
                 }
+
+            }
+            //자식 있는 경우
+            else
+            {
+                //불러오기로 불러져 온 객체인 경우 loadTextures를 통해 추가
+                if (loadTextures.Length > 0)
+                {
+                    for (int i = 0; i < childCnt; i++)
+                    {
+                        syncListTexture.Add(loadTextures[i]);
+                        SetTexture(transform.GetChild(i).gameObject, syncListTexture[i]);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < childCnt; i++)
+                    {
+                        syncListTexture.Add(-1);
+                    }
+                }
+
             }
         }
         else

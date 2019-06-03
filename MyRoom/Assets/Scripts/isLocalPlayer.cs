@@ -19,7 +19,6 @@ public class isLocalPlayer : NetworkBehaviour
         }
         if (isLocalPlayer)
         {
-            Debug.Log("this is local player");
             name = "LocalPlayer";
         }
 
@@ -44,6 +43,11 @@ public class isLocalPlayer : NetworkBehaviour
         CmdSpawn(name,  pos);
     }
 
+    public void SpawnObject(string name, Vector3 pos, int[] textures)
+    {
+        CmdSpawnWithTextures(name, pos, textures);
+    }
+
     [Command]
     void CmdSpawn(string name, Vector3 pos)
     {
@@ -58,6 +62,23 @@ public class isLocalPlayer : NetworkBehaviour
         //NetworkServer.SpawnWithClientAuthority(obj, connectionToClient);
         NetworkServer.Spawn(obj);
         //NetworkServer.SpawnWithClientAuthority
+    }
+
+    [Command]
+    void CmdSpawnWithTextures(string name, Vector3 pos, int[] textures)
+    {
+
+
+        GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
+
+
+        GameObject obj = Instantiate(NewGameObject, pos, NewGameObject.transform.rotation);
+        obj.name = name;
+
+        NetworkServer.Spawn(obj);
+
+        //자식 객체가 없는 경우
+        obj.GetComponent<setParent>().loadTextures = textures;
     }
 
     [Command]

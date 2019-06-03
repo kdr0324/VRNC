@@ -199,7 +199,6 @@ public class MenuManager : MonoBehaviour
 
                 Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
             }
-            Debug.Log("!!!!!!!!!!!!!!!!!!");
             audio.clip = LoadSound;
             audio.Play();
         }
