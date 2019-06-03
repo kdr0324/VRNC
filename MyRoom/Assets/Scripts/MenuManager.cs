@@ -225,7 +225,24 @@ public class MenuManager : MonoBehaviour
         //}
 
         //take a screenshot
-        for (int i = 0; i < 10000; i++)
+
+        //찍기전에 없앨 것
+        //메인 메뉴 투명도 0f
+        mainMenu.GetComponent<CanvasGroup>().alpha = 0f;
+        GameObject.Find("LocalPlayer").transform.GetChild(1).gameObject.SetActive(false);
+        //왼손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(1).gameObject.SetActive(false);
+        //오른손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(2).gameObject.SetActive(false);
+        //레이저
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(1)
+            .GetChild(0).gameObject.SetActive(false);
+        //
+
+
+        for (int i = 1; i < 1000000; i++)
         {
             if (!Capture.doesScreenshotExist(i))
             {
@@ -239,7 +256,14 @@ public class MenuManager : MonoBehaviour
         //CubesPos = GameObject.Find("Cube (1)").gameObject.transform.position;
 
         //you need to wait a small amount of time for the screenshot to be saved
-        Invoke("screenshotWindow.GetComponent<FadeInOut>().Fade()", 0.5f);
+        //Invoke("screenshotWindow.GetComponent<FadeInOut>().Fade()", 0.5f);
+
+
+        //찍기전에 살릴 것 
+        StartCoroutine(ScreenShotWait(0.3f));
+        //메인메뉴 투명도 1f
+
+
 
         audio.clip = ScreenshotSound;
         audio.Play();
@@ -404,6 +428,22 @@ public class MenuManager : MonoBehaviour
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
+    }
+
+    IEnumerator ScreenShotWait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        mainMenu.GetComponent<CanvasGroup>().alpha = 1f;
+        GameObject.Find("LocalPlayer").transform.GetChild(1).gameObject.SetActive(true);
+        //왼손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(1).gameObject.SetActive(true);
+        //오른손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(2).gameObject.SetActive(true);
+        //레이저
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(1)
+           .GetChild(0).gameObject.SetActive(true);
     }
 
 }
