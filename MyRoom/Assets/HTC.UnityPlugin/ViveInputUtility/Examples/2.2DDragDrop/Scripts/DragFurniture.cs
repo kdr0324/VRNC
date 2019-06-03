@@ -102,10 +102,13 @@ public class DragFurniture : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             //GameObject NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
 
 
-           // GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
+            // GameObject obj = Instantiate(NewGameObject, eventData.pointerCurrentRaycast.worldPosition + new Vector3(0, 0.5f, 0), NewGameObject.transform.rotation);
             //obj.name = name;
 
-            GetComponentInParent<AudioSource>().Play();
+            AudioSource audio = GameObject.Find("Room").GetComponent<AudioSource>();
+            audio.clip = GetComponent<CreateFurniture>().FurnitureSound;
+            audio.Play();
+            //GetComponentInParent<AudioSource>().Play();
         }
 
 

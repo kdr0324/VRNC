@@ -6,6 +6,8 @@ public class SoundManager : MonoBehaviour
 {
     private AudioSource audio;
 
+    public AudioClip paperSound;
+
 
 
     void Start()

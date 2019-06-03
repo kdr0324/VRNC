@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class VRUICheckbox : UnityEngine.UI.Toggle {
 
-	Image checkedBG;
-	Image checkmark;
+	public Image checkedBG;
+	public Image checkmark;
 
 	Color accentColor;
 
@@ -21,7 +21,18 @@ public class VRUICheckbox : UnityEngine.UI.Toggle {
 			SetCheckmarkColor();
 
 		});
-	}
+
+        if (checkmark == null)
+        {
+            checkmark = transform.Find("Background/Checked/Checkmark").GetComponent<Image>();
+        }
+
+        if (checkedBG == null)
+        {
+            checkedBG = transform.Find("Background/Checked").GetComponent<Image>();
+
+        }
+    }
 
 	public void setColors (Color a) {
 

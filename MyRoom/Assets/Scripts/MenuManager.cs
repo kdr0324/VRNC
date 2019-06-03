@@ -36,11 +36,14 @@ public class MenuManager : MonoBehaviour
         audio = GameObject.Find("Room").GetComponent<AudioSource>();
         Furniture = GameObject.Find("Furniture");
 
-        if (Client.instance.isConnect)
+        if (Client.instance != null)
         {
-            if (Client.instance.roomType != 0)
+            if (Client.instance.isConnect)
             {
-                loadSlot(Client.instance.roomType);
+                if (Client.instance.roomType != 0)
+                {
+                    loadSlot(Client.instance.roomType);
+                }
             }
         }
     }
@@ -307,9 +310,8 @@ public class MenuManager : MonoBehaviour
 
     public void FriendsList()
     {
-        GetComponent<AudioSource>().clip = ButtonSound;
-        GetComponent<AudioSource>().Play();
-
+        audio.clip = ButtonSound;
+        audio.Play();
 
         if (Client.instance.isConnect)
         {
@@ -334,8 +336,8 @@ public class MenuManager : MonoBehaviour
     public void EnterFriendRoom(int idx)
     {
         Client.instance.RoomEnter(idx);
-        GetComponent<AudioSource>().clip = ButtonSound;
-        GetComponent<AudioSource>().Play();
+        audio.clip = ButtonSound;
+        audio.Play();
 
         //연결 해제
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
@@ -379,8 +381,8 @@ public class MenuManager : MonoBehaviour
         Furniture.GetComponent<FurnitureManager>().Clear();
 
         Client.instance.RoomMake();
-        GetComponent<AudioSource>().clip = ButtonSound;
-        GetComponent<AudioSource>().Play();
+        audio.clip = ButtonSound;
+        audio.Play();
 
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
         GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");

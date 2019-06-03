@@ -53,7 +53,9 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
                 string[] spiltString = droppedTexture.name.Split('(') ;
                 textureName = spiltString[0].Trim();
                 //GetComponent<setParent>().childTexture;
-                GameObject.Find("Furniture").GetComponent<AudioSource>().Play();
+                AudioSource audio = GameObject.Find("Room").GetComponent<AudioSource>();
+                audio.clip = GameObject.Find("Room").GetComponent<SoundManager>().paperSound;
+                audio.Play();
                 
                 //벽
                 if(transform.root.name == "Room")

@@ -8,6 +8,7 @@ public class DeleteFurniture : MonoBehaviour
 {
     public ViveRoleProperty viveRole;
     public ControllerButton RightTrigger;
+    public AudioClip deleteSound;
 
     Vector3 pos;
     Quaternion rot;
@@ -29,9 +30,11 @@ public class DeleteFurniture : MonoBehaviour
         {
             //Destroy(collision.gameObject);
             transform.root.GetComponent<isLocalPlayer>().CmdDeleteFurniture(collision.gameObject);
-            GetComponent<AudioSource>().Play();
+            AudioSource audio = GameObject.Find("Room").GetComponent<AudioSource>();
+            audio.clip = deleteSound;
+            audio.Play();
 
-           
+
         }
     }
 

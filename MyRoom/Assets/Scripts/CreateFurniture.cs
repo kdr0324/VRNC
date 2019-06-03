@@ -8,11 +8,12 @@ public class CreateFurniture : MonoBehaviour
     //public Transform Furniture;
     private List<GameObject> list;
     public AudioClip FurnitureSound;
+    private AudioSource audio;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GameObject.Find("Room").GetComponent<AudioSource>();
 
     }
 
@@ -25,7 +26,9 @@ public class CreateFurniture : MonoBehaviour
     public void FurnitureCreate()
     {
         //GetComponentInParent<AudioSource>().clip = GetComponentInParent<AudioSource>().clip;
-        GetComponentInParent<AudioSource>().Play();
+        //GetComponentInParent<AudioSource>().Play();
+        audio.clip = FurnitureSound;
+        audio.Play();
 
         string current_name = EventSystem.current.currentSelectedGameObject.name;
 
