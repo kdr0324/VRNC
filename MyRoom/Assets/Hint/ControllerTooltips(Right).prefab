@@ -137,15 +137,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ed683b89cd94a44bb399806ce5cce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: ButtonOne
+  displayText: "\uB808\uC774\uC800"
   fontSize: 14
   containerSize: {x: 100, y: 30}
   drawLineFrom: {fileID: 4980400252317375729}
   drawLineTo: {fileID: 6921274495936152420}
   lineWidth: 0.001
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  containerColor: {r: 0, g: 0, b: 0, a: 1}
-  lineColor: {r: 0, g: 0, b: 0, a: 1}
+  fontColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  containerColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  lineColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   alwaysFaceHeadset: 0
 --- !u!1 &4976574175857559507
 GameObject:
@@ -205,15 +205,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ee664e149de442c4794a92b42b8bbe4d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -371,7 +371,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -465,7 +465,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -592,7 +592,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
       key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -694,7 +694,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -788,7 +788,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -873,15 +873,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ee664e149de442c4794a92b42b8bbe4d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -956,7 +956,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1166,7 +1166,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
       key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6feba24806ecd0e41b79c8531da69ae5, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1351,7 +1351,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1436,15 +1436,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ee664e149de442c4794a92b42b8bbe4d, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1496,21 +1496,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4977562089598012061}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a9c9ae8b1fb1542b78598ac955afe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerText: Trigger
+  triggerText: "\uD074\uB9AD"
   gripText: Grip
   touchpadText: Touchpad
-  touchpadTwoText: TouchpadTwo
+  touchpadTwoText: "\uD154\uB808\uD3EC\uD2B8"
   buttonOneText: ButtonOne
   buttonTwoText: ButtonTwo
-  startMenuText: StartMenu
-  tipBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
-  tipTextColor: {r: 1, g: 1, b: 1, a: 1}
-  tipLineColor: {r: 0, g: 0, b: 0, a: 1}
+  startMenuText: "\uB808\uC774\uC800"
+  tipBackgroundColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  tipTextColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  tipLineColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   trigger: {fileID: 0}
   grip: {fileID: 0}
   touchpad: {fileID: 0}
@@ -1539,9 +1539,9 @@ MonoBehaviour:
   m_inputs:
   - viveRole:
       m_roleTypeFullName: 
-      m_roleValueName: 
+      m_roleValueName: RightHand
       m_roleValueInt: 0
-    button: 8
+    button: 0
   m_onVirtualPress:
     m_PersistentCalls:
       m_Calls: []
@@ -1581,7 +1581,7 @@ MonoBehaviour:
   m_inputs:
   - viveRole:
       m_roleTypeFullName: 
-      m_roleValueName: 
+      m_roleValueName: RightHand
       m_roleValueInt: 0
     button: 3
   m_onVirtualPress:
@@ -1623,9 +1623,9 @@ MonoBehaviour:
   m_inputs:
   - viveRole:
       m_roleTypeFullName: 
-      m_roleValueName: 
+      m_roleValueName: RightHand
       m_roleValueInt: 0
-    button: 7
+    button: 4
   m_onVirtualPress:
     m_PersistentCalls:
       m_Calls: []
@@ -1749,7 +1749,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
       key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1891,15 +1891,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ed683b89cd94a44bb399806ce5cce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: Trigger
+  displayText: "\uD074\uB9AD"
   fontSize: 14
   containerSize: {x: 100, y: 30}
   drawLineFrom: {fileID: 4977562089598249301}
   drawLineTo: {fileID: 5625416329701247086}
   lineWidth: 0.001
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  containerColor: {r: 0, g: 0, b: 0, a: 1}
-  lineColor: {r: 0, g: 0, b: 0, a: 1}
+  fontColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  containerColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  lineColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   alwaysFaceHeadset: 0
 --- !u!1 &4977562089598176737
 GameObject:
@@ -1948,15 +1948,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ed683b89cd94a44bb399806ce5cce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: TouchpadTwo
+  displayText: "\uD154\uB808\uD3EC\uD2B8"
   fontSize: 14
   containerSize: {x: 100, y: 30}
   drawLineFrom: {fileID: 4977562089598281675}
   drawLineTo: {fileID: 7331508858769387927}
   lineWidth: 0.001
-  fontColor: {r: 1, g: 1, b: 1, a: 1}
-  containerColor: {r: 0, g: 0, b: 0, a: 1}
-  lineColor: {r: 0, g: 0, b: 0, a: 1}
+  fontColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  containerColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  lineColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   alwaysFaceHeadset: 0
 --- !u!1 &6708129632829872531
 GameObject:
