@@ -59,16 +59,47 @@ int find_node(list* mylist,void *data, int(*find)(void*, void*)){
 }
 
 void* delete_node(list* mylist, void *data, int(*find)(void*, void*)) {
+	int len = mylist->size;
+	node* pre_node = mylist->head;
 	node* cur;
-	void* del;
-	for (node* pre_node = mylist->head; pre_node->next != NULL; pre_node = pre_node->next) {
-		if (!find(pre_node->next->value, data)) {
-			cur = pre_node->next;
-			pre_node->next = cur->next;
+	void* del = NULL;
+	while(len--)
+	{
+		cur = pre_node->next;
+		//head부터 탐색해서 같으면 삭제
+		if (!find(cur->value, data))
+		{
+			if (cur == mylist->last)
+			{
+				//현재 노드 				
+				pre_node->next = NULL;
+				mylist->last = pre_node;
+			}
+			else
+			{
+				pre_node->next = cur->next;
+				
+			}
 			del = cur->value;
 			free_node(cur);
+			mylist->size--;
 			return del;
 		}
+		pre_node = cur;
 	}
+
+	
+	//node* cur;
+	//void* del;
+	
+	//for (node* pre_node = mylist->head; pre_node->next != NULL; pre_node = pre_node->next) {
+		//if (!find(pre_node->next->value, data)) {
+		//		cur = pre_node->next;
+		//		pre_node->next = cur->next;
+		//		del = cur->value;
+		//		free_node(cur);
+		//		return del;
+		//}
+	//}
 	return NULL;
 }

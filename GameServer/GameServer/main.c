@@ -65,6 +65,11 @@ unsigned WINAPI ThreadFunction(void* para)
 			break;
 		case ROOMENTER:
 			roomEnter(para, curUser);
+			if (curRoom)
+			{
+				delete_node(&roomlist, curRoom, cmpRoom);
+				free(curRoom);
+			}
 			break;
 		case PLAY:
 			play(para, curUser, curRoom);
@@ -86,16 +91,13 @@ unsigned WINAPI ThreadFunction(void* para)
 	if (curRoom)
 	{
 		delete_node(&roomlist, curRoom, cmpRoom);
-		roomlist.size--;
 		free(curRoom);
-
 	}
-	
+
 	//유저 정리
 	if (curUser)
 	{
 		delete_node(&userlist, curUser, cmpUser);
-		userlist.size--;
 		free(curUser);
 	}
 

@@ -183,7 +183,6 @@ room* roomEnter(void *sock, user* curUser)
 	send(*(SOCKET*)sock, packetData, PACKETSIZE, 0);
 
 
-
 	return target;
 }
 
