@@ -82,53 +82,17 @@ public class MenuManager : MonoBehaviour
     //슬롯 text 자동갱신
     public void timestamp(bool chk)
     {
-        if (Client.instance != null)
+        Text[] Labels;
+        Button[] buttons;
+
+        if (Client.instance != null && Client.instance.isConnect)
         {
+            //연결이 되어있는 경우
 
-            //방장
-            if (Client.instance != null)
-            {
-                if (Client.instance.isOwner)
-                {
-                    string[] timeStamp = Client.instance.Label_Load();
-                    Text[] Labels;
-                    Button[] buttons;
+            //방장이면 저장, 불러오기
+            //아니면 저장만
+            string[] timeStamp = Client.instance.Label_Load();
 
-                    if (chk)
-                    {
-                        Labels = saveSlotMenu.GetComponentsInChildren<Text>();
-                        buttons = saveSlotMenu.transform.GetComponentsInChildren<Button>();
-                    }
-                    else
-                    {
-                        Labels = loadSlotMenu.GetComponentsInChildren<Text>();
-                        buttons = loadSlotMenu.transform.GetComponentsInChildren<Button>();
-                    }
-                    for (int i = 0; i < 4; i++)
-                    {
-                        Labels[i].text = timeStamp[i];
-                        if (!Labels[i].text.Contains("2"))
-                        {
-                            Labels[i].text = "비어 있음";
-                            buttons[i].interactable = false;
-                        }
-
-
-                    }
-                    //string obj = jsonData;
-                    //Debug.Log(i);
-                    Debug.Log(timeStamp[0]);
-                    Debug.Log(timeStamp[1]);
-                    Debug.Log(timeStamp[2]);
-                    Debug.Log(timeStamp[3]);
-
-                }
-            }
-        }
-        else
-        {
-            Text[] Labels;
-            Button[] buttons;
             if (chk)
             {
                 Labels = saveSlotMenu.GetComponentsInChildren<Text>();
@@ -139,11 +103,50 @@ public class MenuManager : MonoBehaviour
                 Labels = loadSlotMenu.GetComponentsInChildren<Text>();
                 buttons = loadSlotMenu.transform.GetComponentsInChildren<Button>();
             }
+
             for (int i = 0; i < 4; i++)
             {
-                Labels[i].text = "비어 있음";
-                buttons[i].interactable = false;
+                //
+                buttons[i].interactable = true;
+                Labels[i].text = timeStamp[i];
+
+                //방장이 아니고 불러오기이면
+                if (!Client.instance.isOwner && !chk)
+                {
+                    Labels[i].text = "호스트만 가능합니다.";
+                    buttons[i].interactable = false;
+                }
+                //라벨이 비어있으면
+                else if (!Labels[i].text.Contains("2") && !chk)
+                {
+                    Labels[i].text = "비어 있음";
+                    buttons[i].interactable = false;
+                }
             }
+
+        }
+        //바로 Main Scene부터 시작 한 경우
+        else
+        {
+            if (chk)
+            {
+                Labels = saveSlotMenu.GetComponentsInChildren<Text>();
+                buttons = saveSlotMenu.transform.GetComponentsInChildren<Button>();
+            }
+            else
+            {
+                Labels = loadSlotMenu.GetComponentsInChildren<Text>();
+                buttons = loadSlotMenu.transform.GetComponentsInChildren<Button>();
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+
+                Labels[i].text = "서버 연결 안 됨";
+                buttons[i].interactable = false;
+
+            }
+
         }
     }
 
@@ -260,21 +263,8 @@ public class MenuManager : MonoBehaviour
 
         //take a screenshot
 
-        //찍기전에 없앨 것
-        //메인 메뉴 투명도 0f
-        mainMenu.GetComponent<CanvasGroup>().alpha = 0f;
-        GameObject.Find("LocalPlayer").transform.GetChild(1).gameObject.SetActive(false);
-        //왼손
-        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
-            .GetChild(1).gameObject.SetActive(false);
-        //오른손
-        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
-            .GetChild(2).gameObject.SetActive(false);
-        //레이저
-        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(1)
-            .GetChild(0).gameObject.SetActive(false);
-        //
-
+        //스크린샷을 위한 딜레이
+        StartCoroutine(ScreenShotWait(0.3f));
 
         for (int i = 1; i < 1000000; i++)
         {
@@ -293,9 +283,7 @@ public class MenuManager : MonoBehaviour
         //Invoke("screenshotWindow.GetComponent<FadeInOut>().Fade()", 0.5f);
 
 
-        //찍기전에 살릴 것 
-        StartCoroutine(ScreenShotWait(0.3f));
-        //메인메뉴 투명도 1f
+
 
 
 
@@ -371,40 +359,32 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
 
-        if (Client.instance != null)
+        if (Client.instance != null && Client.instance.isConnect)
         {
-            if (Client.instance.isConnect)
+            string[] rooms;
+            rooms = Client.instance.RoomList();
+            Debug.Log("firendSlotMenu.start");
+            int i;
+            int cnt = 0;
+            for (i = 0; i < rooms.Length; i++)
             {
-                string[] rooms;
-                rooms = Client.instance.RoomList();
-                Debug.Log("firendSlotMenu.start");
-                int i;
-                for (i = 0; i < rooms.Length; i++)
+                Debug.Log("Compare " + rooms[i].CompareTo(Client.instance.UserID));
+                //방이 내 방이면 건너 뜀
+                if(rooms[i].CompareTo(Client.instance.UserID) == 0)
                 {
-                    roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
-
-                    char[] checkSpell = rooms[i].ToCharArray();
-                    Debug.Log("Room Name is " + rooms[i] + ", " + char.IsLetterOrDigit(checkSpell[0]));
-
-                    //if (char.IsLetterOrDigit(checkSpell[0]))
-                    //{
-                        Button btn = roomList.GetChild(i).GetComponent<Button>();
-                        btn.onClick.AddListener(() => EnterFriendRoom(i));
-                    //}
-                    //else
-                    //{
-                    //    Button btn = roomList.GetChild(i).GetComponent<Button>();
-                    //    roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
-                    //    roomList.GetChild(i).GetComponent<Button>().interactable = false;
-
-                    //    Debug.Log("왜 안되니?");
-                    //}
+                    cnt++;
+                    continue;
                 }
-                for (i = 0; i < roomList.childCount; i++)
-                {
-                    roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
-                    roomList.GetChild(i).GetComponent<Button>().interactable = false;
-                }
+
+                roomList.GetChild(i).GetComponent<Text>().text = rooms[i];
+                Button btn = roomList.GetChild(i).GetComponent<Button>();
+                btn.onClick.AddListener(() => EnterFriendRoom(i + cnt));
+
+            }
+            for (i = i-cnt; i < roomList.childCount; i++)
+            {
+                roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
+                roomList.GetChild(i).GetComponent<Button>().interactable = false;
             }
         }
         else
@@ -426,6 +406,8 @@ public class MenuManager : MonoBehaviour
         //연결 해제
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
         GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
+
+
         roomNetwork.StopHost();
         roomNetwork.StopClient();
 
@@ -437,7 +419,7 @@ public class MenuManager : MonoBehaviour
         //음성네트워크 방제
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
 
-        StartCoroutine(Wait(0.5f));
+        StartCoroutine(Wait(0.7f));
         roomNetwork.StartClient();
         string voiceRoom = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
 
@@ -460,7 +442,17 @@ public class MenuManager : MonoBehaviour
     public void EnterMyRoom()
     {
 
-        loadSlotMenu.SetActive(true);
+        RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
+        GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
+
+        if(roomNetwork.networkAddress == "localhost")
+        {
+            return;
+        }
+
+        //loadSlotMenu.SetActive(true);
+
+        //만약 이미 내 방이라면 옮길 필요가 없음
 
         Furniture.GetComponent<FurnitureManager>().Clear();
 
@@ -468,8 +460,10 @@ public class MenuManager : MonoBehaviour
         audio.clip = ButtonSound;
         audio.Play();
 
-        RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
-        GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
+
+
+        
+
         roomNetwork.StopHost();
         roomNetwork.StopClient();
         //voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
@@ -492,7 +486,23 @@ public class MenuManager : MonoBehaviour
 
     IEnumerator ScreenShotWait(float time)
     {
+
+        mainMenu.GetComponent<CanvasGroup>().alpha = 0f;
+        GameObject.Find("LocalPlayer").transform.GetChild(1).gameObject.SetActive(false);
+        //왼손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(1).gameObject.SetActive(false);
+        //오른손
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(0)
+            .GetChild(2).gameObject.SetActive(false);
+        //레이저
+        GameObject.Find("LocalPlayer").transform.GetChild(0).GetChild(1)
+            .GetChild(0).gameObject.SetActive(false);
+
+
         yield return new WaitForSeconds(time);
+
+
         mainMenu.GetComponent<CanvasGroup>().alpha = 1f;
         GameObject.Find("LocalPlayer").transform.GetChild(1).gameObject.SetActive(true);
         //왼손
