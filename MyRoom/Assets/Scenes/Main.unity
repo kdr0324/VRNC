@@ -1161,7 +1161,7 @@ Transform:
   m_GameObject: {fileID: 1794504878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_Children:
   - {fileID: 191927886}
   - {fileID: 1033482271}
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   voiceDetection: 0
   voiceDetectionThreshold: 0.01
   voiceDetectionDelayMs: 500
-  unityMicrophoneDevice: "\uB9C8\uC774\uD06C (3- HTC Vive)"
+  unityMicrophoneDevice: "\uB9C8\uC774\uD06C (Rift Audio)"
   photonMicrophoneDeviceId: 0
   interestGroup: 0
   debugEchoMode: 0

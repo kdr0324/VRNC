@@ -29,12 +29,14 @@ public class DeleteFurniture : MonoBehaviour
         if(collision.transform.parent.name == "Furniture" )
         {
             //Destroy(collision.gameObject);
-            transform.root.GetComponent<isLocalPlayer>().CmdDeleteFurniture(collision.gameObject);
-            AudioSource audio = GameObject.Find("Room").GetComponent<AudioSource>();
-            audio.clip = deleteSound;
-            audio.Play();
-
-
+            //if (ViveInput.GetPressDown(HandRole.RightHand, ControllerButton.Trigger))
+            if(true)
+            {    
+                transform.root.GetComponent<isLocalPlayer>().CmdDeleteFurniture(collision.gameObject);
+                AudioSource audio = GameObject.Find("Room").GetComponent<AudioSource>();
+                audio.clip = deleteSound;
+                audio.Play();
+            }
         }
     }
 

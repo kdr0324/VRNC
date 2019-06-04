@@ -332,10 +332,25 @@ public class MenuManager : MonoBehaviour
         if (!mainMenu.activeSelf)
         {
             mainMenu.SetActive(true);
+            furnitureMenu.SetActive(false);
+            settingsMenu.SetActive(false);
+            selectTextureMenu.SetActive(false);
+
+            saveSlotMenu.SetActive(false);
+            loadSlotMenu.SetActive(false);
+            firendSlotMenu.SetActive(false);
         }
         else
         {
             mainMenu.SetActive(false);
+              
+            furnitureMenu.SetActive(false);
+            settingsMenu.SetActive(false);
+            selectTextureMenu.SetActive(false);
+
+            saveSlotMenu.SetActive(false);
+            loadSlotMenu.SetActive(false);
+            firendSlotMenu.SetActive(false);
         }
         audio.clip = ButtonSound;
         audio.Play();

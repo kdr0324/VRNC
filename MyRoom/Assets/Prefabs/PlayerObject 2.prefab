@@ -5373,18 +5373,8 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onVirtualClick:
     m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_onVirtualPressDown:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_onVirtualPressUp:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 790487262404812880}
         m_MethodName: CallMainMenu
         m_Mode: 1
         m_Arguments:
@@ -5395,6 +5385,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_onVirtualPressDown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_onVirtualPressUp:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_toggleGameObjectOnVirtualClick: []
@@ -7222,6 +7222,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0173575ffd4739a459b997ed82f03936, type: 3}
+--- !u!114 &790487262404812880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
+    type: 3}
+  m_PrefabInstance: {fileID: 7708933944157738889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc8aa2531dedb54c95d4ac257f85545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4245517941036522749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5769320608642796404, guid: 0173575ffd4739a459b997ed82f03936,
@@ -7235,11 +7247,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9125283036415736505}
     m_Modifications:
-    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
-        type: 3}
-      propertyPath: m_Name
-      value: ControllerTooltips(Right)
-      objectReference: {fileID: 0}
     - target: {fileID: 4977562089598339617, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7294,6 +7301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
+        type: 3}
+      propertyPath: m_Name
+      value: ControllerTooltips(Right)
       objectReference: {fileID: 0}
     - target: {fileID: 4977562089576255091, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}

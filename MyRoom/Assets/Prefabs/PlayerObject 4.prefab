@@ -2420,7 +2420,18 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onVirtualClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4489364536810264113}
+        m_MethodName: CallMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onVirtualPressDown:
@@ -6916,6 +6927,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6795527409399161320}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4489364536810264113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
+    type: 3}
+  m_PrefabInstance: {fileID: 6795527409399161320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc8aa2531dedb54c95d4ac257f85545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8733789931215670975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6923,11 +6946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7295630351764800881}
     m_Modifications:
-    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
-        type: 3}
-      propertyPath: m_Name
-      value: ControllerTooltips(Right)
-      objectReference: {fileID: 0}
     - target: {fileID: 4977562089598339617, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6982,6 +7000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
+        type: 3}
+      propertyPath: m_Name
+      value: ControllerTooltips(Right)
       objectReference: {fileID: 0}
     - target: {fileID: 4977562089576255091, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}

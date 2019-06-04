@@ -5183,7 +5183,18 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onVirtualClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9187825800927341858}
+        m_MethodName: CallMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: HTC.UnityPlugin.Vive.ViveInputVirtualButton+OutputEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onVirtualPressDown:
@@ -6645,6 +6656,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2270460231162288891}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9187825800927341858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
+    type: 3}
+  m_PrefabInstance: {fileID: 2270460231162288891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc8aa2531dedb54c95d4ac257f85545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2981563041442836539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6652,11 +6675,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963831009638555428}
     m_Modifications:
-    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
-        type: 3}
-      propertyPath: m_Name
-      value: ControllerTooltips(Right)
-      objectReference: {fileID: 0}
     - target: {fileID: 4977562089598339617, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6711,6 +6729,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977562089598012061, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
+        type: 3}
+      propertyPath: m_Name
+      value: ControllerTooltips(Right)
       objectReference: {fileID: 0}
     - target: {fileID: 4977562089576255091, guid: 1f2ff7ff3434c0a4294ed925c2cf9a55,
         type: 3}
@@ -7044,15 +7067,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa0258e23354aa34ca1428df4028e1f4, type: 3}
---- !u!1 &5745291924316813014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2462802403100124440, guid: fa0258e23354aa34ca1428df4028e1f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 7896711391414850510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4221417038286364345 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6270063198012378487, guid: fa0258e23354aa34ca1428df4028e1f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7896711391414850510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5745291924316813014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2462802403100124440, guid: fa0258e23354aa34ca1428df4028e1f4,
     type: 3}
   m_PrefabInstance: {fileID: 7896711391414850510}
   m_PrefabAsset: {fileID: 0}
