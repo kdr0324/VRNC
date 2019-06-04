@@ -376,7 +376,7 @@ public class MenuManager : MonoBehaviour
                     continue;
                 }
 
-                roomList.GetChild(i).GetComponent<Text>().text = rooms[i];
+                roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
                 Button btn = roomList.GetChild(i).GetComponent<Button>();
                 btn.onClick.AddListener(() => EnterFriendRoom(i + cnt));
 
