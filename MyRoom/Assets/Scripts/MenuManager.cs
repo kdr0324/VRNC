@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Photon.Voice.Unity;
 using Photon.Voice.Unity.UtilityScripts;
+using HTC.UnityPlugin.Vive;
 
 public class MenuManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Debug.Log("Menu manager Start");
         audio = GameObject.Find("Room").GetComponent<AudioSource>();
         Furniture = GameObject.Find("Furniture");
@@ -47,6 +49,16 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if(ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
+        {
+            Debug.Log("트리거 눌렀지롱");
+            ViveInput.TriggerHapticPulse(HandRole.RightHand);
+        }
+    }
+
     //프로그램 종료
     public void Quit()
     {
@@ -66,6 +78,7 @@ public class MenuManager : MonoBehaviour
     {
         audio.clip = ButtonSound;
         audio.Play();
+
 
 
         //기존에 떠있는 메인메뉴 UI 종료
@@ -289,7 +302,6 @@ public class MenuManager : MonoBehaviour
 
         audio.clip = ScreenshotSound;
         audio.Play();
-
     }
 
     // 설정하기
@@ -334,7 +346,7 @@ public class MenuManager : MonoBehaviour
             mainMenu.SetActive(true);
             furnitureMenu.SetActive(false);
             settingsMenu.SetActive(false);
-            selectTextureMenu.SetActive(false);
+            
 
             saveSlotMenu.SetActive(false);
             loadSlotMenu.SetActive(false);
@@ -346,7 +358,7 @@ public class MenuManager : MonoBehaviour
               
             furnitureMenu.SetActive(false);
             settingsMenu.SetActive(false);
-            selectTextureMenu.SetActive(false);
+            
 
             saveSlotMenu.SetActive(false);
             loadSlotMenu.SetActive(false);
@@ -364,7 +376,6 @@ public class MenuManager : MonoBehaviour
 
         audio.clip = ButtonSound;
         audio.Play();
-
         FriendsList();
     }
 
@@ -477,7 +488,7 @@ public class MenuManager : MonoBehaviour
 
 
 
-        
+
 
         roomNetwork.StopHost();
         roomNetwork.StopClient();
