@@ -138,7 +138,7 @@ public class setParent : NetworkBehaviour
 
     private void SetTexture(GameObject target, int num)
     {
-        if (num == -1) return;
+        if (num == -1 || target.GetComponent<DropObject>() == null) return;
         Debug.Log("Set Texture : " + num);
         target.GetComponent<MeshRenderer>().material.mainTexture = textures[num];
         target.GetComponent<DropObject>().SetMaterial(textures[num]);

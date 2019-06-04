@@ -1,1 +1,14 @@
-﻿  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe
+﻿  mysql.c
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(52): warning C4244: '초기화 중': 'my_ulonglong'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(18): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(70): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(69): warning C4101: 'res' :참조되지 않은 지역 변수입니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(103): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(138): warning C4101: 'row' :참조되지 않은 지역 변수입니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(187): warning C4029: 선언된 정식 매개 변수 목록이 정의와 다릅니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(235): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(235): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(300): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\bit\documents\github\vrnc\gameserver\gameserver\mysql.c(300): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  LINK : C:\Users\BIT\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  GameServer.vcxproj -> C:\Users\BIT\Documents\GitHub\VRNC\GameServer\x64\Debug\GameServer.exe

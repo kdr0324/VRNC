@@ -7201,6 +7201,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 846e646532de5554ea61a3142216b1cb, type: 3}
   - {fileID: 21300000, guid: d4203fcc8b336234da8fa211c440ae0a, type: 3}
   - {fileID: 21300000, guid: ffec1755477ec534fbf2c9ba552ed761, type: 3}
+  - {fileID: 21300000, guid: bd610c08e8ab0ce4da48363639182f1b, type: 3}
+  - {fileID: 21300000, guid: 560d783d0ecd05147b172235b5aff4a3, type: 3}
+  - {fileID: 21300000, guid: c4a10c62d08a1984083ed8c0d2fef077, type: 3}
+  - {fileID: 21300000, guid: b7cf711335e32eb48acf48563e50c9e9, type: 3}
 --- !u!114 &4448874214796632498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12401,40 +12405,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5369639012335432252}
     m_Modifications:
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.39215687
+      propertyPath: m_Name
+      value: VRUI-Checkbox
       objectReference: {fileID: 0}
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1531088791267603163, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
@@ -12541,16 +12520,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Name
-      value: VRUI-Checkbox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1530580868150196991, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12631,6 +12600,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 1708134111555669789, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_Color.r
@@ -12657,6 +12641,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5,
         type: 3}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbee07ade354914d89eb245daf9b1f6, type: 3}
 --- !u!224 &155400776677592579 stripped
@@ -13383,40 +13387,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5369639012335432252}
     m_Modifications:
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.39215687
+      propertyPath: m_Name
+      value: VRUI-Checkbox
       objectReference: {fileID: 0}
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1531088791267603163, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
@@ -13523,16 +13502,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_Name
-      value: VRUI-Checkbox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594447200060716679, guid: ddbee07ade354914d89eb245daf9b1f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1530580868150196991, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13613,6 +13582,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708135488725883133, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 1708134111555669789, guid: ddbee07ade354914d89eb245daf9b1f6,
         type: 3}
       propertyPath: m_Color.r
@@ -13639,6 +13623,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 12d1a70bcbdfa584f80a9a5b074e4cc5,
         type: 3}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708107307793316757, guid: ddbee07ade354914d89eb245daf9b1f6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbee07ade354914d89eb245daf9b1f6, type: 3}
 --- !u!1 &7627355318195427613 stripped

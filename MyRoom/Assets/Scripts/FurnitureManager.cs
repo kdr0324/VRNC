@@ -221,7 +221,10 @@ public class FurnitureManager : MonoBehaviour
             {
                 for (int j = 0; j < cnt; j++)
                 {
-
+                    if (cur.GetChild(j).GetComponent<DropObject>() == null)
+                    {
+                        continue;
+                    }
                     if (cur.GetChild(j).GetComponent<MeshRenderer>() != null)
                     {
                         if (cur.GetChild(j).GetComponent<DropObject>().textureName == "")
