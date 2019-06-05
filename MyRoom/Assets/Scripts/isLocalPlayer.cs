@@ -28,7 +28,6 @@ public class isLocalPlayer : NetworkBehaviour
                 {
                     room.GetChild(i).GetComponent<setTexture>().EnterFriendRoom();
                 }
-
             }
         }
 

@@ -40,7 +40,7 @@ public class MenuManager : MonoBehaviour
 
         if (Client.instance != null)
         {
-            if (Client.instance.isConnect)
+            if (Client.instance.isConnect && Client.instance.isOwner)
             {
                 if (Client.instance.roomType != 0)
                 {
@@ -158,9 +158,7 @@ public class MenuManager : MonoBehaviour
 
                 Labels[i].text = "서버 연결 안 됨";
                 buttons[i].interactable = false;
-
             }
-
         }
     }
 
@@ -406,9 +404,9 @@ public class MenuManager : MonoBehaviour
                 }
 
                 int idx = i - cnt;
-                roomList.GetChild(idx).GetComponent<Button>().interactable = true;
+                roomList.GetChild(idx).GetComponent<VRUIOutlineButton>().interactable = true;
                 roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
-                Button btn = roomList.GetChild(idx).GetComponent<Button>();
+                VRUIOutlineButton btn = roomList.GetChild(idx).GetComponent<VRUIOutlineButton>();
                 btn.onClick.AddListener(() => EnterFriendRoom(idx));
                 btn.onClick.AddListener(() => Client.instance.curRoom = rooms[idx]);
 
@@ -416,7 +414,7 @@ public class MenuManager : MonoBehaviour
             for (i = i-cnt; i < roomList.childCount; i++)
             {
                 roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
-                roomList.GetChild(i).GetComponent<Button>().interactable = false;
+                roomList.GetChild(i).GetComponent<VRUIOutlineButton>().interactable = false;
             }
         }
         else
@@ -424,7 +422,7 @@ public class MenuManager : MonoBehaviour
             for (int i=0; i<roomList.childCount; i++)
             {
                 roomList.GetChild(i).GetComponentInChildren<Text>().text = "비어 있음";
-                roomList.GetChild(i).GetComponent<Button>().interactable = false;
+                roomList.GetChild(i).GetComponent<VRUIOutlineButton>().interactable = false;
             }
         }
     }
@@ -439,8 +437,6 @@ public class MenuManager : MonoBehaviour
         //연결 해제
         RoomNetwork roomNetwork = GameObject.Find("RoomNetworkManager").GetComponent<RoomNetwork>();
         GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
-
-
 
 
         roomNetwork.StopHost();
@@ -496,13 +492,11 @@ public class MenuManager : MonoBehaviour
         audio.Play();
 
 
-
-
-
         roomNetwork.StopHost();
         roomNetwork.StopClient();
         //voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
         //voiceNetwork.GetComponent<VoiceConnection>().
+
 
         roomNetwork.networkAddress = Client.instance.roomIp;
         Client.instance.curRoom = Client.instance.UserID;

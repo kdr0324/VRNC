@@ -240,9 +240,9 @@ public class Client : MonoBehaviour
             //방 IP 받아옴
             roomIp = GetComponent<LibraryClient>().LocalIPAddress();
             Debug.Log("Room Make : " + roomIp);
-            
 
             //Play();
+            curRoom = UserID;
         }
         else
         {
@@ -280,7 +280,6 @@ public class Client : MonoBehaviour
 
                 Array.Clear(buffer, 0, buffer.Length);
             }
-
             return rooms;
         }
         else
