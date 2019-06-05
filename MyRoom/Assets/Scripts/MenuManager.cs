@@ -44,6 +44,7 @@ public class MenuManager : MonoBehaviour
             {
                 if (Client.instance.roomType != 0)
                 {
+                    Client.instance.curRoom = Client.instance.UserID;
                     loadSlot(Client.instance.roomType);
                 }
             }
@@ -396,8 +397,9 @@ public class MenuManager : MonoBehaviour
             {
                 Debug.Log("Compare " + rooms[i].CompareTo(Client.instance.UserID));
                 //방이 내 방이면 건너 뜀
-
-                if(rooms[i].CompareTo(Client.instance.UserID) == 0)
+                //방이 이미 내가 있는 방이면 건너 뜀
+                if(rooms[i].CompareTo(Client.instance.UserID) == 0 ||
+                    rooms[i].CompareTo(Client.instance.curRoom) == 0)
                 {
                     cnt++;
                     continue;
@@ -408,6 +410,7 @@ public class MenuManager : MonoBehaviour
                 roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
                 Button btn = roomList.GetChild(idx).GetComponent<Button>();
                 btn.onClick.AddListener(() => EnterFriendRoom(idx));
+                btn.onClick.AddListener(() => Client.instance.curRoom = rooms[idx]);
 
             }
             for (i = i-cnt; i < roomList.childCount; i++)
@@ -499,6 +502,7 @@ public class MenuManager : MonoBehaviour
         //voiceNetwork.GetComponent<VoiceConnection>().
 
         roomNetwork.networkAddress = Client.instance.roomIp;
+        Client.instance.curRoom = Client.instance.UserID;
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = Client.instance.UserID;
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();

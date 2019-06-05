@@ -17,6 +17,7 @@ public class Client : MonoBehaviour
     public bool isOwner = false;
     public string roomIp = null;
     public string UserID = null;
+    public string curRoom = null;
 
     public bool isConnect = false;
 
