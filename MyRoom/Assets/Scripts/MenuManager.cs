@@ -441,6 +441,8 @@ public class MenuManager : MonoBehaviour
         GameObject voiceNetwork = GameObject.Find("RoomNetworkManager");
 
 
+
+
         roomNetwork.StopHost();
         roomNetwork.StopClient();
 
@@ -452,8 +454,9 @@ public class MenuManager : MonoBehaviour
         //음성네트워크 방제
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
 
-        StartCoroutine(Wait(0.7f));
+        
         roomNetwork.StartClient();
+        //StartCoroutine(WaitForTexture(0.7f));
         string voiceRoom = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
 
         char[] checkName = roomList.GetChild(idx).GetComponentInChildren<Text>().text.ToCharArray();
@@ -507,6 +510,8 @@ public class MenuManager : MonoBehaviour
         StartCoroutine(Wait(0.5f));
         roomNetwork.StartHost();
 
+        
+
 
         roomNetwork.JoinOrCreateRoom(Client.instance.UserID);
         //voiceNetwork.GetComponent<ConnectAndJoin>().ConnectNow();
@@ -515,6 +520,16 @@ public class MenuManager : MonoBehaviour
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
+    }
+
+    IEnumerator WaitForTexture(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Transform Room = GameObject.Find("Room").transform;
+        for(int i=0; i< Room.childCount; i++)
+        {
+            Room.GetChild(i).GetComponent<setTexture>().EnterFriendRoom();
+        }
     }
 
     IEnumerator ScreenShotWait(float time)

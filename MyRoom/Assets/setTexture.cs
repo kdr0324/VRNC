@@ -32,6 +32,8 @@ public class setTexture : NetworkBehaviour
 
     private void MyCallBack(SyncListInt.Operation op, int index)
     {
+
+        Debug.Log("MyCallBack");
         int num = syncListTexture[index];
 
         if (num == -1) return;
@@ -66,6 +68,7 @@ public class setTexture : NetworkBehaviour
 
     private void SetTexture(GameObject target, int num)
     {
+        Debug.Log("SetTexture"); 
         if (num == -1) return;
         Debug.Log("Set Texture : " + num);
         target.GetComponent<MeshRenderer>().material.mainTexture = textures[num];
@@ -73,6 +76,11 @@ public class setTexture : NetworkBehaviour
         target.GetComponent<DropObject>().textureName = textures[num].name;
     }
 
-
+    //친구 방에 들어갔을 때 벽지 변경
+    public void EnterFriendRoom()
+    {
+        Debug.Log("친구방에 벽지 붙이는중..." + syncListTexture[0]);
+        SetTexture(this.gameObject, syncListTexture[0]);
+    }
 
 }

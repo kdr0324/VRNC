@@ -20,6 +20,16 @@ public class isLocalPlayer : NetworkBehaviour
         if (isLocalPlayer)
         {
             name = "LocalPlayer";
+
+            if(isClient)
+            {
+                Transform room = GameObject.Find("Room").transform;
+                for (int i = 0; i < room.childCount; i++)
+                {
+                    room.GetChild(i).GetComponent<setTexture>().EnterFriendRoom();
+                }
+
+            }
         }
 
         if (!isLocalPlayer)

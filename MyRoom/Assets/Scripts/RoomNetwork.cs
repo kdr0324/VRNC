@@ -156,6 +156,8 @@ public class RoomNetwork : NetworkManager
             extraMessage.CharacterType = 0;
         //메시지 전달
         ClientScene.AddPlayer(client.connection, 0, extraMessage);
+
+
     }
     //public override void OnServerConnect(NetworkConnection conn)
     //{
