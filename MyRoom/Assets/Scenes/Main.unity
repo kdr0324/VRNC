@@ -1873,13 +1873,13 @@ MonoBehaviour:
   voiceDetection: 0
   voiceDetectionThreshold: 0.01
   voiceDetectionDelayMs: 500
-  unityMicrophoneDevice: "\uB9C8\uC774\uD06C (Rift Audio)"
+  unityMicrophoneDevice: "\uB9C8\uC774\uD06C (3- HTC Vive)"
   photonMicrophoneDeviceId: 0
   interestGroup: 0
   debugEchoMode: 0
   reliableMode: 0
   encrypt: 0
-  transmitEnabled: 0
+  transmitEnabled: 1
   samplingRate: 24000
   frameDuration: 20000
   bitrate: 30000
