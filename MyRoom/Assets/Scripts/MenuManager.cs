@@ -389,22 +389,25 @@ public class MenuManager : MonoBehaviour
         {
             string[] rooms;
             rooms = Client.instance.RoomList();
-            Debug.Log("firendSlotMenu.start");
+            Debug.Log("firendSlotMenu.start ," + rooms.Length);
             int i;
             int cnt = 0;
             for (i = 0; i < rooms.Length; i++)
             {
                 Debug.Log("Compare " + rooms[i].CompareTo(Client.instance.UserID));
                 //방이 내 방이면 건너 뜀
+
                 if(rooms[i].CompareTo(Client.instance.UserID) == 0)
                 {
                     cnt++;
                     continue;
                 }
 
-                roomList.GetChild(i).GetComponentInChildren<Text>().text = rooms[i];
-                Button btn = roomList.GetChild(i).GetComponent<Button>();
-                btn.onClick.AddListener(() => EnterFriendRoom(i + cnt));
+                int idx = i - cnt;
+                roomList.GetChild(idx).GetComponent<Button>().interactable = true;
+                roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
+                Button btn = roomList.GetChild(idx).GetComponent<Button>();
+                btn.onClick.AddListener(() => EnterFriendRoom(idx));
 
             }
             for (i = i-cnt; i < roomList.childCount; i++)
@@ -425,6 +428,7 @@ public class MenuManager : MonoBehaviour
 
     public void EnterFriendRoom(int idx)
     {
+        Debug.Log("Enter Friend Room , " + idx);
         Client.instance.RoomEnter(idx);
         audio.clip = ButtonSound;
         audio.Play();
@@ -452,7 +456,6 @@ public class MenuManager : MonoBehaviour
         char[] checkName = roomList.GetChild(idx).GetComponentInChildren<Text>().text.ToCharArray();
         for (int i = 0; i < checkName.Length; i++)
         {
-            Debug.Log("lalala");
             if (!char.IsLetterOrDigit(checkName[i]))
             {
                 Debug.Log(i);
