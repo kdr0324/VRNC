@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 674435824783420653}
   - component: {fileID: 8463857016362713251}
   m_Layer: 0
-  m_Name: kitchen_shelf_corner
+  m_Name: kitchen_shelf_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.4610434, y: 0, z: -6.497624}
+  m_LocalRotation: {x: -0.27059808, y: -0.6532815, z: -0.6532815, w: 0.27059808}
+  m_LocalPosition: {x: 3.4610434, y: 0, z: -7.316755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -38,7 +38,7 @@ Transform:
   - {fileID: 400004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: -45, z: -90.00001}
 --- !u!114 &3603832172243996182
 MonoBehaviour:
   m_ObjectHideFlags: 0
