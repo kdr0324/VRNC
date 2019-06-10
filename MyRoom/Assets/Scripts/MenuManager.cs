@@ -53,11 +53,11 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if(ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
-        {
-            Debug.Log("트리거 눌렀지롱");
-            ViveInput.TriggerHapticPulse(HandRole.RightHand);
-        }
+        //if(ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
+        //{
+        //    Debug.Log("트리거 눌렀지롱");
+        //    ViveInput.TriggerHapticPulse(HandRole.RightHand);
+        //}
     }
 
     //프로그램 종료
