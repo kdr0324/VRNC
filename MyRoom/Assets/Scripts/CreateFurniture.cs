@@ -34,7 +34,7 @@ public class CreateFurniture : MonoBehaviour
 
         //Debug.Log(transform.root.name);
         transform.root.GetComponent<isLocalPlayer>().
-            SpawnObject(current_name, transform.position + new Vector3(0, 0.5f, 0.3f));
+            SpawnObject(current_name, transform.position + new Vector3(0, 0.5f, 0));
        // GameObject NewGameObject = Resources.Load("Prefabs/" + current_name) as GameObject;
 
 

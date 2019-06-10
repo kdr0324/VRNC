@@ -321,7 +321,7 @@ public class FurnitureManager : MonoBehaviour
             string name = obj.objDataList[i].name;
 
 
-            LocalPlayer.SpawnObject(name, obj.objDataList[i].position, obj.objDataList[i].textures);
+            LocalPlayer.SpawnObjectRot(name, obj.objDataList[i].position, obj.objDataList[i].rotation, obj.objDataList[i].textures);
 
 
             ////이름에 맞는 가구 Prefab Load

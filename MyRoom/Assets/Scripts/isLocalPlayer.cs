@@ -57,6 +57,11 @@ public class isLocalPlayer : NetworkBehaviour
         CmdSpawnWithTextures(name, pos, textures);
     }
 
+    public void SpawnObjectRot(string name, Vector3 pos, Quaternion rot ,int[] textures)
+    {
+        CmdSpawnWithTexturesRot(name, pos, rot, textures);
+    }
+
     [Command]
     void CmdSpawn(string name, Vector3 pos)
     {
@@ -82,6 +87,23 @@ public class isLocalPlayer : NetworkBehaviour
 
 
         GameObject obj = Instantiate(NewGameObject, pos, NewGameObject.transform.rotation);
+        obj.name = name;
+
+        NetworkServer.Spawn(obj);
+
+        //자식 객체가 없는 경우
+        obj.GetComponent<setParent>().loadTextures = textures;
+    }
+
+    [Command]
+    void CmdSpawnWithTexturesRot(string name, Vector3 pos, Quaternion rot, int[] textures)
+    {
+
+
+        GameObject NewGameObject = Resources.Load("Prefabs/" + name) as GameObject;
+
+
+        GameObject obj = Instantiate(NewGameObject, pos, rot);
         obj.name = name;
 
         NetworkServer.Spawn(obj);
