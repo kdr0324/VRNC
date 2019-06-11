@@ -69,6 +69,7 @@ unsigned WINAPI ThreadFunction(void* para)
 			{
 				delete_node(&roomlist, curRoom, cmpRoom);
 				free(curRoom);
+				curRoom = NULL;
 			}
 			break;
 		case PLAY:
@@ -87,6 +88,7 @@ unsigned WINAPI ThreadFunction(void* para)
 
 	}
 
+	printf("연결 해제\n");
 	//룸 정리
 	if (curRoom)
 	{
@@ -100,7 +102,7 @@ unsigned WINAPI ThreadFunction(void* para)
 		delete_node(&userlist, curUser, cmpUser);
 		free(curUser);
 	}
-
+	printf("연결 완료\n");
 
 	//클라이언트 소켓 종료
 	closesocket(*(SOCKET*)para);

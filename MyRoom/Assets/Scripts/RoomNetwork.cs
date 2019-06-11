@@ -120,7 +120,7 @@ public class RoomNetwork : NetworkManager
         int character = message.CharacterType;
 
         //playerCount에 맞는 스폰포인트 지정
-        Transform spawnPoint = this.startPositions[playerCount];
+        Transform spawnPoint = this.startPositions[playerCount%4];
 
         //새로운 플레이어 생성
         GameObject newPlayer;

@@ -305,12 +305,6 @@ public class Client : MonoBehaviour
             //들어가고 방 번호 전달
             cli.Send(buffer, buffer.Length, SocketFlags.None);
 
-            /*
-             * 
-             * 게임 진입
-             * 
-             * 
-             */
             //Owner IP receive
             Array.Clear(buffer, 0, buffer.Length);
             cli.Receive(buffer, buffer.Length, SocketFlags.None);
