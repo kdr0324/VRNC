@@ -407,7 +407,7 @@ public class MenuManager : MonoBehaviour
                 roomList.GetChild(idx).GetComponent<VRUIOutlineButton>().interactable = true;
                 roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
                 VRUIOutlineButton btn = roomList.GetChild(idx).GetComponent<VRUIOutlineButton>();
-                btn.onClick.AddListener(() => EnterFriendRoom(idx));
+                btn.onClick.AddListener(() => EnterFriendRoom(i));
                 btn.onClick.AddListener(() => Client.instance.curRoom = rooms[idx]);
 
             }
