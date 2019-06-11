@@ -5136,7 +5136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9125283036300292425}
   m_LocalRotation: {x: -0.52133375, y: 0.47771358, z: 0.52133375, w: -0.4777153}
-  m_LocalPosition: {x: 0.003, y: -0.291, z: -0.207}
+  m_LocalPosition: {x: 0.003, y: -0.275, z: -0.379}
   m_LocalScale: {x: 0.99999857, y: 0.99999857, z: 1}
   m_Children: []
   m_Father: {fileID: 9125283036282150966}
@@ -7165,21 +7165,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6918652101482854361, guid: 0173575ffd4739a459b997ed82f03936,
         type: 3}
       propertyPath: saveWindow
@@ -7195,6 +7180,21 @@ PrefabInstance:
       propertyPath: screenshotWindow
       value: 
       objectReference: {fileID: 631732800801496303}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134877500907549385, guid: 0173575ffd4739a459b997ed82f03936,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8564392491919712652, guid: 0173575ffd4739a459b997ed82f03936,
         type: 3}
       propertyPath: m_SizeDelta.x
