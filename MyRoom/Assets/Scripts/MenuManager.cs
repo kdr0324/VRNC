@@ -403,13 +403,16 @@ public class MenuManager : MonoBehaviour
                     continue;
                 }
 
+                //버튼 번호
                 int idx = i - cnt;
+
+                //룸 번호
                 int chk = i;
                 roomList.GetChild(idx).GetComponent<VRUIOutlineButton>().interactable = true;
                 roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
                 VRUIOutlineButton btn = roomList.GetChild(idx).GetComponent<VRUIOutlineButton>();
                 btn.onClick.AddListener(() => EnterFriendRoom(chk));
-                btn.onClick.AddListener(() => Client.instance.curRoom = rooms[idx]);
+                btn.onClick.AddListener(() => Client.instance.curRoom = rooms[chk]);
 
             }
             for (i = i-cnt; i < roomList.childCount; i++)

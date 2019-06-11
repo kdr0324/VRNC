@@ -65,12 +65,14 @@ unsigned WINAPI ThreadFunction(void* para)
 			break;
 		case ROOMENTER:
 			roomEnter(para, curUser);
+			printf("start\n");
 			if (curRoom)
 			{
 				delete_node(&roomlist, curRoom, cmpRoom);
 				free(curRoom);
 				curRoom = NULL;
 			}
+			printf("End\n");
 			break;
 		case PLAY:
 			play(para, curUser, curRoom);

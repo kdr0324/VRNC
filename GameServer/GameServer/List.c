@@ -81,7 +81,8 @@ void* delete_node(list* mylist, void *data, int(*find)(void*, void*)) {
 				
 			}
 			del = cur->value;
-			free_node(cur);
+			//free_node(cur);
+			//free(cur);			
 			mylist->size--;
 			return del;
 		}
