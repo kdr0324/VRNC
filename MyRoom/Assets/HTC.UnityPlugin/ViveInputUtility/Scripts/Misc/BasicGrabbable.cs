@@ -173,6 +173,8 @@ namespace HTC.UnityPlugin.Vive
             m_eventGrabberSet.Add(eventData, grabber);
 
             AddGrabber(grabber);
+
+            GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdClientAuthority(gameObject);
         }
 
         public virtual void OnColliderEventDragFixedUpdate(ColliderButtonEventData eventData)
@@ -202,6 +204,8 @@ namespace HTC.UnityPlugin.Vive
             RemoveGrabber(grabber);
             m_eventGrabberSet.Remove(eventData);
             Grabber.Release(grabber);
+
+            GameObject.Find("LocalPlayer").GetComponent<isLocalPlayer>().CmdServerAuthority(gameObject);
         }
     }
 }
