@@ -404,10 +404,11 @@ public class MenuManager : MonoBehaviour
                 }
 
                 int idx = i - cnt;
+                int chk = i;
                 roomList.GetChild(idx).GetComponent<VRUIOutlineButton>().interactable = true;
                 roomList.GetChild(idx).GetComponentInChildren<Text>().text = rooms[i];
                 VRUIOutlineButton btn = roomList.GetChild(idx).GetComponent<VRUIOutlineButton>();
-                btn.onClick.AddListener(() => EnterFriendRoom(i));
+                btn.onClick.AddListener(() => EnterFriendRoom(chk));
                 btn.onClick.AddListener(() => Client.instance.curRoom = rooms[idx]);
 
             }
