@@ -237,6 +237,8 @@ public class MenuManager : MonoBehaviour
                     ObjDataList obj = JsonUtility.FromJson<ObjDataList>(jsonData);
 
                     Furniture.GetComponent<FurnitureManager>().ListToFurniture(obj);
+
+                    Client.instance.roomType = idx;
                 }
             }
             else
