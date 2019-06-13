@@ -453,10 +453,11 @@ public class MenuManager : MonoBehaviour
         //voiceNetwork.GetComponent<VoiceConnection>().Client.Disconnect();
 
         roomNetwork.networkAddress = Client.instance.roomIp;
+        roomNetwork.networkAddress = roomNetwork.networkAddress.Substring(roomNetwork.networkAddress.IndexOf("192"));
         //음성네트워크 방제
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
 
-        
+
         roomNetwork.StartClient();
         //StartCoroutine(WaitForTexture(0.7f));
         string voiceRoom = roomList.GetChild(idx).GetComponentInChildren<Text>().text;
@@ -505,6 +506,7 @@ public class MenuManager : MonoBehaviour
 
 
         roomNetwork.networkAddress = Client.instance.roomIp;
+        roomNetwork.networkAddress = roomNetwork.networkAddress.Substring(roomNetwork.networkAddress.IndexOf("192"));
         Client.instance.curRoom = Client.instance.UserID;
         //voiceNetwork.GetComponent<ConnectAndJoin>().RoomName = Client.instance.UserID;
         StartCoroutine(Wait(0.5f));
