@@ -311,6 +311,10 @@ public class FurnitureManager : MonoBehaviour
                 //wallTexture[i].GetComponent<DropObject>().SetMaterial(FurnitureTextures[walls[i]]);
                 //wallTexture[i].GetComponent<DropObject>().textureName = FurnitureTextures[walls[i]].name;
             }
+            else
+            {
+                LocalPlayer.CmdSetSyncWallTexture(wallTexture[i], 0, 0);
+            }
         }
         
 

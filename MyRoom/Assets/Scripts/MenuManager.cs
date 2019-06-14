@@ -47,6 +47,10 @@ public class MenuManager : MonoBehaviour
                     Client.instance.curRoom = Client.instance.UserID;
                     loadSlot(Client.instance.roomType);
                 }
+                else
+                {
+                    Furniture.GetComponent<FurnitureManager>().Clear();
+                }
             }
         }
     }
